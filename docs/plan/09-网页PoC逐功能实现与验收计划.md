@@ -473,3 +473,14 @@ TC-090实际结果：
 实现依据核对[FastAPI模块化路由](https://fastapi.tiangolo.com/tutorial/bigger-applications/)、[Pydantic模型](https://docs.pydantic.dev/latest/concepts/models/)及[uv锁文件与同步](https://docs.astral.sh/uv/concepts/projects/sync/)；具体兼容结果以上述锁定版本和本地检查为准。
 
 2026-10-25用户随后明确授权提交main并推送。本次交付包含T-089设计规则与样稿证据、T-090后端两套Skill及任务准备服务；提交前fetch确认main与origin/main一致，Ruff、格式、mypy与26项pytest复验通过。按明确文件清单暂存，output图片候选、虚拟环境和缓存排除；提交SHA与远端同步结果以Git回执为准，真实生图未接入的边界保持。
+
+## 15 T-094 五种坐姿Skill与首张基准（2026-10-25）
+
+FR-001 → DES-018第08节 → US-009／AC-038—040 → T-094／TC-094。用户授权先做一张并将五种个性化动作整理为Skill；以character-seated-poses统一管理，poses.json为动作唯一来源，API新增姿态列表及pose_id选择，版本覆盖动作资源。新请求要求单选，旧三视图／卡片保持原规格，不能携带坐姿指令。
+
+TC-094：Skill结构校验通过；Ruff与格式检查、mypy strict通过；39项pytest通过，新增覆盖全部五姿态、缺失／非法／多选、旧Skill错带姿态、输出透明规格、姿态发现与动作修改影响版本。自然陪伴prepare实际生成任务快照；一次内置imagegen出图，RGBA尺寸、哈希与alpha检测见素材记录02第28节。后台仍未接入真实生图；本次出图由聊天执行，不是HTTP接口出图验收。
+
+透明数值验证通过，原始图目视检查完成；浏览器打开本地file预览被策略拒绝，没有改用其他途径绕过，因此深浅底浏览器目视对照未完成。未新建前端消费，Umi客户端兼容仍未验证。未替换现用透明坐姿、修改Figma、生成其他四张或提交推送。
+
+
+2026-10-25用户授权先提交main并推送。提交前Ruff、格式、mypy与39项pytest复验通过。当前本地output目录缺失，已从Codex原始生成文件按既有SHA-256恢复T-094自然坐姿和正式卡参考；旧output中的提示词／任务快照／清单本次未恢复，上文为当时交付记录。待提交范围包含T-091—094设定卡、五坐姿Skill与对应文档；后续四图另行执行。

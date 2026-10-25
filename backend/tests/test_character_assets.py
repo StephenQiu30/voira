@@ -27,7 +27,7 @@ def request_body(
     }
 
 
-@pytest.mark.parametrize("skill_id", service.SKILL_IDS)
+@pytest.mark.parametrize("skill_id", ["character-turnaround", "character-card"])
 def test_prepared_task_is_reproducible_and_not_generated(
     client: TestClient,
     skill_id: schemas.SkillId,
@@ -47,6 +47,7 @@ def test_prepared_task_is_reproducible_and_not_generated(
         "status",
         "skill",
         "request",
+        "pose",
         "instructions",
         "prompt",
         "output",
@@ -244,8 +245,102 @@ def test_registry_and_openapi_expose_only_preparation(
         "listCharacterAssetSkills",
         "getDeepSeekCharacterProfile",
         "prepareCharacterAssetTask",
+        "listCharacterSeatedPoses",
     }
     assert len(operations) == len(set(operations))
     assert (
         client.post("/api/agents/character-assets/generate").status_code == 404
     )
+
+
+@pytest.mark.parametrize(
+    "pose_id", ["natural", "listening", "casual", "playful", "thinking"]
+)
+def test_selected_seated_pose_has_transparent_output(
+    client: TestClient,
+    pose_id: str,
+) -> None:
+    body = request_body("character-seated-poses")
+    body["pose_id"] = pose_id
+    result = client.post("/api/agents/character-assets/prepare", json=body)
+    assert result.status_code == 200
+    task = schemas.PreparedTask.model_validate(result.json())
+    assert task.pose is not None
+    assert task.pose.pose_id == pose_id
+    assert task.status == "prepared"
+    assert task.output.transparent_background is True
+    assert task.output.background == "transparent"
+    assert task.output.aspect_ratio == "2:3"
+    assert task.pose.body in task.prompt
+    assert all(
+        other.body not in task.prompt
+        for other in service.list_poses()
+        if other.pose_id != pose_id
+    )
+
+
+@pytest.mark.parametrize(
+    "skill_id,pose_id",
+    [
+        ("character-seated-poses", None),
+        ("character-seated-poses", "unknown"),
+        ("character-seated-poses", ["natural", "casual"]),
+        ("character-turnaround", "natural"),
+        ("character-card", "thinking"),
+    ],
+)
+def test_pose_selection_cannot_be_missing_invalid_or_leak_to_cards(
+    client: TestClient,
+    skill_id: schemas.SkillId,
+    pose_id: object,
+) -> None:
+    body = request_body(skill_id)
+    body["pose_id"] = pose_id
+    assert (
+        client.post(
+            "/api/agents/character-assets/prepare",
+            json=body,
+        ).status_code
+        == 422
+    )
+
+
+def test_pose_catalog_has_all_five_unique_options(client: TestClient) -> None:
+    result = client.get("/api/agents/character-assets/poses")
+    assert result.status_code == 200
+    assert [item["pose_id"] for item in result.json()] == [
+        "natural",
+        "listening",
+        "casual",
+        "playful",
+        "thinking",
+    ]
+    assert len({item["body"] for item in result.json()}) == 5
+
+
+def test_output_spec_cannot_contradict_transparency() -> None:
+    with pytest.raises(ValidationError):
+        schemas.OutputSpec(transparent_background=True)
+    with pytest.raises(ValidationError):
+        schemas.OutputSpec(aspect_ratio="2:3", background="transparent")
+
+
+def test_seated_version_includes_pose_resource(
+    tmp_path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from importlib import resources
+
+    from app import skills
+
+    folder = tmp_path / "character-seated-poses"
+    folder.mkdir()
+    original = resources.files(skills).joinpath("character-seated-poses")
+    for name in ("SKILL.md", "poses.json"):
+        (folder / name).write_bytes(original.joinpath(name).read_bytes())
+    monkeypatch.setattr(service.resources, "files", lambda _: tmp_path)
+    before = service.load_skill("character-seated-poses")[0].version
+    poses = json.loads((folder / "poses.json").read_text())
+    poses[0]["expression"] = "克制而温暖的笑容"
+    (folder / "poses.json").write_text(json.dumps(poses, ensure_ascii=False))
+    assert service.load_skill("character-seated-poses")[0].version != before

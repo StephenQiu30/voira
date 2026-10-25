@@ -11,11 +11,21 @@ router = APIRouter(prefix="/agents/character-assets", tags=["角色美术Agent"]
 @router.get(
     "/skills",
     operation_id="listCharacterAssetSkills",
-    summary="列出三视图与设定卡Skill",
+    summary="列出角色美术Skill",
 )
 def list_skills() -> tuple[schemas.SkillInfo, ...]:
     """返回本地Skill来源和内容版本，不调用图像模型。"""
     return service.list_skills()
+
+
+@router.get(
+    "/poses",
+    operation_id="listCharacterSeatedPoses",
+    summary="列出五种个性化坐姿",
+)
+def list_poses() -> tuple[schemas.PoseDefinition, ...]:
+    """返回坐姿Skill的动作定义，不触发图片生成。"""
+    return service.list_poses()
 
 
 @router.get(

@@ -554,3 +554,30 @@ DeepSeek最新白底母版未覆盖，单独提取Git基线透明图到character
 两套Skill结构校验、Ruff、mypy strict及26项pytest通过；临时Uvicorn真实HTTP冒烟验证两种prepare和OpenAPI，随后已停止。依赖由uv.lock锁定，实际证据见计划09第14节TC-090。尚未接入前端、供应商出图、会话控制或持久化，不覆盖public或前轮样稿；没有提交推送。下一步真正出图需确定图像执行器及素材ID解析方式，不能直接调用LibTV未公开内部接口。
 
 2026-10-25用户随后明确授权提交main并推送。本次交付包含T-089设计规则与样稿证据、T-090后端两套Skill及任务准备服务；提交前fetch确认main与origin/main一致，Ruff、格式、mypy与26项pytest复验通过。按明确文件清单暂存，output图片候选、虚拟环境和缓存排除；提交SHA与远端同步结果以Git回执为准，真实生图未接入的边界保持。
+
+## 69 T-091 DeepSeek设定卡候选（2026-10-25）
+
+按用户要求继续生成，先使用backend character-card准备任务，再由聊天内置imagegen执行；共首稿与白袜修正两次调用。选定候选output/character-design/t091-deepseek-card/deepseek-card-v2.png为1536×1024白底卡，包含主坐姿、四表情、叠手／倾听／托腮动作与座椅／配饰／鞋履细节。同目录保存任务快照、精确提示词、首稿和哈希清单。
+
+实际目视结果及局部漂移见素材记录02第25节、计划08第45节TC-091；角色卡仍待用户评审，未替换public或Figma，未生成独立透明素材，未提交推送。backend仍只做prepare，本轮不是其真实生图适配器接通的证据。
+
+## 70 T-092 用户选定设定卡进入frontend（2026-10-25）
+
+用户明确选用新附件，已原样替换frontend/public/characters/cards/deepseek.png；1536×1024 RGB，文件SHA-256与附件一致。采用附件色调，不继续使用T-091的v2白袜修正结果。清理两张T-091试稿与三张旧设定稿共5张PNG，保留提示词及清理哈希证据；设计26移除被替代的旧卡编辑原文，设计20和素材记录02同步正式入口。
+
+首页仍使用独立透明坐姿，设定卡作为cards正式资源更新，未把白底拼版替换到舞台。未改前端代码、后端、其他人物或Figma，未提交推送；验证见计划08第46节TC-092。
+
+## 71 T-093 设定卡脚部局部优化（2026-10-25）
+
+根据用户反馈，内置imagegen仅针对已选卡面右下脚部特写执行一次修正：分开两只鞋，梳理脚踝／鞋口、扣带、厚底与粗跟透视；主立绘、文字与其他分区目视保持。修正版已替换frontend/public/characters/cards/deepseek.png，输入、提示词与哈希清单位于output/character-design/t093-footwear-fix。
+
+静态资源HTTP 200且响应哈希等于正式文件；未声明全图像素不变，未改代码或其他人物资源，未提交推送。实际证据见计划08第47节TC-093。
+
+## 72 T-094 自然陪伴首图与五坐姿Skill（2026-10-25）
+
+新增backend/app/skills/character-seated-poses，五种动作保存在poses.json：natural／listening／casual／playful／thinking。prepare必须单选pose_id，返回所选pose与2:3透明PNG要求；三视图和设定卡仍3:2白底。GET /api/agents/character-assets/poses可查询动作，内容版本覆盖SKILL.md与JSON，角色造型继续独立配置。Ruff、格式、mypy、Skill校验与39项测试通过。
+
+已用最新卡面生成一张自然陪伴候选output/character-design/t094-natural/deepseek-natural.png，1024×1536 RGBA，真实alpha检测与构图目视结果见素材记录02第28节／计划09第15节TC-094；浏览器file协议预览被拒绝，深浅底对照未完成。输入、提示词、任务快照与清单保留，未覆盖首页现用图，其他四张尚未生成。backend仍只准备任务；未提交推送。
+
+
+2026-10-25用户授权先提交main并推送。提交前Ruff、格式、mypy与39项pytest复验通过。当前本地output目录缺失，已从Codex原始生成文件按既有SHA-256恢复T-094自然坐姿和正式卡参考；旧output中的提示词／任务快照／清单本次未恢复，上文为当时交付记录。待提交范围包含T-091—094设定卡、五坐姿Skill与对应文档；后续四图另行执行。

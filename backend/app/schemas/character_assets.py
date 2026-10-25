@@ -10,7 +10,10 @@ from pydantic import (
     model_validator,
 )
 
-SkillId = Literal["character-turnaround", "character-card"]
+SkillId = Literal[
+    "character-turnaround", "character-card", "character-seated-poses"
+]
+PoseId = Literal["natural", "listening", "casual", "playful", "thinking"]
 Medium = Literal["anime", "photorealistic", "illustration"]
 Text = Annotated[
     str, StringConstraints(strip_whitespace=True, min_length=1, max_length=2000)
@@ -61,6 +64,7 @@ class PrepareRequest(StrictModel):
 
     skill_id: SkillId
     medium: Medium
+    pose_id: PoseId | None = None
     character: CharacterProfile
     references: Annotated[
         tuple[ReferenceImage, ...], Field(min_length=1, max_length=5)
@@ -69,6 +73,11 @@ class PrepareRequest(StrictModel):
     @model_validator(mode="after")
     def validate_references(self) -> Self:
         """核对主身份、参考唯一性和各Skill的输入边界。"""
+        if self.skill_id == "character-seated-poses":
+            if self.pose_id is None:
+                raise ValueError("坐姿Skill必须选择一种pose_id")
+        elif self.pose_id is not None:
+            raise ValueError("只有坐姿Skill接受pose_id")
         if self.references[0].role != "identity":
             raise ValueError("第一张参考必须是identity身份基准")
         ids = [reference.asset_id for reference in self.references]
@@ -86,23 +95,44 @@ class PrepareRequest(StrictModel):
 
 
 class SkillInfo(StrictModel):
-    """可追溯的本地Skill定义，版本为文件内容SHA-256。"""
+    """可追溯的本地Skill定义，版本覆盖规则文件及其动作资源。"""
 
     skill_id: SkillId
     description: str
     version: str
-    source_url: str
+    source_url: str | None
     provenance: str
 
 
+class PoseDefinition(StrictModel):
+    """所选姿态的动作与表情，来源于Skill资源。"""
+
+    pose_id: PoseId
+    name: Text
+    body: Text
+    expression: Text
+
+
 class OutputSpec(StrictModel):
-    """两种整张设定资产的规格；不代表独立透明素材。"""
+    """设定卡／三视图与独立坐姿的配套输出规格。"""
 
     format: Literal["png"] = "png"
-    aspect_ratio: Literal["3:2"] = "3:2"
-    transparent_background: Literal[False] = False
-    background: Literal["white"] = "white"
+    aspect_ratio: Literal["3:2", "2:3"] = "3:2"
+    transparent_background: bool = False
+    background: Literal["white", "transparent"] = "white"
     review_required: Literal[True] = True
+
+    @model_validator(mode="after")
+    def validate_background(self) -> Self:
+        """避免透明开关、背景说明与画幅彼此矛盾。"""
+        expected = (
+            ("2:3", "transparent")
+            if self.transparent_background
+            else ("3:2", "white")
+        )
+        if (self.aspect_ratio, self.background) != expected:
+            raise ValueError("背景与画幅不符合资产输出规格")
+        return self
 
 
 class PreparedTask(StrictModel):
@@ -111,6 +141,7 @@ class PreparedTask(StrictModel):
     status: Literal["prepared"] = "prepared"
     skill: SkillInfo
     request: PrepareRequest
+    pose: PoseDefinition | None = None
     instructions: str
     prompt: str
     output: OutputSpec

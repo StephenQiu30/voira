@@ -1,7 +1,9 @@
 """加载固定Skill并编排制作任务，不执行模型或任意素材I/O。"""
 
 import hashlib
+import json
 from importlib import resources
+from typing import get_args
 
 import yaml
 
@@ -11,6 +13,7 @@ from app.schemas import character_assets as schemas
 SKILL_IDS: tuple[schemas.SkillId, ...] = (
     "character-turnaround",
     "character-card",
+    "character-seated-poses",
 )
 
 
@@ -38,10 +41,18 @@ def load_skill(skill_id: schemas.SkillId) -> tuple[schemas.SkillInfo, str]:
     metadata = header.get("metadata")
     if not isinstance(metadata, dict) or not parts[2].strip():
         raise ValueError("Skill缺少来源或正文")
+    version = hashlib.sha256(raw)
+    if skill_id == "character-seated-poses":
+        version.update(b"\x00poses.json\x00")
+        version.update(
+            resources.files(skills)
+            .joinpath(skill_id, "poses.json")
+            .read_bytes()
+        )
     info = schemas.SkillInfo(
         skill_id=skill_id,
         description=header["description"],
-        version=hashlib.sha256(raw).hexdigest(),
+        version=version.hexdigest(),
         source_url=metadata["source_url"],
         provenance=metadata["provenance"],
     )
@@ -49,8 +60,23 @@ def load_skill(skill_id: schemas.SkillId) -> tuple[schemas.SkillInfo, str]:
 
 
 def list_skills() -> tuple[schemas.SkillInfo, ...]:
-    """列出固定注册的两套角色美术Skill。"""
+    """列出固定注册的角色美术Skill。"""
     return tuple(load_skill(skill_id)[0] for skill_id in SKILL_IDS)
+
+
+def list_poses() -> tuple[schemas.PoseDefinition, ...]:
+    """返回坐姿Skill中的五种动作，拒绝缺失或重复配置。"""
+    raw = (
+        resources.files(skills)
+        .joinpath("character-seated-poses", "poses.json")
+        .read_text(encoding="utf-8")
+    )
+    poses = tuple(
+        schemas.PoseDefinition.model_validate(item) for item in json.loads(raw)
+    )
+    if tuple(pose.pose_id for pose in poses) != get_args(schemas.PoseId):
+        raise ValueError("坐姿配置与允许的pose_id不一致")
+    return poses
 
 
 def deepseek_profile() -> schemas.CharacterProfile:
@@ -74,6 +100,16 @@ def prepare(request: schemas.PrepareRequest) -> schemas.PreparedTask:
     """
     info, instructions = load_skill(request.skill_id)
     output = schemas.OutputSpec()
+    pose = None
+    if request.skill_id == "character-seated-poses":
+        pose = next(
+            item for item in list_poses() if item.pose_id == request.pose_id
+        )
+        output = schemas.OutputSpec(
+            aspect_ratio="2:3",
+            transparent_background=True,
+            background="transparent",
+        )
     # 输入只作为序列化数据拼入，不作模板、文件名或代码求值。
     prompt = (
         instructions
@@ -83,6 +119,8 @@ def prepare(request: schemas.PrepareRequest) -> schemas.PreparedTask:
         + "\n\n输出规格：\n"
         + output.model_dump_json(indent=2)
     )
+    if pose is not None:
+        prompt += "\n\n仅执行以下选中姿态：\n" + pose.model_dump_json(indent=2)
     checks: tuple[str, ...] = (
         "实际查看全部身份参考，辅助图仅控制声明用途",
         "脸型、头发、服装、媒介与不变项一致",
@@ -91,11 +129,17 @@ def prepare(request: schemas.PrepareRequest) -> schemas.PreparedTask:
     )
     if request.skill_id == "character-turnaround":
         checks += ("正面／90度侧面／背面等高，右正脸同一人",)
-    else:
+    elif request.skill_id == "character-card":
         checks += ("主图、已有道具配饰、差异化表情及动作特写同款",)
+    else:
+        checks += (
+            "单人单椅，姿态符合所选动作，头发／裙摆／鞋底／椅脚完整",
+            "实测PNG alpha；检查深浅底边缘与不透明主体，不接受假透明",
+        )
     return schemas.PreparedTask(
         skill=info,
         request=request,
+        pose=pose,
         instructions=instructions,
         prompt=prompt,
         output=output,

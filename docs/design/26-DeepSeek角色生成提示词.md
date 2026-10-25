@@ -1,7 +1,7 @@
 ---
 类型: 设计
 状态: 草案
-版本: 0.6
+版本: 0.7
 更新: 2026-10-25
 ---
 
@@ -14,6 +14,8 @@
 原生成输入已移入本地output；后续以各正式路径下的最终图作为连续性参考。本文保留DeepSeek样稿提示词与实际生成证据；T-090运行服务使用[backend两套Skill和独立角色配置](../../backend/README.md)，不自动执行本文历史原文。坐姿提示词遵循已确认要求：**不同坐姿、一种姿势一张图、不要抱枕、不要过度设计**。参考用户指定的[原自然坐姿](../../frontend/public/characters/01-natural/deepseek.png)，并实际查看同目录五人及DeepSeek的[交叠腿](../../frontend/public/characters/02-crossed/deepseek.png)、[侧斜坐姿](../../frontend/public/characters/03-leaning/deepseek.png)。只生成DeepSeek，不混用其他人的脸或服装。
 
 当前只维护有效提示词；已撤销的抱枕与拼版原文随本次清理移除。角色故事见[设计24](24-七位角色背景与人设.md)。
+
+**T-094当前坐姿入口**：[character-seated-poses](../../backend/app/skills/character-seated-poses/SKILL.md)，动作以其poses.json为准。下文第02—04节保留先前套图生成证据，不作为新五种个性化动作的执行入口；当前选定卡与T-094参考快照优先。
 
 ## 02 连续性与输出约束
 
@@ -82,17 +84,9 @@ RELAXED SIDE-REST SEATED POSE: Same woman and fixed frontal chair/camera as refe
 
 [现存三视图](../../frontend/public/characters/turnarounds/deepseek.png)包含不透肤白丝袜，属于旧版输出；新制作采用左侧正面／90度侧面／背面等尺度站姿、右侧正脸特写，具体以设计20为准。现存图只供核对已有造型，不能把旧布局或二次元媒介当作新版本硬约束。
 
-以下为历史角色卡生成证据；T-089已改选Casting的分区组织方法，后续另加入道具、表情和动作特写，见设计20第03.2节，不再直接执行此旧编辑提示词。历史角色设定图沿用用户已认可的主立绘＋四处特写版式，最新仅同步白丝袜、白底与无抱枕；不将版式套到五张姿势图。本轮生成时使用前次设定卡与独立自然叠手图；旧试稿已清理，后续直接使用当前设定图与自然叠手图作参考。输出：[当前设定图](../../frontend/public/characters/cards/deepseek.png)。实际原文：
+**当前正式设定卡（T-092选定，T-093脚部修正）**：[DeepSeek设定卡](../../frontend/public/characters/cards/deepseek.png)。用户明确选用本轮重新上传的版本，先按附件原始像素采用，不采用T-091的v2白袜修正版；后按用户反馈仅优化右下脚部特写，见第08节。旧“主图＋四处细节”卡面与其编辑提示词已被替代，从本文移除重复原文；历史生成摘要仍见素材记录02。
 
-```text
-Use case: precise-object-edit.
-Reference 1 is the previously approved DeepSeek character profile card with FOUR detail studies and NO pillow. Reference 2 is the latest white-background natural seated character, the current face/costume/opaque-white-tights/chair baseline.
-Edit reference 1 with only the following consistency corrections. Keep its existing one-main-figure plus four-detail layout, all exact text, detail labels, original gentle adult face, clothing, gold embroidery and chair.
-1. All visible leg surfaces in the large seated figure AND the “裙摆与鞋履” closeup MUST be continuous fully opaque matte PURE WHITE tights, covering knees, shins, ankles and feet inside the shoes. Use the clearly white tights in reference 2, distinct from peach hands/face, with only subtle neutral cool gray cloth shadows. No bare legs, nude pink or translucent hosiery.
-2. Background everywhere PURE WHITE #FFFFFF, no pale-blue wash, ivory tint or gradient; no room, objects or floor texture.
-3. No lap pillow or loose cushion anywhere. Both hands rest on the actual ivory skirt, as in reference 2. Lower-left closeup remains “袖口与手部”, showing folded hands and lace sleeves on skirt, never a pillow.
-Do NOT add new decorative framing, new panels, extra text, objects, animals or anatomy. Absolutely no tail, fin ears, horns or wings. Match reference 2 original character style and chair, maintain high-detail 2D anime CG. This is the matching existing profile card of a simple standalone pose set, not an invitation to redesign. Preserve all four intentional matching detail closeups; no additional design elements. Keep same landscape aspect ratio and full head-to-shoes framing.
-```
+现卡采用坐姿主图、四种表情、叠手／前倾／托腮细节、座椅／配饰／鞋履特写；后续编辑以此正式图为参考。独立坐姿仍要求真实透明，不能直接拿白底设定卡作舞台人物。
 
 ### 5.1 T-089 三视图实际提示词
 
@@ -113,4 +107,24 @@ No chair in this structural standing sheet. No pillow, handheld prop, tail, fin 
 
 三视图／设定卡检查背景、视角、完整构图、白丝袜和身份连续性；独立坐姿另外检查真实alpha、发丝／蕾丝／椅子空隙边缘及姿势差异。不能只凭提示词或图片预览宣称透明。
 
-T-089候选已目视检查三站姿、脸部特写、白袜及无尾巴／抱枕；完整鞋履与裙摆可见。背部发饰、侧面鼻唇、鞋跟高度和刺绣仍需用户评审，未验证严格正投影或3D一致性。候选只在本地output，未覆盖public，未同步Figma、提交或推送。设定卡及五张透明坐姿尚未重新生成。历史正式图的实际交付情况见素材记录02。
+T-089候选已目视检查三站姿、脸部特写、白袜及无尾巴／抱枕；完整鞋履与裙摆可见。背部发饰、侧面鼻唇、鞋跟高度和刺绣仍需用户评审，未验证严格正投影或3D一致性。候选只在本地output，未覆盖public，未同步Figma、提交或推送。设定卡现已由T-092替换为用户选定附件；五张透明坐姿尚未重新生成。历史交付与当前入口见素材记录02。
+
+## 07 T-091 角色设定卡实际执行
+
+按[character-card Skill](../../backend/app/skills/character-card/SKILL.md)及DeepSeek独立配置准备任务，Skill内容版本dc5b3311776b378c3a11d77c770af9b18a0520c9ba2c20ee376232ed53e091fd。实际出图由聊天内置imagegen执行，不是backend或LibTV私有Skill的自动调用。
+
+首轮提示词指定横版白底、左侧完整坐姿主图、右侧四种差异化表情／三处动作／道具配饰；原坐姿图控制身份、画风及椅子，三视图仅供服装。第二轮仅要求将所有可见腿部修正为连续不透肤哑光纯白连裤袜、保留其余布局与文本；实际局部漂移见素材记录02第25节。
+
+精确提示词与输入快照位于本地output/character-design/t091-deepseek-card下的prompt-v1.txt、prompt-v2.txt、prepared-task.json；历史生成哈希在manifest.json。T-092用户另行指定附件作为正式版本，已清理v1／v2 PNG；任务输入与提示词保留用于追溯，当前正式图与清理清单见素材记录02第26节。
+
+## 08 T-093 脚部特写局部编辑
+
+用户要求优化右下脚部，针对已有正式卡片使用precise-object-edit；限定右下约x=1210—1535、y=735—1000区域，重建两个分离且结构一致的左右鞋，改善脚踝、鞋口、扣带和鞋底透视，保留已选主体色调与整卡版式。内置imagegen调用一次，transparent_background=false；实际原文见output/character-design/t093-footwear-fix/prompt.txt。
+
+已更新正式卡片，当前版本以素材记录02第27节为准；这是用户授权的局部修正，不恢复此前被用户舍弃的全图白袜调色。
+
+## 09 T-094 自然陪伴透明基准
+
+当前任务用character-seated-poses、pose_id=natural准备，身份与座椅参考为T-093正式设定卡。实际由内置imagegen单次生成1024×1536 RGBA PNG，输出output/character-design/t094-natural/deepseek-natural.png；输入快照、完整提示词prompt.txt、prepared-task.json与alpha检查记录在同目录。未自动替换现用坐姿，其他四张尚未生成。
+
+提示词约束单人单椅、正面机位、自然叠手、并拢双膝、平行小腿与不交叉脚踝，保留已选卡面色调；不得复制卡片标题或特写拼版。透明背景由参数transparent_background=true指定，并实际读取PNG alpha验收，不能仅凭工具参数认定通过。

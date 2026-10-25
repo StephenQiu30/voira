@@ -37,7 +37,7 @@ voira/
 │   │   ├── core/                 # 配置、日志、异常等基础能力
 │   │   ├── schemas/              # Pydantic 请求与响应模型
 │   │   ├── services/             # 用例编排与业务规则
-│   │   ├── skills/               # 三视图／设定卡SKILL.md及独立角色预设
+│   │   ├── skills/               # 三视图／设定卡／坐姿Skill及角色预设
 │   │   └── integrations/         # 外部服务适配与协议隔离
 │   └── tests/                    # 后续后端测试
 ├── frontend/                     # Next.js 前端，独立管理 Node 依赖
@@ -141,3 +141,5 @@ T-060已按用户授权审阅并提交推送220个文件，包括文档、设计
 [backend README](backend/README.md)维护启动、接口和调用示例。app/skills/character-turnaround与character-card保存本项目适配的SKILL.md；profiles/deepseek.json保存造型，不将DeepSeek限制写成通用人设。schemas校验输入，services按固定注册项读取规则并生成内容版本，api提供本机查询／prepare，FastAPI提供自动契约。没有真实图像适配器或素材解析器，不把聊天工具当SDK。
 
 规则运行入口归backend两个Skill；docs/design20维护视觉决策，26保留实际样稿提示词与生成证据，第三方快照保持原样。输出规格在schemas中约束，本轮只准备整张三视图／卡面；独立透明素材仍依设计规则另行制作。此服务不改public，不创建脚本目录、数据库或持久任务队列。
+
+T-094扩展character-seated-poses，五种动作集中在poses.json；prepare通过pose_id单选，另增GET /api/agents/character-assets/poses供查询。坐姿输出2:3透明PNG，原三视图／卡片保持3:2白底。规则版本覆盖动作资源；输出图片仍由聊天工具制作，backend不执行真实生图。
