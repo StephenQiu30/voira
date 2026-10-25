@@ -128,3 +128,9 @@ T-089候选已目视检查三站姿、脸部特写、白袜及无尾巴／抱枕
 当前任务用character-seated-poses、pose_id=natural准备，身份与座椅参考为T-093正式设定卡。实际由内置imagegen单次生成1024×1536 RGBA PNG，输出output/character-design/t094-natural/deepseek-natural.png；输入快照、完整提示词prompt.txt、prepared-task.json与alpha检查记录在同目录。未自动替换现用坐姿，其他四张尚未生成。
 
 提示词约束单人单椅、正面机位、自然叠手、并拢双膝、平行小腿与不交叉脚踝，保留已选卡面色调；不得复制卡片标题或特写拼版。透明背景由参数transparent_background=true指定，并实际读取PNG alpha验收，不能仅凭工具参数认定通过。
+
+## 10 T-095 四种独立坐姿
+
+用户授权继续其余四张。每次使用同一T-094自然基准和T-093正式卡，分别准备listening、casual、playful、thinking，调用内置imagegen一次，均transparent_background=true。实际提示词分别保存在output/character-design/t095-seated-poses的listening-prompt.txt、casual-prompt.txt、playful-prompt.txt、thinking-prompt.txt；同名前缀prepared.json保留Skill版本与动作定义。
+
+主约束为同一成年人物／服装／座椅、正面全身、单人单椅、无文字拼版／新增道具。动作分别为前倾双手放膝、交叠腿抬掌解释、侧斜双腿抬食指、右肘靠扶手托腮。此次任务快照按用户选定卡面修正袜色描述为米白，不执行旧预设额外漂白。当前为候选，局部细节和前端深浅背景效果仍需评审。
