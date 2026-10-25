@@ -122,8 +122,8 @@ voira/
 
 ## 08 仓库身份与本地路径
 
-2026-10-25用户直接授权创建仓库并按产品设计改名。GitHub为[StephenQiu30/voira](https://github.com/StephenQiu30/voira)，当前为私有空仓库；本地真实路径`/Users/stephenqiu/Desktop/StephenQiu/voira`，Git初始分支main，origin为`https://github.com/StephenQiu30/voira.git`。
+2026-10-25用户直接授权创建仓库并按产品设计改名。GitHub为[StephenQiu30/voira](https://github.com/StephenQiu30/voira)，T-060交付核验时为公开仓库且main已有首次资料提交（创建时为私有，本轮未修改可见性）；本地真实路径`/Users/stephenqiu/Desktop/StephenQiu/voira`，Git初始分支main，origin为`https://github.com/StephenQiu30/voira.git`。
 
 旧路径`/Users/stephenqiu/Desktop/StephenQiu/DigitalHuman`是指向voira的兼容符号链接，不是第二份工程或第二个Git仓库。保留它以兼容正在运行的设计会话及已有Codex项目路径；应用侧保存的项目标签/路径不因文件夹改名自动更新，后续操作优先使用真实路径。所有旧路径使用者迁移后才能移除该链接。
 
-本次没有提交或推送；本地文档、素材及骨架仍未跟踪。新增.gitignore排除秘密配置、运行状态、依赖/缓存和SQLite文件；未来首次提交仍需逐文件审核，不自动全量暂存。业务实现与模型调用授权边界不变。
+T-060已按用户授权审阅并提交推送220个文件，包括文档、设计素材和目录骨架；交付核验见工程计划06第06节。15份研究证据已脱敏，原件仅保留在被忽略的.local目录；运行状态、秘密配置、临时文件、依赖/缓存和SQLite文件不提交。后续仍按明确文件清单审核与提交，保留并行修改；业务实现与模型调用授权边界不变。
