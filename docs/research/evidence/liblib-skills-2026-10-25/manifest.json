@@ -1,0 +1,63 @@
+{
+  "acquired": "2026-10-25",
+  "reaEvidenceBundleSHA256": "0c7c51221f1a161ac65e7135e225468efa331dd549d54f141e68fb48b438fb8a",
+  "detailA": "REA response body request-93 from ev_2ad957c6a44f655debb2dfc534d0bd93fe4408d3ea0c074a8b45a2cc1baa0f84; base64 decoded JSON",
+  "detailB": "Unauthenticated HTTP GET of same public template/detail endpoint with supplied templateUuid; no cookie or credential",
+  "examples": [
+    {
+      "skill": "a",
+      "index": 1,
+      "url": "https://libtv-res.liblib.art/upload-images/54ef20fc456e46f2bac3a0e580c7e4c8/522aa221f0bd218d0950f010865fca14a01b46cd.png",
+      "sha256": "f7467e5f686ed621457c4bf20cbff68883bf2252979d65971b1335393824c944",
+      "reviewed": true
+    },
+    {
+      "skill": "a",
+      "index": 2,
+      "url": "https://libtv-res.liblib.art/upload-images/54ef20fc456e46f2bac3a0e580c7e4c8/8c92df616f32e3fd1f7a73b59a7f1ac66c8c86b3.png",
+      "sha256": "fc9e0354fd3dd5752b83ce38036b6746e6bea7318474e8e5915dfd5a2eaa093a",
+      "reviewed": false
+    },
+    {
+      "skill": "a",
+      "index": 3,
+      "url": "https://libtv-res.liblib.art/upload-images/54ef20fc456e46f2bac3a0e580c7e4c8/ea96af3c9fb5fd7dfebf1802b6a6b72d51d649ee.png",
+      "sha256": "79a5dc574658bc8c4aa44cd3af370e63134c5324c27a0cbcc5ef7ea3dad2e800",
+      "reviewed": false
+    },
+    {
+      "skill": "b",
+      "index": 1,
+      "url": "https://libtv-res.liblib.art/upload-images/ad7396f8e0a5497ab352f403f290c82f/4a46c7df4214493b101c64790864ca5f5ab7911d.png",
+      "sha256": "b25ae0e14d2961b15b941814f52fc227e74c4079f13c994f25d64c7d9f3436e8",
+      "reviewed": true
+    },
+    {
+      "skill": "b",
+      "index": 2,
+      "url": "https://libtv-res.liblib.art/upload-images/ad7396f8e0a5497ab352f403f290c82f/3e1e44cd6c5925bfb2ded1578e8bfeb6f743ccb6.png",
+      "sha256": "a962e242435de827567da2b38305877b02e5d68ed0b145df2e114a23cadcc697",
+      "reviewed": true
+    },
+    {
+      "skill": "b",
+      "index": 3,
+      "url": "https://libtv-res.liblib.art/upload-images/ad7396f8e0a5497ab352f403f290c82f/bb976228244984f6ce9aae085c81ef2f0c90fa31.png",
+      "sha256": "ea52eaebaae8b72c89a1bdf83791e6f2f37568411eade8bd8b5735c583890b9b",
+      "reviewed": true
+    },
+    {
+      "skill": "b",
+      "index": 4,
+      "url": "https://libtv-res.liblib.art/upload-images/ad7396f8e0a5497ab352f403f290c82f/b924d0697cf69def044342f98be4e882bf68564d.png",
+      "sha256": "cfec2b15513216f4554c06223bb8ebae936989669049bf96a1c67e69dec27891",
+      "reviewed": true
+    }
+  ],
+  "publishedBundleSHA256": "3075851dda8c67cad7b41df8b7d53f8c8829da7013fcc3422822b6f0b2e31411",
+  "publicationRedaction": {
+    "date": "2026-10-25",
+    "queryValuesRemoved": 6,
+    "note": "公开副本移除六个网络事件URL的访问参数值；原记录内SHA字段仅对应采集时内容，不代表脱敏后字节。原始bundle哈希保留用于来源追溯。"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "searches": [
+    {
+      "success": true,
+      "data": {
+        "web": [
+          {
+            "url": "https://m.douyin.com/share/video/7476408391917767963",
+            "title": "画的是冥蛇佩姬 - 抖音",
+            "description": "画的是冥蛇佩姬，做了佩姬的可动纸片人#手绘#可动纸片人教程#可动纸片人#冥蛇佩姬#逃出惊魂夜- 灬挌挌媛于20250228发布在抖音，已经收获了32.1万个 ...",
+            "position": 1
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7317206335643274507",
+            "title": "联赛PVP九零攻略帮战拆塔偷塔90装备、内功、技能、特质 - 抖音",
+            "description": "游戏角色设计实战班-课堂改图#人物概念设计#角色原画. 00:00. 游戏角色设计实战班-课堂改图#人物概念设计#角色原画#角色设计#厚涂#板绘. 79. 蛋仔派对 ...",
+            "position": 2
+          }
+        ],
+        "tools": []
+      },
+      "id": "01a1723f-9b59-76fa-906b-b5c1edd0994d",
+      "creditsUsed": 2,
+      "agent_hints": [
+        "All 2 web results are excerpts only (#1 \"https://m.douyin.com/share/video/7476408391917767963\", #2 \"https://m.douyin.com/share/video/7317206335643274507\"). If you need more than an excerpt, use firecrawl_scrape with {\"url\":\"<one of these URLs>\",\"formats\":[\"markdown\"]}. Retrieve only needed pages; do not re-scrape results that already contain the required content."
+      ]
+    },
+    {
+      "success": true,
+      "data": {
+        "web": [
+          {
+            "url": "https://www.douyin.com/video/7650082133368704296",
+            "title": "漩涡一族都有哪些人，为何他们比千手一族还强？ #火影忍者- 抖音",
+            "description": "因为火影中最强的术就是封印术和幻术，分别在漩涡一族和宇智波一族手里。其他人用这两类术都是些边角料。这两种术到了后期基本上都不允许出现了，因为设定上太强了，几乎 ...",
+            "position": 1
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7585590185572994362",
+            "title": "你为什么要这么对她。 本来还在高高兴兴的看前瞻，早就听说了简会出 ...",
+            "description": "... 游戏角色，为什么要被你们这样对待啊。喜欢她的人少吗，哪怕是简单的 ... 人设她的性格都不应该被这样子让人知晓。她明明是个带有启动色彩的警察 ...",
+            "position": 2
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7516926106700664076",
+            "title": "跟风自评/推荐一下自己的28个天赏头#逆水寒#逆水寒手游#逆水寒天赏发型 ...",
+            "description": "跟风自评/推荐一下自己的28个天赏头#逆水寒#逆水寒手游#逆水寒天赏发型#游戏日常- 画未呀【手游模板版】于20250617发布在抖音，已经收获了4.2万个喜欢 ...",
+            "position": 3
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7530515906053688616",
+            "title": "“我或曾梦见，与你亲密无间。醒来后发现，你我形同陌路。” #鸣潮 ... - 抖音",
+            "description": "2.5就是最后一舞了，因主线剧情中男主人设暴雷，对身为漂泊者角色原形的本人形象造成严重负面影响，本人已决定取消对这个负心汉的肖像授权。除非库洛能 ...",
+            "position": 4
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7483334997844299059",
+            "title": "HEROISM STUDIO家， 奥特之母-玛丽，光芒 - 抖音",
+            "description": "HEROISM STUDIO家， 奥特之母-玛丽，光芒~ #手办#二次元#奥特曼#奥特之母#魅惑- 爱吃两碗米于20250319发布在抖音，已经收获了4.2万个喜欢，来抖音， ...",
+            "position": 5
+          }
+        ],
+        "tools": []
+      },
+      "id": "01a1723f-9b55-7220-a9c2-20f161d497da",
+      "creditsUsed": 2,
+      "agent_hints": [
+        "All 5 web results are excerpts only (#1 \"https://www.douyin.com/video/7650082133368704296\", #2 \"https://m.douyin.com/share/video/7585590185572994362\", #3 \"https://m.douyin.com/share/video/7516926106700664076\" and 2 more). If you need more than an excerpt, use firecrawl_scrape with {\"url\":\"<one of these URLs>\",\"formats\":[\"markdown\"]}. Retrieve only needed pages; do not re-scrape results that already contain the required content."
+      ]
+    }
+  ],
+  "refinedSearches": [
+    {
+      "success": true,
+      "data": {
+        "web": [
+          {
+            "url": "https://jingxuan.douyin.com/m/video/7683112786356680635",
+            "title": "拒绝AI抽卡！如何加强角色设计的逻辑性！-抖音精选",
+            "description": "如何加强角色设计的逻辑性！ 2026-09-08发布. 拒绝AI抽卡！如何加强角色设计的逻辑性！ ... 好的游戏动画不是动作，而是设计性格。 02:54 · 好的游戏动画不是动作，而是设计 ...",
+            "position": 1
+          },
+          {
+            "url": "https://www.douyin.com/shipin/7577943290746751017",
+            "title": "小智最好用的角色模板 - 抖音",
+            "description": "ai小智性格模板#人工智能#ai女友#ai机器人. 194. 00:00 · ai小智性格 ... 角色设计#Ai提示词#ai小智#Ai智能体#AI伴侣 · @ AI人设工坊 · 最新款小智ai搭 ...",
+            "position": 2
+          },
+          {
+            "url": "https://so.douyin.com/s?search_entrance=aweme&app_theme=light&innerWidth=412&keyword=%E7%A7%81%E8%AE%BE&query_correct_type=1&is_no_width_reload=0&enter_method=video_title_challenge&group_id=7369539442815601932&reloadNavStart=1736640000000&innerHeight=732&pd=general",
+            "title": "私设 - 抖音搜索",
+            "description": "包括更改角色背景故事、性格特征或人物关系，本质上是对原作的二度创作 ... 角色设计非遗时装，将非遗元素融入游戏角色，以创新形式展现非遗文化 ...",
+            "position": 3
+          },
+          {
+            "url": "https://www.douyin.com/shipin/7315305401954617382",
+            "title": "宝可梦朱紫100了改性格还有用吗 - 抖音",
+            "description": "... 角色设计独特，演出表现水准在线。不过保主部分的处理比较简单化，三篇 ... 宝可梦朱紫100了改性格还有用吗. 抖音Icon. @小鱼儿呼唤爱创作的原声.",
+            "position": 4
+          },
+          {
+            "url": "https://www.douyin.com/video/7694314205377350963",
+            "title": "七个矮人一亮相，观众不用听台词就知道谁是谁白雪公主逃进小木屋 ...",
+            "description": "七个矮人一亮相，观众不用听台词就知道谁是谁白雪公主逃进小木屋，遇见了七个小矮人。本集从动画师视角拆解迪士尼“性格可视化”的角色设计，再看王后如何调配毒药、扮成 ...",
+            "position": 5
+          }
+        ],
+        "tools": []
+      },
+      "id": "01a17240-13d0-7628-ad4c-dc5a7053e8a6",
+      "creditsUsed": 2,
+      "agent_hints": [
+        "All 5 web results are excerpts only (#1 \"https://jingxuan.douyin.com/m/video/7683112786356680635\", #2 \"https://www.douyin.com/shipin/7577943290746751017\", #3 and 2 more). If you need more than an excerpt, use firecrawl_scrape with {\"url\":\"<one of these URLs>\",\"formats\":[\"markdown\"]}. Retrieve only needed pages; do not re-scrape results that already contain the required content."
+      ]
+    },
+    {
+      "success": true,
+      "data": {
+        "web": [
+          {
+            "url": "https://www.douyin.com/shipin/7518186013466871846",
+            "title": "即梦ai生成人物怎么保证衣服一致 - 抖音",
+            "description": "一、固定人设卡锁定核心特征，给每个角色单独制作专属人设卡，把脸型、发型 ... 设定好的角色关键词完整保留，每一段内容都持续使用相同描述， ai 生成画面时，就 ...",
+            "position": 1
+          },
+          {
+            "url": "https://www.douyin.com/video/7695038090880070985",
+            "title": "数百套AI人设卡｜从末世废墟到古风谁懂啊！700+AI人设卡直接挑花 ...",
+            "description": "数百套AI人设卡｜从末世废墟到古风谁懂啊！700+AI人设卡直接挑花眼✨冥婚、末世、疯批大佬、古风仙侠、原神同人各种设定全部拉满沦陷在和虚拟角色聊天的快乐里 ...",
+            "position": 2
+          },
+          {
+            "url": "https://www.douyin.com/shipin/7610215240395769891",
+            "title": "即梦怎么创建角色库 - 抖音",
+            "description": "... 人设卡，一键出提示词。#aigc #ai漫剧#ai漫剧制作#即梦AI #Midjourney 很多人不 ... 设定表拆分角色信息转化为中英文声图提示词优先渲染九比十六数版纯色背景正面 ...",
+            "position": 3
+          },
+          {
+            "url": "https://m.douyin.com/shipin/7644769871502444579",
+            "title": "libtv上传完角色如何关联三视图 - 抖音",
+            "description": "... 设定.详解漫剧脚本拆分逻辑、台词分镜规划，定制统一人设角色稿，稳固 ... 人设卡，一键出提示词。#aigc #ai漫剧#ai漫剧制作#即梦AI #Midjourney.",
+            "position": 4
+          },
+          {
+            "url": "https://m.douyin.com/share/video/7620684126228738932",
+            "title": "以水墨为骨，以色彩为魂，符文战场的终极霸主纳什男爵来袭！ #符 ... - 抖音",
+            "description": "” 全套角色资产设定｜线稿+上色+人设卡圣女与剑修，月下相逢的千年执念。 细节拆分、三视图、表情展示，一套解锁完整人物。 AI绘画打造属于你的小说 ...",
+            "position": 5
+          }
+        ],
+        "tools": []
+      },
+      "id": "01a17240-130e-73b4-815b-7f16d94d1527",
+      "creditsUsed": 2,
+      "agent_hints": [
+        "All 5 web results are excerpts only (#1 \"https://www.douyin.com/shipin/7518186013466871846\", #2 \"https://www.douyin.com/video/7695038090880070985\", #3 \"https://www.douyin.com/shipin/7610215240395769891\" and 2 more). If you need more than an excerpt, use firecrawl_scrape with {\"url\":\"<one of these URLs>\",\"formats\":[\"markdown\"]}. Retrieve only needed pages; do not re-scrape results that already contain the required content."
+      ]
+    }
+  ],
+  "scrapes": [
+    {
+      "markdown": "开启读屏标签\n\n读屏标签已关闭\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)\n\n[Topick](https://www.douyin.com/jingxuan?from_nav=1)\n\n[For You](https://www.douyin.com/?recommend=1&from_nav=1)\n\n[Following](https://www.douyin.com/follow?from_nav=1)\n\n[Friends](https://www.douyin.com/friend?from_nav=1)\n\n[Profile](https://www.douyin.com/user/self?from_nav=1)\n\n[小游戏](https://www.douyin.com/microgame?from_nav=1)\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnBgV1.c2d02d79e5d865c9.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnLightBg.fe56ca1b49c54af0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverBgV1.f235d153ab9d389d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverLightBg.e31ce72d119a7941.png)\n\n![](<Base64-Image-Removed>)\n\n下载抖音精选\n\n2026 © 抖音\n\n[京ICP备16016397号-3](https://beian.miit.gov.cn/)\n\n服务器出现问题\n\n请稍后重试\n\n去精选页查看更多视频\n\n进入全屏\n\n直播加载中\n\nRMC NoCaptcha\n\n![](https://lf-ucenter-web.yhgfb-cn-static.com/obj/passport-fe/flat_bg_2_small.png)\n\nLog in to Douyin\n\nScan to Log In\n\nHow to scan\n\n![](<Base64-Image-Removed>)\n\nOpen the Douyin app and tap\n\nin the top-left corner to scan\n\nUse Phone\n\nUse Password\n\nSend code\n\nLog in\n\nLog in or Sign up means consent [user agreement](https://www.douyin.com/agreements/?id=6773906068725565448) and [privacy policy](https://www.douyin.com/agreements/?id=6773901168964798477)\n\nWeb-Cross-Storage",
+      "metadata": {
+        "title": "在抖音记录美好生活20261025 - 抖音",
+        "keywords": "抖音,抖音短视频,抖音官网",
+        "theme-color": "#161823",
+        "lark:url:video_brand_name": "抖音",
+        "baidu-site-verification": "code-2WPwEy0bEv",
+        "lark:url:enable": "false",
+        "lark:url:video_cover_image_url": "",
+        "mobile-agent": "format=[html5]; url=https://m.douyin.com/share/video/7683112786356680635",
+        "lark:url:video_title": "在抖音记录美好生活20261025 - 抖音",
+        "google": "notranslate",
+        "applicable-device": "pc",
+        "mobile-web-app-capable": "yes",
+        "viewport": [
+          "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+          "width=device-width, initial-scale=1.0"
+        ],
+        "lark:url:video_iframe_url": "https://www.douyin.com/light/7683112786356680635",
+        "description": "于20261025发布在抖音，已经收获了0个喜欢，来抖音，记录美好生活！",
+        "lark:url:video_icon_url": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico",
+        "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+        "scrapeId": "01a17240-8373-76ef-92a4-f7a0f7a5a401",
+        "sourceURL": "https://jingxuan.douyin.com/m/video/7683112786356680635",
+        "url": "https://www.douyin.com/video/7683112786356680635",
+        "statusCode": 200,
+        "contentType": "text/html; charset=utf-8",
+        "timezone": "America/New_York",
+        "proxyUsed": "basic",
+        "cacheState": "miss",
+        "indexId": "6ddf0271-ba59-4831-a037-6cc4fa9cce4f",
+        "creditsUsed": 1,
+        "concurrencyLimited": false
+      }
+    },
+    {
+      "markdown": "开启读屏标签\n\n读屏标签已关闭\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)\n\n[Topick](https://www.douyin.com/jingxuan?from_nav=1)\n\n[For You](https://www.douyin.com/?recommend=1&from_nav=1)\n\n[Following](https://www.douyin.com/follow?from_nav=1)\n\n[Friends](https://www.douyin.com/friend?from_nav=1)\n\n[Profile](https://www.douyin.com/user/self?from_nav=1)\n\n[小游戏](https://www.douyin.com/microgame?from_nav=1)\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnBg.b27e25d68aab9de7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnLightBg.fe56ca1b49c54af0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverBg.3e19a3a05f191ca0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverLightBg.e31ce72d119a7941.png)\n\n![](<Base64-Image-Removed>)\n\n下载抖音精选\n\n2026 © 抖音\n\n[京ICP备16016397号-3](https://beian.miit.gov.cn/)\n\n服务器出现问题\n\n请稍后重试\n\n去精选页查看更多视频\n\n进入全屏\n\n直播加载中\n\nRMC NoCaptcha\n\n![](https://lf-ucenter-web.yhgfb-cn-static.com/obj/passport-fe/flat_bg_2_small.png)\n\nLog in to Douyin\n\nScan to Log In\n\nHow to scan\n\nOpen the Douyin app and tap\n\nin the top-left corner to scan\n\nUse Phone\n\nUse Password\n\nSend code\n\nLog in\n\nLog in or Sign up means consent [user agreement](https://www.douyin.com/agreements/?id=6773906068725565448) and [privacy policy](https://www.douyin.com/agreements/?id=6773901168964798477)\n\nWeb-Cross-Storage",
+      "metadata": {
+        "lark:url:video_title": "在抖音记录美好生活20261025 - 抖音",
+        "description": "于20261025发布在抖音，已经收获了0个喜欢，来抖音，记录美好生活！",
+        "title": "在抖音记录美好生活20261025 - 抖音",
+        "lark:url:video_brand_name": "抖音",
+        "mobile-web-app-capable": "yes",
+        "baidu-site-verification": "code-2WPwEy0bEv",
+        "google": "notranslate",
+        "lark:url:enable": "false",
+        "lark:url:video_icon_url": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico",
+        "theme-color": "#161823",
+        "lark:url:video_iframe_url": "https://www.douyin.com/light/7694314205377350963",
+        "keywords": "抖音,抖音短视频,抖音官网",
+        "applicable-device": "pc",
+        "lark:url:video_cover_image_url": "",
+        "mobile-agent": "format=[html5]; url=https://m.douyin.com/share/video/7694314205377350963",
+        "viewport": [
+          "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+          "width=device-width, initial-scale=1.0"
+        ],
+        "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+        "scrapeId": "01a17240-83a0-7507-9c58-e06edcf1a6fb",
+        "sourceURL": "https://www.douyin.com/video/7694314205377350963",
+        "url": "https://www.douyin.com/video/7694314205377350963",
+        "statusCode": 200,
+        "contentType": "text/html; charset=utf-8",
+        "timezone": "America/New_York",
+        "proxyUsed": "basic",
+        "cacheState": "miss",
+        "indexId": "2c29198a-f317-4c02-90c4-75de8264f7bd",
+        "creditsUsed": 1,
+        "concurrencyLimited": false
+      }
+    },
+    {
+      "markdown": "开启读屏标签\n\n读屏标签已关闭\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)\n\n[Topick](https://www.douyin.com/jingxuan?from_nav=1)\n\n[For You](https://www.douyin.com/?recommend=1&from_nav=1)\n\n[Following](https://www.douyin.com/follow?from_nav=1)\n\n[Friends](https://www.douyin.com/friend?from_nav=1)\n\n[Profile](https://www.douyin.com/user/self?from_nav=1)\n\n[小游戏](https://www.douyin.com/microgame?from_nav=1)\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnBg.b27e25d68aab9de7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnLightBg.fe56ca1b49c54af0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverBg.3e19a3a05f191ca0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverLightBg.e31ce72d119a7941.png)\n\n![](<Base64-Image-Removed>)\n\n下载抖音精选\n\n2026 © 抖音\n\n[京ICP备16016397号-3](https://beian.miit.gov.cn/)\n\n404\n\n页面不见了\n\n进入全屏\n\n直播加载中\n\nRMC NoCaptcha\n\n![](https://lf-ucenter-web.yhgfb-cn-static.com/obj/passport-fe/flat_bg_2_small.png)\n\nLog in to Douyin\n\nScan to Log In\n\nHow to scan\n\n![](<Base64-Image-Removed>)\n\nOpen the Douyin app and tap\n\nin the top-left corner to scan\n\nUse Phone\n\nUse Password\n\nSend code\n\nLog in\n\nLog in or Sign up means consent [user agreement](https://www.douyin.com/agreements/?id=6773906068725565448) and [privacy policy](https://www.douyin.com/agreements/?id=6773901168964798477)\n\nWeb-Cross-Storage",
+      "metadata": {
+        "mobile-web-app-capable": "yes",
+        "viewport": [
+          "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+          "width=device-width, initial-scale=1.0"
+        ],
+        "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+        "scrapeId": "01a17240-83d8-737f-a6a5-d65830842b00",
+        "sourceURL": "https://www.douyin.com/shipin/7518186013466871846",
+        "url": "https://www.douyin.com/shipin/7518186013466871846",
+        "statusCode": 200,
+        "contentType": "text/html; charset=utf-8",
+        "timezone": "America/New_York",
+        "proxyUsed": "basic",
+        "cacheState": "miss",
+        "indexId": "49e03c20-95c3-424c-ac21-1ec2c7489da6",
+        "creditsUsed": 1,
+        "concurrencyLimited": true,
+        "concurrencyQueueDurationMs": 6426
+      },
+      "warning": "This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan."
+    }
+  ],
+  "mobileFallback": {
+    "markdown": "开启读屏标签\n\n读屏标签已关闭\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app.beb4a83a0d39bb5d.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/get_app_hover.c9e81f511d248ae7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app.795ee19b3ececa6b.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/fold_get_app_hover.911c3dd97d692c11.png)\n\n[Topick](https://www.douyin.com/jingxuan?from_nav=1)\n\n[For You](https://www.douyin.com/?recommend=1&from_nav=1)\n\n[Following](https://www.douyin.com/follow?from_nav=1)\n\n[Friends](https://www.douyin.com/friend?from_nav=1)\n\n[Profile](https://www.douyin.com/user/self?from_nav=1)\n\n[小游戏](https://www.douyin.com/microgame?from_nav=1)\n\n![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnBg.b27e25d68aab9de7.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnLightBg.fe56ca1b49c54af0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverBg.3e19a3a05f191ca0.png)![](https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/media/jxWeakBtnHoverLightBg.e31ce72d119a7941.png)\n\n![](<Base64-Image-Removed>)\n\n下载抖音精选\n\n2026 © 抖音\n\n[京ICP备16016397号-3](https://beian.miit.gov.cn/)\n\n视频数据加载中\n\n进入全屏\n\n直播加载中\n\nRMC NoCaptcha",
+    "metadata": {
+      "mobile-web-app-capable": "yes",
+      "viewport": [
+        "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+        "width=device-width, initial-scale=1.0"
+      ],
+      "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+      "scrapeId": "01a17241-2529-7335-8f54-e9361d1ebba4",
+      "sourceURL": "https://m.douyin.com/share/video/7683112786356680635",
+      "url": "https://www.douyin.com/video/7683112786356680635",
+      "statusCode": 200,
+      "contentType": "text/html; charset=utf-8",
+      "timezone": "America/New_York",
+      "proxyUsed": "basic",
+      "cacheState": "miss",
+      "indexId": "1f9f9253-6f10-43e4-a30a-81028a696e68",
+      "creditsUsed": 1,
+      "concurrencyLimited": false
+    }
+  },
+  "context7": {
+    "resolve": [
+      {
+        "type": "text",
+        "text": "Available Libraries:\n\n- Title: Blender\n- Context7-compatible library ID: /websites/blender_manual_en\n- Description: Blender is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D-printed models, motion graphics, interactive 3D applications, virtual reality, and video games.\n- Code Snippets: 12282\n- Source Reputation: High\n- Benchmark Score: 67.25\n----------\n- Title: Blender\n- Context7-compatible library ID: /websites/blender_manual_en_4_4\n- Description: This project provides comprehensive documentation for Blender, covering various aspects of 3D modeling, animation, rendering, and more.\n- Code Snippets: 9903\n- Source Reputation: High\n- Benchmark Score: 57.22\n----------\n- Title: Blender Python API\n- Context7-compatible library ID: /websites/blender_api_current\n- Description: Blender Python API is a comprehensive programming interface that allows developers to automate, extend, and customize Blender's 3D modeling, animation, and rendering capabilities through Python scripting.\n- Code Snippets: 26083\n- Source Reputation: High\n- Benchmark Score: 59.88\n----------\n- Title: Blender Python API\n- Context7-compatible library ID: /websites/blender_api_4_5\n- Description: The Blender Python API provides comprehensive documentation and reference for scripting and extending Blender's functionality using Python, covering context access, data manipulation, operators, and types.\n- Code Snippets: 26394\n- Source Reputation: High\n- Benchmark Score: 60.45\n----------\n- Title: Blender Python API\n- Context7-compatible library ID: /websites/blender_api_4_2\n- Description: The Blender Python API provides comprehensive documentation and reference for scripting and extending Blender functionalities using Python.\n- Code Snippets: 24618\n- Source Reputation: High\n- Benchmark Score: 63.29"
+      }
+    ],
+    "query": [
+      {
+        "type": "text",
+        "text": "### Render > Shader Nodes > Shader > Principled BSDF > Coat\n\nSource: https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html\n\n### Coat¶\nCoat on top of the materials, to simulate for example a clearcoat, lacquer or car paint. \n\nWeight\n    \nControls the intensity of the coat layer, both the reflection and the tinting. Typically should be zero or one for physically-based materials, but may be textured to vary the amount of coating across the surface. \n\nRoughness\n    \nRoughness of the coat layer. \n\nIOR\n    \nIndex of refraction (IOR) of the coat layer. Affects its reflectivity as well as the falloff of coat tinting. \n\nTint\n    \nAdds a colored tint to the coat layer by modeling absorption in the layer. Saturation increases at shallower angles, as the light travels farther through the medium, depending on the IOR. \n\nNormal\n    \nControls the normals of the _Coat_ layer, for example to add a smooth coating on a rough surface.\n\n--------------------------------\n\n### Render > Shader Nodes > Shader > Principled BSDF > Sheen\n\nSource: https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html\n\n### Sheen¶\nSheen simulates very small fibers on the surface. For cloth this adds a soft velvet like reflection near edges. It can also be used to simulate dust on arbitrary materials. \n\nWeight\n    \nControls the intensity of the sheen layer. \n\nRoughness\n    \nRoughness of the sheen reflection. \n\nTint\n    \nThe color of the sheen reflection.\n\n--------------------------------\n\n### Sheen BSDF\n\nSource: https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/sheen.html\n\nThe _Sheen_ BSDF is used to add reflection to materials that have micro surface details such as cloth or dust. This shader is intended to be layered on top of other shaders such as dielectric or metallic shader setups.\n\n--------------------------------\n\n### Principled BSDF > Layers\n\nSource: https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html\n\nThe base layer is a mix between metal, diffuse, subsurface, and transmission components. Most materials will use one of these components, though it is possible to smoothly mix between them.\n\nThe metal component is opaque and only reflect lights. Diffuse is fully opaque, while subsurface also involves light scattering just below the surface. Both diffuse and subsurface sit below a specular layer. The transmission component includes both specular reflection and refraction.\n\nAn optional thin film layer sits on top of metal, transmission and specular component, to create iridescent effect.\n\nOn top of all base layers there is an optional glossy coat. And finally the sheen layer sits on top of all other layers, to add fuzz or dust.\n\nLight emission can also be added. Light emits from below the coat and sheen layers, to model for example emissive displays with a coat or dust.\n\n--------------------------------\n\n### Surfaces > BSDF Parameters\n\nSource: https://docs.blender.org/manual/en/latest/render/materials/components/surface.html\n\n## BSDF Parameters¶\nA major difference from non-physically-based renderers is that direct light reflection from lights and indirect light reflection of other surfaces are not decoupled, but rather handled using a single BSDF. This limits the possibilities a bit, but we believe overall it is helpful in creating consistent-looking renders with fewer parameters to tune. \n\nRoughness\n    \nFor the glossy BSDFs, the _roughness_ parameter controls the sharpness of the reflection, from 0.0 (perfectly sharp) to 1.0 (very soft)."
+      }
+    ]
+  }
+}
