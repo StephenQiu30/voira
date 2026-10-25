@@ -10,6 +10,7 @@
 - [DeepSeek配置](app/skills/profiles/deepseek.json)：角色身份、衣饰、道具和表演独立于Skill。其他角色可提交自定义配置，支持anime、photorealistic、illustration。
 - [Grok配置](app/skills/profiles/grok.json)：金发双马尾、黑红金礼服与机智活泼表演；T-097制作输入，可作为prepare的character提交，未新增Grok查询端点。
 - [Claude配置](app/skills/profiles/claude.json)：铜橙长发、细框眼镜、向日葵与象牙白深棕礼服；T-100制作输入，复用通用prepare。
+- [Gemini配置](app/skills/profiles/gemini.json)：蓝紫长发、猫耳、琥珀双瞳和金色星饰；T-105三视图与设定卡输入，复用通用prepare。
 
 T-101统一三视图右侧大幅半身特写，占比匹配DeepSeek基准；使用自然轮廓与柔边改善方块感，不缩成小头像。具体比例与验收以character-turnaround为准。
 
