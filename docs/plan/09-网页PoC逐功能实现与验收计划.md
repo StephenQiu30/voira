@@ -450,3 +450,26 @@ TC-088实际证据：
 | 浏览器 | 本地生产页未观察到error／warn；模拟视口已清除，恢复暗色与默认形象 |
 
 截图位于本机visualizations当前任务目录voira-layout-desktop-t087.png及voira-layout-mobile-t087.png。本轮没有通过隐藏页面overflow裁切控件；极小视口和文本放大允许自然滚动。未验证触屏实机、聊天或直播业务，不修改Figma、角色母版、后端或提交推送。
+
+## 14 T-090 后端角色美术Agent整理（2026-10-25）
+
+FR-001 → DES-018第07节 → US-009／AC-034—037 → T-090／TC-090。用户明确要求将两个Skill整理进backend，开放本批Skill包、配置、准备服务及最小FastAPI应用；原T-029会话接口和其他真实业务不因此完成。
+
+实施：建立两个SKILL.md及DeepSeek独立配置 → 共享输入／输出模型和服务 → 固定注册、来源与版本 → 本机查询／prepare端点 → 锁定Python依赖并验证Skill、格式、类型、单元与接口行为。真实图像供应商不在本批接入；不创建脚本目录、生成客户端或新前端页面。
+
+TC-090实际结果：
+
+| 检查 | 结果与边界 |
+|---|---|
+| Skill结构 | skill-creator的quick_validate对两套Skill均通过；固定注册名称及来源，Casting明确适配边界 |
+| Python基线 | Python 3.13.14、uv 0.11.32；FastAPI 0.162.0、Pydantic 2.14.1，uv.lock锁定完整依赖；TestClient使用httpx2 2.16.0 |
+| 静态检查 | Ruff lint与格式检查通过；mypy strict检查9个应用模块通过；D415因中文句号单独豁免，其余Google docstring规则保留 |
+| 行为与契约 | 26项pytest通过，无警告；覆盖两种任务、真人自定义角色隔离、参考顺序／用途、未知Skill、路径／URL输入拒绝、缺项、长度、额外参数、冻结结果、模板文字不求值、Host／Origin和唯一operation_id |
+| 本机HTTP冒烟 | 临时loopback端口启动真实Uvicorn，OpenAPI读取3个路径，两种prepare各返回200／prepared；完成后进程已停止，无常驻新增服务 |
+| 文档与交付 | 201条本地引用有效、围栏成对、git diff --check通过；没有生成客户端，因为本批无前端消费，Umi兼容性不计已验证 |
+
+这些检查只证明Skill包、任务准备代码和HTTP边界；未解析真实素材ID、上传图片、调用图像模型、渲染新图或验收下游提示注入防护。独立透明素材没有执行，T-089样稿仍待视觉评审。未覆盖public／Figma／前端或提交推送。
+
+实现依据核对[FastAPI模块化路由](https://fastapi.tiangolo.com/tutorial/bigger-applications/)、[Pydantic模型](https://docs.pydantic.dev/latest/concepts/models/)及[uv锁文件与同步](https://docs.astral.sh/uv/concepts/projects/sync/)；具体兼容结果以上述锁定版本和本地检查为准。
+
+2026-10-25用户随后明确授权提交main并推送。本次交付包含T-089设计规则与样稿证据、T-090后端两套Skill及任务准备服务；提交前fetch确认main与origin/main一致，Ruff、格式、mypy与26项pytest复验通过。按明确文件清单暂存，output图片候选、虚拟环境和缓存排除；提交SHA与远端同步结果以Git回执为准，真实生图未接入的边界保持。

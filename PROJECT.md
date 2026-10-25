@@ -1,7 +1,7 @@
 ---
 类型: 规范
 状态: 有效
-版本: 0.13
+版本: 0.14
 更新: 2026-10-25
 ---
 
@@ -11,7 +11,7 @@
 
 本文是声伴 · Voira（工程目录voira）的目录、技术栈和跨端协作入口。2026-10-25 用户明确要求创建前后端目录并编写工程规范：前端采用 Next.js、React、shadcn/ui、Radix UI、Tailwind CSS、Prettier、ESLint、Axios、Zustand、Umi OpenAPI；后端采用 FastAPI，遵循 Google 风格。
 
-后端目录统一拼写为 `backend`。初始阶段创建目录骨架和规范；T-084已在用户授权下初始化可运行Next.js前端及人物选择页布局，后端、API客户端和数字人业务仍未实现。当前[业务需求索引v0.10](docs/requirement/01-数字人MVP需求草案.md)已按用户指令改为先跑通网页数字人，直播后置；工程栈和以下目录约定不变。Vidu、蓝色大肥鱼、合成画面和问答已确认；本地优先及本地Codex回答已确认，接入协议从简；音色方向、人设、回答长度、人工继续及最近3轮上下文已确认；具体音色/送模/观感待评审，账号预算等实际调用前再定，不以外部开播权限为前置条件。
+后端目录统一拼写为 `backend`。初始阶段创建目录骨架和规范；T-084已在用户授权下初始化可运行Next.js前端及人物选择页布局，T-090已交付backend角色美术Skill及任务准备服务；前端API客户端、真实生图和数字人业务仍未实现。当前[业务需求索引v0.10](docs/requirement/01-数字人MVP需求草案.md)已按用户指令改为先跑通网页数字人，直播后置；工程栈和以下目录约定不变。Vidu、蓝色大肥鱼、合成画面和问答已确认；本地优先及本地Codex回答已确认，接入协议从简；音色方向、人设、回答长度、人工继续及最近3轮上下文已确认；具体音色/送模/观感待评审，账号预算等实际调用前再定，不以外部开播权限为前置条件。
 
 本版按用户补充要求简化：路由按功能组织，不设置版本目录或版本号URL前缀；接口文档由FastAPI声明自动生成；不创建自定义脚本文件或脚本目录；前端API生成结果统一放入 `frontend/src/api/`。
 
@@ -37,6 +37,7 @@ voira/
 │   │   ├── core/                 # 配置、日志、异常等基础能力
 │   │   ├── schemas/              # Pydantic 请求与响应模型
 │   │   ├── services/             # 用例编排与业务规则
+│   │   ├── skills/               # 三视图／设定卡SKILL.md及独立角色预设
 │   │   └── integrations/         # 外部服务适配与协议隔离
 │   └── tests/                    # 后续后端测试
 ├── frontend/                     # Next.js 前端，独立管理 Node 依赖
@@ -75,7 +76,7 @@ voira/
     └── research/                 # 研究、原始证据与第三方参考源码
 ```
 
-T-084已增加前端页面、BasicLayout、人物展示功能及package.json／package-lock.json／Next.js、TypeScript、ESLint、Prettier配置；上图为目录职责示意。后端main.py等仍待后续初始化。数据库、迁移、队列和独立媒体进程的目录按正式设计需要添加，不预建微服务或供应商专属工程。`docs/research/reference/` 始终作为参考资料保存。
+T-084已增加前端页面、BasicLayout、人物展示功能及package.json／package-lock.json／Next.js、TypeScript、ESLint、Prettier配置；上图为目录职责示意。T-090已增加后端main.py、角色素材api／schemas／services、两套skills、pyproject.toml和uv.lock。数据库、迁移、队列和独立媒体进程的目录按正式设计需要添加，不预建微服务或供应商专属工程。`docs/research/reference/` 始终作为参考资料保存。
 
 ## 03 技术栈与职责
 
@@ -90,7 +91,7 @@ T-084已增加前端页面、BasicLayout、人物展示功能及package.json／p
 | 前端 | Umi OpenAPI（`@umijs/openapi`） | 从后端契约生成 TypeScript 类型与请求代码，作为开发工具使用；不引入 Umi 应用框架 |
 | 后端 | Python + FastAPI + Pydantic | 接口、校验、业务编排及 OpenAPI 契约；遵循 Google Python Style Guide 和 FastAPI 官方指南 |
 
-T-084前端已锁定Next.js 16.4.3、React 19.3.1、Tailwind CSS 4.3.3与Radix UI 1.8.1，使用npm 12.0.2；完整直接／间接版本见frontend/package.json及package-lock.json。后端及后续功能依赖版本尚未锁定。初始化时核验 Node/Python、Next.js/React、shadcn/Radix/Tailwind、FastAPI/Pydantic 和生成器的兼容组合，记录版本并生成各端锁文件；不使用漂移的 `latest` 作为可复现基线。媒体路线已确定为Vidu；[最小业务设计](docs/design/03-Vidu网页PoC最小业务设计.md)提出ARTC订阅、SQLite和HTTP状态快照，本地Codex作为回答生成进程，建议codex exec后交给Vidu text_tts；这些接入细节仍待验证。部署先本机，包管理器未锁定。
+T-084前端已锁定Next.js 16.4.3、React 19.3.1、Tailwind CSS 4.3.3与Radix UI 1.8.1，使用npm 12.0.2；完整直接／间接版本见frontend/package.json及package-lock.json。T-090后端使用Python 3.13，FastAPI 0.162.0、Pydantic 2.14.1；依赖使用uv.lock锁定，启动与检查见backend README。初始化时核验 Node/Python、Next.js/React、shadcn/Radix/Tailwind、FastAPI/Pydantic 和生成器的兼容组合，记录版本并生成各端锁文件；不使用漂移的 `latest` 作为可复现基线。媒体路线已确定为Vidu；[最小业务设计](docs/design/03-Vidu网页PoC最小业务设计.md)提出ARTC订阅、SQLite和HTTP状态快照，本地Codex作为回答生成进程，建议codex exec后交给Vidu text_tts；这些接入细节仍待验证。部署先本机，后端包管理器采用uv。
 
 规范正文：[前端开发规范](docs/templates/07-前端开发规范.md) · [后端开发规范](docs/templates/08-后端开发规范.md)。统一视觉以[DESIGN](DESIGN.md)为准，提交格式以[AGENTS第05节](AGENTS.md#05-代码提交规范)的 `type(scope): xxx` 为准。两端README和AGENTS只维护入口，不复制整套规则。
 
@@ -102,7 +103,7 @@ T-084前端已锁定Next.js 16.4.3、React 19.3.1、Tailwind CSS 4.3.3与Radix U
 4. 通过生成器自定义请求导入接入 `frontend/src/lib/` 中的 Axios 适配层。先核对锁定版本的请求签名，再实现参数映射和返回值适配；不能假设 Axios 实例与生成器默认 request 签名兼容。
 5. 变更模型或接口后，从自动更新的 `/openapi.json` 再生成客户端、检查差异、执行两端静态检查及契约测试。覆盖可空与可选、枚举、错误响应、取消、multipart、路径前缀和实际使用的响应类型。FastAPI输出的OpenAPI规范版本与生成器支持范围须通过样例验证；规范版本不同于业务URL版本，不直接改规范版本字段伪装兼容。读取schema不得触发真实生成、开播或收费会话。
 
-以上是待落地的工程流程，目前没有可运行应用、自动文档端点或生成物。OpenAPI客户端用于HTTP控制接口；RTC、WebSocket或SSE如经设计采用，须单独描述协议、鉴权、事件及重连语义。自动文档机制依据[FastAPI官方入门指南](https://fastapi.tiangolo.com/tutorial/first-steps/)（2026-10-25核对）。
+T-090已提供角色素材准备接口及自动文档端点；该接口尚无前端消费，Umi客户端生成与会话契约仍待后续接入验证。OpenAPI客户端用于HTTP控制接口；RTC、WebSocket或SSE如经设计采用，须单独描述协议、鉴权、事件及重连语义。自动文档机制依据[FastAPI官方入门指南](https://fastapi.tiangolo.com/tutorial/first-steps/)（2026-10-25核对）。
 
 ## 05 工程边界与维护
 
@@ -134,3 +135,9 @@ T-060已按用户授权审阅并提交推送220个文件，包括文档、设计
 ## 09 T-084 前端布局基线
 
 用户明确授权从布局开始实现，交付入口见[frontend README](frontend/README.md)。BasicLayout只负责Header／Content／Footer，人物选择状态位于功能组件。Figma桌面61:2473／手机61:2803为视觉依据，最新DeepSeek白底母版保留，透明舞台三图独立保存在public/characters/stage；不改并行素材。当前不接入API、媒体、直播或队列业务。实际检查见计划09第12节。
+
+## 10 T-090 角色美术Skill服务
+
+[backend README](backend/README.md)维护启动、接口和调用示例。app/skills/character-turnaround与character-card保存本项目适配的SKILL.md；profiles/deepseek.json保存造型，不将DeepSeek限制写成通用人设。schemas校验输入，services按固定注册项读取规则并生成内容版本，api提供本机查询／prepare，FastAPI提供自动契约。没有真实图像适配器或素材解析器，不把聊天工具当SDK。
+
+规则运行入口归backend两个Skill；docs/design20维护视觉决策，26保留实际样稿提示词与生成证据，第三方快照保持原样。输出规格在schemas中约束，本轮只准备整张三视图／卡面；独立透明素材仍依设计规则另行制作。此服务不改public，不创建脚本目录、数据库或持久任务队列。
