@@ -8,6 +8,7 @@
 - [character-card](app/skills/character-card/SKILL.md)：主立绘、已有道具配饰、表情与动作特写；依据Casting公开示例与用户要求编写，非其私有正文。
 - [character-seated-poses](app/skills/character-seated-poses/SKILL.md)：单次选择自然陪伴、认真倾听、轻松闲聊、俏皮回应或托腮思考，准备独立透明坐姿。
 - [DeepSeek配置](app/skills/profiles/deepseek.json)：角色身份、衣饰、道具和表演独立于Skill。其他角色可提交自定义配置，支持anime、photorealistic、illustration。
+- [Grok配置](app/skills/profiles/grok.json)：金发双马尾、黑红金礼服与机智活泼表演；T-097制作输入，可作为prepare的character提交，未新增Grok查询端点。
 
 Skill随backend加载，不写入个人全局技能目录；不依赖本机output或临时附件路径。三视图和卡面使用白底；独立坐姿任务固定2:3真实透明PNG，仍不提供拆图或实际生图接口。纯准备结果不代表已查看参考图片、已出图或已验收。
 

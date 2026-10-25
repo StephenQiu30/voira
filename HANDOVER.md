@@ -593,3 +593,17 @@ DeepSeek最新白底母版未覆盖，单独提取Git基线透明图到character
 用户限定先改资源、不改页面；页面改动已撤回，frontend/src与HEAD无差异。旧natural／crossed／leaning路径分别采用natural／casual／playful新图，另增listening／thinking备用。五张均与源图字节一致，1024×1536 RGBA。恢复源码后生产构建通过，五资源HTTP 200且哈希一致，实际桌面确认原三姿态切换及深浅背景透明正常，控制台无error／warn。
 
 同项目3000生产预览已重启并刷新本机Next图片缓存；临时跳过浏览器缓存验收后已恢复。未重新验收手机、未增加备用两图入口、未改Figma或后端。用户授权提交main并推送资源及T-095／096记录；见计划09第17节。
+
+## 75 T-097 Grok三视图与设定卡（2026-10-25）
+
+用户要求继续Grok设计，随后明确与DeepSeek样式保持一致。已使用通用三视图／卡片Skill准备任务，新增独立profiles/grok.json；没有新增API端点。三视图首稿与构图修正各一次，卡片首稿与DeepSeek样式对齐各一次，共4次内置imagegen调用。两张最终候选保存于output/character-design/t097-grok/grok-turnaround.png、grok-card.png，1536×1024 RGB白底。
+
+卡面沿用DeepSeek小衬线标题、左主坐姿／右表情动作／底部道具细节与柔和裁切，Grok保留金发蓝瞳、黑红金礼服及挑眉坏笑。输入、实际提示词、prepare快照和哈希清单已保存；Grok配置通过Pydantic及两类prepare校验。背面、刺绣和椅雕仍有生成推导／差异，未验收3D一致性。未覆盖正式资源、改页面、生成透明坐姿或提交推送。详见设计27和计划09第18节。
+
+T-098用户随后指出主图腿内侧穿插，已局部imagegen修正一次并更新本地grok-card.png候选；多余黑色褶块已去除，内腿与红裙衬遮挡更清楚。旧稿保留before-leg-fix后缀，提示词与新哈希入manifest。未覆盖正式卡、改页面或提交推送。
+
+## 76 T-099 Grok五种透明坐姿（2026-10-25）
+
+用户要求五种形象图，已按坐姿Skill分别准备并由内置imagegen生成5张1024×1536 RGBA候选，路径output/character-design/t099-grok-poses/grok-{natural,listening,casual,playful,thinking}.png。首图参考T-098修正版Grok卡，后四图追加natural统一比例；提示词按Grok机智活泼人设调整表演，没有改通用动作定义。
+
+五张均实测真实alpha，计数及哈希在manifest；原图目视动作差异及腿／袜／红裙衬遮挡。部分发丝／裙边余量较紧，深浅底浏览器尚未验收，细饰与椅雕仍待视觉评审。未改前端资源／页面、未生成视频、未提交推送；任务准备不是后端生图接通证据。详见设计27第06节、素材记录02第32节、计划09第19节。
