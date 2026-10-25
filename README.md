@@ -10,13 +10,13 @@
 
 </div>
 
-[![蓝色大肥鱼角色设定卡：深蓝卷发、蓝瞳与蕾丝服装，包含正侧背三视图、轻挥手坐姿和表情设计](docs/design/assets/characters/cards/deepseek-turnaround-card.png)](docs/design/assets/characters/cards/deepseek-turnaround-card.png)
+[![蓝色大肥鱼角色设定图：深蓝卷发、蓝瞳、白丝袜，坐姿主立绘与必要特写](frontend/public/characters/cards/deepseek.png)](frontend/public/characters/cards/deepseek.png)
 
 > **当前阶段：角色与交互设计、工程骨架。** 下方为静态设计评审稿；网页应用和真实数字人服务尚未接通。第一阶段聚焦网页交流，直播能力后续探索。
 
 ## 认识五位角色
 
-同一套细腻的插画风格，五种不同的交流气质。每张设定卡包含正面、侧面、背面、个性坐姿、表情与代表配色，点击图片可查看原图。
+同一套细腻的插画风格，五种不同的交流气质。设定图呈现各自的形象与个性，点击图片可查看原图。
 
 ### 01 · 蓝色大肥鱼
 
@@ -32,7 +32,7 @@
 
 对新鲜事充满好奇，总能联想到意料之外的点子。蓝紫长发、猫耳与星饰，搭配灵感手势和惊喜的表情，像随时准备分享一个新发现。
 
-[![Gemini角色设定卡：蓝紫长发、猫耳和星饰，包含正侧背三视图、灵感手势与好奇惊喜表情](docs/design/assets/characters/cards/gemini-turnaround-card.png)](docs/design/assets/characters/cards/gemini-turnaround-card.png)
+[![Gemini角色设定卡：蓝紫长发、猫耳和星饰，包含正侧背三视图、灵感手势与好奇惊喜表情](frontend/public/characters/cards/gemini.png)](frontend/public/characters/cards/gemini.png)
 
 ### 03 · Claude
 
@@ -40,7 +40,7 @@
 
 习惯认真倾听，也愿意多想一步。铜橙长发、细框眼镜与向日葵饰物，配上轻扶眼镜的动作和会心微笑，呈现温和而专注的思考者气质。
 
-[![Claude角色设定卡：铜橙长发、细框眼镜与向日葵饰物，包含正侧背三视图、扶眼镜动作与思考表情](docs/design/assets/characters/cards/claude-turnaround-card.png)](docs/design/assets/characters/cards/claude-turnaround-card.png)
+[![Claude角色设定卡：铜橙长发、细框眼镜与向日葵饰物，包含正侧背三视图、扶眼镜动作与思考表情](frontend/public/characters/cards/claude.png)](frontend/public/characters/cards/claude.png)
 
 ### 04 · Grok
 
@@ -48,7 +48,7 @@
 
 脑子转得快，嘴角总藏着一点坏笑。金色双马尾与黑红礼服，配上俏皮点颊和得意神态；喜欢机智的小玩笑，也懂得适时收住锋芒。
 
-[![Grok角色设定卡：金色双马尾、蓝瞳与黑红礼服，包含正侧背三视图、俏皮点颊坐姿与坏笑得意表情](docs/design/assets/characters/cards/grok-turnaround-card.png)](docs/design/assets/characters/cards/grok-turnaround-card.png)
+[![Grok角色设定卡：金色双马尾、蓝瞳与黑红礼服，包含正侧背三视图、俏皮点颊坐姿与坏笑得意表情](frontend/public/characters/cards/grok.png)](frontend/public/characters/cards/grok.png)
 
 ### 05 · ChatGPT
 
@@ -56,7 +56,7 @@
 
 从容亲切，善于把零散想法整理成清晰表达。银紫长发、紫瞳与玫瑰头饰，搭配掌心轻展、倾听和鼓励的表情，让交流保持开放。
 
-[![ChatGPT角色设定卡：银紫长发、紫瞳与玫瑰头饰，包含正侧背三视图、掌心轻展坐姿及倾听鼓励表情](docs/design/assets/characters/cards/chatgpt-turnaround-card.png)](docs/design/assets/characters/cards/chatgpt-turnaround-card.png)
+[![ChatGPT角色设定卡：银紫长发、紫瞳与玫瑰头饰，包含正侧背三视图、掌心轻展坐姿及倾听鼓励表情](frontend/public/characters/cards/chatgpt.png)](frontend/public/characters/cards/chatgpt.png)
 
 这些是项目中的角色视觉设定，不代表相关模型厂商的官方角色或合作关系，也不代表已接入五种模型。背面造型与个性动作仍在评审；生成来源、提示词和素材版本见[角色素材记录](docs/design/02-五位角色素材生成记录.md)。
 

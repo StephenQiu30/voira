@@ -1,7 +1,7 @@
 ---
 类型: 规范
 状态: 有效
-版本: 0.11
+版本: 0.13
 更新: 2026-10-25
 ---
 
@@ -11,7 +11,7 @@
 
 本文是声伴 · Voira（工程目录voira）的目录、技术栈和跨端协作入口。2026-10-25 用户明确要求创建前后端目录并编写工程规范：前端采用 Next.js、React、shadcn/ui、Radix UI、Tailwind CSS、Prettier、ESLint、Axios、Zustand、Umi OpenAPI；后端采用 FastAPI，遵循 Google 风格。
 
-后端目录统一拼写为 `backend`。本轮创建目录骨架和规范文件，尚未安装依赖、生成应用或编写业务代码；目录存在不代表项目可运行。当前[业务需求索引v0.10](docs/requirement/01-数字人MVP需求草案.md)已按用户指令改为先跑通网页数字人，直播后置；工程栈和以下目录约定不变。Vidu、蓝色大肥鱼、合成画面和问答已确认；本地优先及本地Codex回答已确认，接入协议从简；音色方向、人设、回答长度、人工继续及最近3轮上下文已确认；具体音色/送模/观感待评审，账号预算等实际调用前再定，不以外部开播权限为前置条件。
+后端目录统一拼写为 `backend`。初始阶段创建目录骨架和规范；T-084已在用户授权下初始化可运行Next.js前端及人物选择页布局，后端、API客户端和数字人业务仍未实现。当前[业务需求索引v0.10](docs/requirement/01-数字人MVP需求草案.md)已按用户指令改为先跑通网页数字人，直播后置；工程栈和以下目录约定不变。Vidu、蓝色大肥鱼、合成画面和问答已确认；本地优先及本地Codex回答已确认，接入协议从简；音色方向、人设、回答长度、人工继续及最近3轮上下文已确认；具体音色/送模/观感待评审，账号预算等实际调用前再定，不以外部开播权限为前置条件。
 
 本版按用户补充要求简化：路由按功能组织，不设置版本目录或版本号URL前缀；接口文档由FastAPI声明自动生成；不创建自定义脚本文件或脚本目录；前端API生成结果统一放入 `frontend/src/api/`。
 
@@ -43,11 +43,16 @@ voira/
 │   ├── AGENTS.md                 # 前端规范入口
 │   ├── README.md                 # 前端说明
 │   ├── public/                   # 可公开访问的静态资源
-│   │   ├── characters/           # 按姿态状态组织，每个目录五位角色
+│   │   ├── characters/           # 最终坐姿、三视图与设定图
 │   │   │   ├── 01-natural/       # 状态一：自然坐姿
 │   │   │   ├── 02-crossed/       # 状态二：翘腿坐姿
-│   │   │   └── 03-leaning/       # 状态三：侧斜坐姿
-│   │   └── scenes/               # 配套场景背景
+│   │   │   ├── 03-leaning/       # 状态三：侧斜坐姿
+│   │   │   ├── 04-forward/       # 前倾坐姿
+│   │   │   ├── 05-side-rest/     # 侧倚坐姿
+│   │   │   ├── turnarounds/      # 最终三视图
+│   │   │   └── cards/            # 最终角色设定图
+│   │   ├── scenes/               # 最终场景背景
+│   │   └── brand/                # Logo与字标SVG
 │   ├── src/
 │   │   ├── app/                  # App Router 页面、布局与全局样式
 │   │   ├── components/
@@ -70,7 +75,7 @@ voira/
     └── research/                 # 研究、原始证据与第三方参考源码
 ```
 
-`main.py`、`__init__.py`、页面、依赖清单、锁文件和工具配置均在后续应用初始化时创建，目前不在上图中冒充已交付。数据库、迁移、队列和独立媒体进程的目录按正式设计需要添加，不预建微服务或供应商专属工程。`docs/research/reference/` 始终作为参考资料保存。
+T-084已增加前端页面、BasicLayout、人物展示功能及package.json／package-lock.json／Next.js、TypeScript、ESLint、Prettier配置；上图为目录职责示意。后端main.py等仍待后续初始化。数据库、迁移、队列和独立媒体进程的目录按正式设计需要添加，不预建微服务或供应商专属工程。`docs/research/reference/` 始终作为参考资料保存。
 
 ## 03 技术栈与职责
 
@@ -85,7 +90,7 @@ voira/
 | 前端 | Umi OpenAPI（`@umijs/openapi`） | 从后端契约生成 TypeScript 类型与请求代码，作为开发工具使用；不引入 Umi 应用框架 |
 | 后端 | Python + FastAPI + Pydantic | 接口、校验、业务编排及 OpenAPI 契约；遵循 Google Python Style Guide 和 FastAPI 官方指南 |
 
-版本尚未锁定。初始化时核验 Node/Python、Next.js/React、shadcn/Radix/Tailwind、FastAPI/Pydantic 和生成器的兼容组合，记录版本并生成各端锁文件；不使用漂移的 `latest` 作为可复现基线。媒体路线已确定为Vidu；[最小业务设计](docs/design/03-Vidu网页PoC最小业务设计.md)提出ARTC订阅、SQLite和HTTP状态快照，本地Codex作为回答生成进程，建议codex exec后交给Vidu text_tts；这些接入细节仍待验证。部署先本机，包管理器未锁定。
+T-084前端已锁定Next.js 16.4.3、React 19.3.1、Tailwind CSS 4.3.3与Radix UI 1.8.1，使用npm 12.0.2；完整直接／间接版本见frontend/package.json及package-lock.json。后端及后续功能依赖版本尚未锁定。初始化时核验 Node/Python、Next.js/React、shadcn/Radix/Tailwind、FastAPI/Pydantic 和生成器的兼容组合，记录版本并生成各端锁文件；不使用漂移的 `latest` 作为可复现基线。媒体路线已确定为Vidu；[最小业务设计](docs/design/03-Vidu网页PoC最小业务设计.md)提出ARTC订阅、SQLite和HTTP状态快照，本地Codex作为回答生成进程，建议codex exec后交给Vidu text_tts；这些接入细节仍待验证。部署先本机，包管理器未锁定。
 
 规范正文：[前端开发规范](docs/templates/07-前端开发规范.md) · [后端开发规范](docs/templates/08-后端开发规范.md)。统一视觉以[DESIGN](DESIGN.md)为准，提交格式以[AGENTS第05节](AGENTS.md#05-代码提交规范)的 `type(scope): xxx` 为准。两端README和AGENTS只维护入口，不复制整套规则。
 
@@ -108,12 +113,9 @@ voira/
 
 ## 06 设计交付资产
 
-产品显示名为声伴 · Voira，工程目录与GitHub仓库统一为voira。统一视觉见[DESIGN](DESIGN.md)；界面草案与Logo/token资产位于[docs/design](docs/design/01-网页体验界面设计.md)及其assets目录。资产CSS是设计交接内容，尚未接入frontend/src/app/globals.css；本轮未生成应用、依赖清单或组件代码。
+最终图片统一放在frontend/public：characters存角色，scenes存场景，brand存Logo与字标。角色坐姿按01-natural、02-crossed、03-leaning、04-forward、05-side-rest分目录；三视图放turnarounds，设定图放cards。文件名统一为角色名.png，不带版本号；只保留实际完成的角色，不补空文件。
 
-角色静态素材按用户要求保存在frontend/public/characters，以01-natural（自然坐姿）、02-crossed（翘腿坐姿）、03-leaning（侧斜坐姿）分目录；每个状态固定为deepseek.png、gemini.png、claude.png、grok.png、chatgpt.png。切换状态通过目录区分，不在public文件名继续堆叠v2/v3版本号。
-
-旧版本保存在docs/design/assets/characters/history/v1与v2，用户姿态参考保存在同级references；public仅维护当前三状态共15张角色图。配套背景继续位于frontend/public/scenes；来源、实际提示词、状态映射及哈希见[素材记录](docs/design/02-五位角色素材生成记录.md)。这些文件不构成可运行前端或实时姿态切换能力。
-
+旧稿、参考、候选、生成清单和校验过程统一放本地output，已由.gitignore排除，不提交GitHub。docs只维护设计、当前提示词与最终素材引用；不得在public或docs另建history、references、pending、review-set版本目录。当前DeepSeek七张最终稿见[素材记录](docs/design/02-五位角色素材生成记录.md)，可复用提示词见[设计26](docs/design/26-DeepSeek角色生成提示词.md)。静态图片交付不代表前端应用或动态服务已实现。
 
 ## 07 业务设计入口
 
@@ -127,3 +129,8 @@ voira/
 旧路径`/Users/stephenqiu/Desktop/StephenQiu/DigitalHuman`是指向voira的兼容符号链接，不是第二份工程或第二个Git仓库。保留它以兼容正在运行的设计会话及已有Codex项目路径；应用侧保存的项目标签/路径不因文件夹改名自动更新，后续操作优先使用真实路径。所有旧路径使用者迁移后才能移除该链接。
 
 T-060已按用户授权审阅并提交推送220个文件，包括文档、设计素材和目录骨架；交付核验见工程计划06第06节。15份研究证据已脱敏，原件仅保留在被忽略的.local目录；运行状态、秘密配置、临时文件、依赖/缓存和SQLite文件不提交。后续仍按明确文件清单审核与提交，保留并行修改；业务实现与模型调用授权边界不变。
+
+
+## 09 T-084 前端布局基线
+
+用户明确授权从布局开始实现，交付入口见[frontend README](frontend/README.md)。BasicLayout只负责Header／Content／Footer，人物选择状态位于功能组件。Figma桌面61:2473／手机61:2803为视觉依据，最新DeepSeek白底母版保留，透明舞台三图独立保存在public/characters/stage；不改并行素材。当前不接入API、媒体、直播或队列业务。实际检查见计划09第12节。
