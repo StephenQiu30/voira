@@ -430,3 +430,23 @@ TC-084证据：
 截图存于本机visualizations任务目录voira-frontend-desktop-t084.png与voira-frontend-mobile-t084.png。本轮是静态数据展示及布局交互，不是真实会话Mock闭环；开始交流禁用，正文说明服务未连接。未验证触屏实机、服务错误／媒体恢复、真实角色驱动或播放；未接入Three.js／GSAP、自动队列、API与模型。
 
 初始化shadcn 4.22.1时遇到npm 12向子进程传入allow-scripts参数而退出，改用CLI运行上下文移除该继承参数后添加组件成功；组件仍为官方Radix源码，未切换Base UI。未新增自定义脚本文件。官方核对入口：[Next.js安装](https://nextjs.org/docs/app/getting-started/installation)、[Radix Tabs](https://ui.shadcn.com/docs/components/radix/tabs)、[主题集成](https://ui.shadcn.com/docs/dark-mode/next)。
+
+
+## 13 T-088 首屏布局与favicon修正（2026-10-25）
+
+NFR-006／007 → DESIGN第36节 → US-001静态展示 → T-088 → TC-088。用户反馈外围黑边、首屏多余纵向滚动及品牌favicon缺失，本轮沿用布局实施授权，不扩大真实服务范围。
+
+移除外层padding与圆角，保留内容边距；根据视口高度调整网格、人物高度及上下留白，维持头像和姿态控件最小触控面积。复用现有声伴标志新增src/app/icon.svg、favicon.ico、apple-icon.png，由Next.js生成head引用；ICO与Apple图标由相同SVG栅格化，不新增依赖或自定义脚本。
+
+TC-088实际证据：
+
+| 检查 | 结果与边界 |
+|---|---|
+| 桌面首屏 | 1280×720、1264×738、1366×768、1440×900与实际1570×953，document滚动尺寸等于视口尺寸 |
+| 平板／手机 | 768×1024和390×844无多余滚动；320×740页面高789px，必要内容自然纵向滚动，无横向溢出 |
+| 选择稳定 | 1280×720下大肥鱼→Claude、自然→翘腿，五头像的坐标及62×82尺寸逐项不变，页面仍为720px高 |
+| 品牌与主题 | 页头mask使用品牌SVG；三种favicon资源HTTP 200，head引用已核对；浅色／暗色切换保留角色姿态 |
+| 代码检查 | lint、format:check、typecheck、最终Next.js生产build通过 |
+| 浏览器 | 本地生产页未观察到error／warn；模拟视口已清除，恢复暗色与默认形象 |
+
+截图位于本机visualizations当前任务目录voira-layout-desktop-t087.png及voira-layout-mobile-t087.png。本轮没有通过隐藏页面overflow裁切控件；极小视口和文本放大允许自然滚动。未验证触屏实机、聊天或直播业务，不修改Figma、角色母版、后端或提交推送。
