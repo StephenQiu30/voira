@@ -128,7 +128,10 @@ def prepare(request: schemas.PrepareRequest) -> schemas.PreparedTask:
         "生成后人工目视评审，不以prepared视为生成或验收",
     )
     if request.skill_id == "character-turnaround":
-        checks += ("正面／90度侧面／背面等高，右正脸同一人",)
+        checks += (
+            "正面／90度侧面／背面等高，右正脸同一人",
+            "右侧大幅半身特写占比匹配DeepSeek基准，自然轮廓渐隐，不缩小成头像或矩形硬切",
+        )
     elif request.skill_id == "character-card":
         checks += ("主图、已有道具配饰、差异化表情及动作特写同款",)
     else:

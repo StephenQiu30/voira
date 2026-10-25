@@ -607,3 +607,23 @@ T-098用户随后指出主图腿内侧穿插，已局部imagegen修正一次并�
 用户要求五种形象图，已按坐姿Skill分别准备并由内置imagegen生成5张1024×1536 RGBA候选，路径output/character-design/t099-grok-poses/grok-{natural,listening,casual,playful,thinking}.png。首图参考T-098修正版Grok卡，后四图追加natural统一比例；提示词按Grok机智活泼人设调整表演，没有改通用动作定义。
 
 五张均实测真实alpha，计数及哈希在manifest；原图目视动作差异及腿／袜／红裙衬遮挡。部分发丝／裙边余量较紧，深浅底浏览器尚未验收，细饰与椅雕仍待视觉评审。未改前端资源／页面、未生成视频、未提交推送；任务准备不是后端生图接通证据。详见设计27第06节、素材记录02第32节、计划09第19节。
+
+## 77 T-100／101 Claude设计与三视图系列占比（2026-10-26）
+
+前批Grok配置与记录以9e179e7提交并推送main，提交前7类任务准备通过；output候选未进入Git。随后新增Claude配置，生成三视图及设定卡候选。用户要求消除特写方块感，并纠正过小头像方案，最终共用Skill明确维持DeepSeek大幅半身特写占比，仅优化自然轮廓和柔和渐隐；prepare加入对应验收项。
+
+共4次内置imagegen，当前两图和被替代试稿在output/character-design/t100-claude，提示词、参考及manifest留存。卡片与三视图均1536×1024 RGB。Ruff、格式、mypy、39项pytest及Claude两类prepare通过。图片目视检查，细饰／正投影一致性与用户最终评审未完成；特写侧缘留白较紧。未改frontend资源／页面，未制作Claude五坐姿，未接入后端生图。Claude及Skill改动尚未提交推送，详见设计28与计划09第20节。
+
+## 78 T-102 Claude五种透明坐姿（2026-10-26）
+
+用户明确继续五种形象图，已复用现有Skill与Claude配置，五种prepare通过，内置imagegen调用5次。natural作为首张基准，后四张追加它统一比例材质。五张1024×1536 RGBA候选及提示词／输入／任务快照／manifest保存于output/character-design/t102-claude-poses。
+
+透明数值检测通过，alpha0—254、四角透明；原图目视五动作、身份及手脚／衣料结构。左右边缘余量偏紧，未完成深浅底浏览器验收，细饰及椅雕有生成差异。未覆盖frontend或修改页面、未接入后端生图、未提交推送；前轮Claude／三视图Skill未提交改动保持。见计划09第21节TC-102。
+
+## 79 T-103 系列正式资源替换（2026-10-26）
+
+用户要求替换最新形象并提交main推送，后续提醒DeepSeek。Grok、Claude各三现用坐姿／两备用／卡／三视图共14图采用；DeepSeek现用stage已是新版，本次另同步五个历史姿态路径。共19图源文件、正式文件与HTTP响应哈希一致，frontend/src保持不变，倾听／思考未新增页面入口。
+
+前端生产构建、后端Ruff／格式／mypy／39项pytest通过。桌面查看两角色三态，浅底及暗底侧斜透明正常，DeepSeek默认新版确认，控制台无warn／error。截图与哈希在output/character-design/t103-resource-update；未重验手机。3000本机生产预览已重启，Next图片缓存已刷新；页面临时禁用缓存已恢复。
+
+本批按授权提交T-100—103配置／Skill／文档及正式资源；另有历史需求v0.9文档被删除，来源不属于本任务，排除提交并保留其工作区状态。Git回执确认提交与推送结果。
