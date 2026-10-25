@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": {
+    "web": [
+      {
+        "url": "https://help.aliyun.com/zh/document_detail/109589.html",
+        "title": "实时音视频通话云端混流推流直播-旁路转推 - 阿里云文档",
+        "description": "阿里云RTC为您提供了旁路转推功能，您可以将正在进行实时音视频通话时频道的画面同步到云端进行混流，并将混流后的直播流推流给第三方CDN或者阿里云视频 ...",
+        "position": 1
+      },
+      {
+        "url": "https://www.aliyun.com/product/apsaravideo/live/interactlive",
+        "title": "RTC_直播连麦_实时音视频通话_互动直播_视频云-阿里云",
+        "description": "# 实时音视频\n## 产品架构\n通过旁路转推直接对接阿里云媒体处理中心，提供录制、转码、混流、内容审核、对接第三方审核等配套能力。 同时也可以无缝扩展标准直播，CDN 直播观众可通过 RTS/FLV/RTMP/HLS 协议拉流，不限制并发人数 ，无需加入房间组件。\n\n## 应用场景\n直播连麦\n\n在网络连接不稳定、可用性差的条件下，提供基于 RTC 协议的推流方式，提升推流及连麦的流畅度。\n\n[视频直播](https://www.aliyun.com/product/live?spm=a2c4g.11186623.J_4VYgf18xNlTAyFFbOuOQe.109.26da18d4digqY0&scm=20140722.X_data-97d0e85bfafd95424f39._.V_1) [视频点播](https://www.aliyun.com/product/vod?spm=5176.28414104.J_4VYgf18xNlTAyFFbOuOQe.148.4b1f175e39Fktb&scm=20140722.X_data-e6fd14dc22c6f5029384._.V_1)\n\n[视频直播](https://www.aliyun.com/product/live?spm=a2c4g.11186623.J_4VYgf18xNlTAyFFbOuOQe.109.26da18d4digqY0&scm=20140722.X_data-97d0e85bfafd95424f39._.V_1)\n\n[视频直播](https://www.aliyun.com/product/live?spm=5176.8413026.J_4VYgf18xNlTAyFFbOuOQe.179.2ae410297KC090&scm=20140722.X_data-97d0e85bfafd95424f39._.V_1)\n\n[视频直播](https://www.aliyun.com/product/live?spm=5176.8413026.J_4VYgf18xNlTAyFFbOuOQe.179.2ae410297KC090&scm=20140722.X_data-97d0e85bfafd95424f39._.V_1)\n\n[视频直播](https://www.aliyun.com/product/live?spm=5176.8413026.J_4VYgf18xNlTAyFFbOuOQe.179.2ae410297KC090&scm=20140722.X_data-97d0e85bfafd95424f39._.V_1)\n\n## 更多产品与服务\n视频直播\n\n集成了直播推流、视频播放、短视频创作、美颜特效、音频特效等核心能力，为用户提供一体化 SDK，支持移动端、PC 端、Web 端等多终端接入，搭配开源 UI 组件和产品级 Demo，支持用户根据业务需求集成所需 SDK 以及采用低代码方式快速搭建所需应用。",
+        "position": 2
+      },
+      {
+        "url": "https://help.aliyun.com/zh/live/developer-guide-to-battles",
+        "title": "主播PK互动开发指南 - 阿里云文档",
+        "description": "当收到RTC房间内主播推流后，调用旁路转推OpenAPI接口StartLiveMPUTask，将RTC房间内的流转推到CDN上，旁路转推接口详情参考：StartLiveMPUTask - 创建混 ...",
+        "position": 3
+      }
+    ],
+    "tools": []
+  },
+  "id": "01a16ea7-ce4a-704f-972a-49d50c6154f4",
+  "creditsUsed": 2,
+  "agent_hints": [
+    "All 3 web results are excerpts only (#1 \"https://help.aliyun.com/zh/document_detail/109589.html\", #2 \"https://www.aliyun.com/product/apsaravideo/live/interactlive\", #3 \"https://help.aliyun.com/zh/live/developer-guide-to-battles\"). If you need more than an excerpt, use firecrawl_scrape with {\"url\":\"<one of these URLs>\",\"formats\":[\"markdown\"]}. Retrieve only needed pages; do not re-scrape results that already contain the required content."
+  ]
+}

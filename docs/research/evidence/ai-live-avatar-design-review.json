@@ -1,0 +1,155 @@
+{
+  "record_id": "RES-008",
+  "collected_on": "2026-10-25",
+  "method": "GitHub connector fixed commit source review; local blob comparison; no runtime execution",
+  "repository": "garycaogan/ai-live-avatar",
+  "default_branch": "main",
+  "commit": "5559ec5440c93814737155183dbe832df0b9f215",
+  "commit_date": "2026-10-19T13:47:27Z",
+  "tree_sha": "e7fbecf6cc3eccd7bb09dc35f76608d26065000e",
+  "tree_truncated": false,
+  "fresh_file_reads": [
+    {
+      "path": "README.md",
+      "blob_sha": "574d9a07a1c3f63ad0877709b9b099bf3084c629",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/README.md"
+    },
+    {
+      "path": "live/session.py",
+      "blob_sha": "09083e2e604b27e747bec905f70bb9505ccd3793",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/live/session.py"
+    },
+    {
+      "path": "live/broadcast.py",
+      "blob_sha": "a329e3eed2cb176529bde1b3d589f0b56d6a8e3d",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/live/broadcast.py"
+    },
+    {
+      "path": "static/stage.html",
+      "blob_sha": "7616cafb1af4f454cf3670119621c413dba1d6ce",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/static/stage.html"
+    },
+    {
+      "path": "server.py",
+      "blob_sha": "0d396bff2e4baefe8900e4b76b70eef47be014e9",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/server.py"
+    },
+    {
+      "path": "tests/test_e2e.py",
+      "blob_sha": "5b5b06c9200c83466d78b2e0975bfdf3770cd557",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/tests/test_e2e.py"
+    },
+    {
+      "path": "live/vidu.py",
+      "blob_sha": "e9b57a86876ca682faf30e7ab06b43c530a6764f",
+      "url": "https://github.com/garycaogan/ai-live-avatar/blob/5559ec5440c93814737155183dbe832df0b9f215/live/vidu.py"
+    }
+  ],
+  "local_snapshot_checks": [
+    {
+      "path": "LICENSE",
+      "sha": "8596a91e40199a445b54b533a502ed0ed7d3a1b5",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "README.md",
+      "sha": "b04b78dd74453035ee656d3a293a68da303246af",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "WORKBENCH_API.md",
+      "sha": "b37e6a79bfb1cdcde9200bf9ab90d464e8dc20bf",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/broadcast.py",
+      "sha": "2577783465deb253e8344ea0ecbf433fa0246e68",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/moderation.py",
+      "sha": "45ba19e971d60722f891b04964d74a21ce62defd",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/queue.py",
+      "sha": "6c00218ccd484a891c0f91bd8f418d8e46595482",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/router.py",
+      "sha": "ac42db2c6ef5942285570abc6742c531bb7c71e5",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/session.py",
+      "sha": "c84f2a8135b5d4b867110ea3bc7f68973b0cb568",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/vidu.py",
+      "sha": "16c02188ce4bdb2a7f4248edc67b3adebdcef3db",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "live/workbench.py",
+      "sha": "3d762fa9916e3e1ca9ce18c5e0103c9abade5622",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "requirements.txt",
+      "sha": "7a4fbf2fa96710192d69debb0b10331408f94053",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "server.py",
+      "sha": "f994e6bc8dfcf835f6a46fe8e5fe482e42daad00",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "static/stage.html",
+      "sha": "27c57cbd6a51fc738b0957fcea4dfcd63ab1e644",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "tests/test_e2e.py",
+      "sha": "0e15afcc567c9b91c7f7a4d64260aafdf0370cb3",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    },
+    {
+      "path": "tools/fetch_vendor.sh",
+      "sha": "1a0f1e524de5883ff8251a74c19a21b061c6d22e",
+      "match": false,
+      "normalization_match": "remove_one_trailing_lf"
+    }
+  ],
+  "normalization_note": "All 15 existing selected snapshots contain one extra final LF. Removing only that LF reproduces the upstream Git blob SHA. Earlier source bytes are preserved. Line numbering of code is unchanged.",
+  "limits": [
+    "Static source inspection only",
+    "Mock tests were read but not run",
+    "No Vidu session, Codex model invocation, SDK playback, image upload or voice audition",
+    "Vendor timing and quality claims are not project acceptance"
+  ],
+  "design_decisions": [
+    "REST/WS/RTC boundaries reused as architectural references",
+    "Existing aiohttp server replaced by agreed FastAPI and Next.js architecture",
+    "SSE simplified to local HTTP snapshots",
+    "Local Codex generation and Vidu text_tts replace vendor-generated dialogue",
+    "Manual continue replaces estimated-duration scheduling",
+    "Durable intent ledger and provider termination reconciliation must be built"
+  ]
+}

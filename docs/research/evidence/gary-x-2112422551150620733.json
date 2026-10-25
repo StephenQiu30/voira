@@ -1,0 +1,46 @@
+{
+  "collected_at": "2026-10-25",
+  "source_url": "https://x.com/GaryAIytb/status/2112422551150620733",
+  "published_at": "2026-10-20T05:55:57.000Z",
+  "author": "Gary曹淦 @GaryAIytb",
+  "retrieval_metadata": {
+    "scrapeId": "01a16ee9-8078-747a-8a67-0f396ef083bc",
+    "sourceURL": "https://x.com/GaryAIytb/status/2112422551150620733",
+    "url": "https://x.com/GaryAIytb/status/2112422551150620733",
+    "statusCode": 200,
+    "contentType": "text/html; charset=utf-8",
+    "proxyUsed": "basic",
+    "postprocessorsUsed": [
+      "x-twitter"
+    ],
+    "indexId": "4daf8391-509c-49d7-aadf-663277b565b9",
+    "creditsUsed": 30,
+    "concurrencyLimited": false
+  },
+  "evidence_type": "author self-report, retrieved with Firecrawl",
+  "storage_note": "仅保留影响选型的摘要及来源，不保存正文全文或评论；未独立复现实播。",
+  "findings": [
+    "作者确认框架为 garycaogan/ai-live-avatar；Vidu负责生成，框架负责场控。",
+    "试播叙述约70多分钟；成本段为67分钟191.47元，含预热与会话重开，未取得账单。",
+    "评论到开口约10–20秒；曾断线约3分钟；长回复可能被后续指令打断。",
+    "作者认为底图、音色、人设、构图与节奏影响真实感。",
+    "预制完整照片重开会话比连续局部编辑更稳；背景编辑曾造成衣着异常，相关功能后被禁用。",
+    "恢复后上下文可能缺失，暖场话题需防短周期重复。",
+    "网页评论临时接法未开源；作者的平台规则说法需独立核验。"
+  ],
+  "links": [
+    "https://x.com/GaryAIytb/status/2112422551150620733",
+    "https://github.com/beiyege-01",
+    "https://ncnmu5q1eqm9.feishu.cn/file/Z5Spb8GIlog8qlxaWWKcGB7Xnbg",
+    "https://github.com/garycaogan/ai-live-avatar",
+    "https://www.youtube.com/live/fG84tzLOxLc",
+    "https://x.com/zookmas1314/status/2112628661778038906",
+    "https://x.com/Haosen9527/status/2112473395657134440",
+    "https://x.com/7ai_Life/status/2112499870712148005"
+  ],
+  "limitations": [
+    "未检视录屏动态效果",
+    "自报数据不是本项目基准或官方规则",
+    "叙述与源码细节差异未强行合并"
+  ]
+}

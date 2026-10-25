@@ -1,0 +1,266 @@
+{
+  "evidence_id": "ev_a79b16adc4dc4fa4b0e1b9ef1c1b5519fce84b9301746c41f1ab6e6af32e9d7d",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk?modal_id=7697175786456911113",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 900,
+        "device_scale_factor": 1
+      },
+      "locale": "zh-CN",
+      "timezone": "Asia/Shanghai",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "wait-public-post",
+        "action": "wait_for_timeout",
+        "duration_ms": 5000
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "e4dbf7de83368daa1f2d3f8127763e674f296a2d4bc6c09b9ebfb34aa0152533"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.86"
+    },
+    "scenario": {
+      "start_origin": "https://www.douyin.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 8376,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3118,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk?modal_id=REDACTED",
+          "origin": "https://www.douyin.com",
+          "query_parameter_names": [
+            "modal_id"
+          ],
+          "redacted": true
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "wait-public-post",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 5037,
+        "before_url": {
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk?modal_id=REDACTED",
+          "origin": "https://www.douyin.com",
+          "query_parameter_names": [
+            "modal_id"
+          ],
+          "redacted": true
+        },
+        "after_url": {
+          "url": "https://www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk?modal_id=REDACTED",
+          "origin": "https://www.douyin.com",
+          "query_parameter_names": [
+            "modal_id"
+          ],
+          "redacted": true
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "7d2d79c9ba4af5cab74457a8dbddfdd2ac823fc490bfed92afa239e03d28a2bb",
+              "bytes": 15655,
+              "text": "- document:\n  - button \"开启读屏标签\"\n  - text: 读屏标签已关闭\n  - link:\n    - /url: //www.douyin.com/jingxuan\n  - link \"精选\":\n    - /url: https://www.douyin.com/jingxuan?from_nav=1\n  - link \"推荐\":\n    - /url: https://www.douyin.com/?recommend=1&from_nav=1\n  - link \"AI抖音\":\n    - /url: https://www.douyin.com/aisearch?from_nav=1\n    - img\n    - text: AI抖音\n  - link \"关注\":\n    - /url: https://www.douyin.com/follow?from_nav=1\n  - link \"朋友\":\n    - /url: https://www.douyin.com/friend?from_nav=1\n  - link \"我的\":\n    - /url: https://www.douyin.com/user/self?from_nav=1\n  - link \"直播\":\n    - /url: https://live.douyin.com/?from_nav=1\n  - link \"放映厅\":\n    - /url: https://www.douyin.com/vs?from_nav=1\n  - link \"短剧\":\n    - /url: https://www.douyin.com/series?from_nav=1\n  - img\n  - img\n  - text: 下载抖音精选 2026 © 抖音\n  - link \"京ICP备16016397号-3\":\n    - /url: https://beian.miit.gov.cn/\n  - img\n  - img\n  - img\n  - contentinfo:\n    - link \"icon京公网安备11010802050006号\":\n      - /url: https://beian.mps.gov.cn/\n      - img \"icon\"\n      - text: 京公网安备11010802050006号\n    - link \"icon电子营业执照\":\n      - /url: https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do\n      - img \"icon\"\n      - text: 电子营业执照\n    - text: 信息网络传播视听节目许可证 0126733 广播电视节目制作经营许可证 （京）字第11313号 增值电信业务经营许可证 京B2-20170846 网络文化经营许可证 京网文〔2025〕0181-061号 互联网宗教信息服务许可证 京（2025）0000017 药品医疗器械网络信息服务备案 （京）网药械信息备字（2023）第00570号 互联网新闻信息服务许可证 11220230001\n    - link \"（京）人服证字〔2026〕第0600005023号\":\n      - /url: https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/d1cb34abe8ebb5600b51bac36ce3247f.jpg\n    - link \"网络谣言曝光台\":\n      - /url: https://www.piyao.org.cn/yybgt/index.htm\n    - link \"网上有害信息举报\":\n      - /url: https://www.12377.cn/\n    - text: 违法和不良信息举报 400-140-2108 feedback@douyin.com 算法推荐专项举报 sfjubao@bytedance.com 体育饭圈专项举报 tyfq@bytedance.com\n    - link \"广告投放\":\n      - /url: https://www.oceanengine.com/resource/douyin\n    - link \"用户服务协议\":\n      - /url: https://www.douyin.com/agreements/?id=6773906068725565448\n    - link \"隐私政策\":\n      - /url: https://www.douyin.com/agreements/?id=6773901168964798477\n    - link \"账号找回\":\n      - /url: https://www.douyin.com/recovery_account/\n    - link \"联系我们\":\n      - /url: https://www.douyin.com/aboutus/\n    - link \"加入我们\":\n      - /url: https://www.douyin.com/aboutus/\n    - link \"友情链接\":\n      - /url: https://www.douyin.com/friend_links\n    - link \"站点地图\":\n      - /url: https://www.douyin.com/htmlmap/hotauthor_0_1\n    - link \"下载抖音\":\n      - /url: https://www.douyin.com/downloadpage/pc\n    - link \"抖音电商\":\n      - /url: https://mix.jinritemai.com/falcon/mix_page/index.html\n  - banner:\n    - textbox \"搜索你感兴趣的内容\"\n    - button \"搜索\":\n      - img\n      - text: 搜索\n    - img:\n      - img\n    - paragraph: 充钻石\n    - link \"客户端\":\n      - /url: https://www.douyin.com/download/pc/obj/douyin-pc-web/douyin-pc-client/7044145585217083655/releases/495279540/8.7.0/darwin-universal/douyin-v8.7.0-darwin-universal.dmg\n      - img:\n        - img\n      - paragraph: 客户端\n      - img\n    - img:\n      - img\n    - text: 壁纸\n    - list:\n      - img:\n        - img\n      - paragraph: 通知\n    - list:\n      - paragraph: 消息\n    - img:\n      - img\n    - paragraph: 投稿\n    - button \"登录\":\n      - img\n      - paragraph: 登录\n  - listitem:\n    - img \"程序员七七头像\"\n  - heading \"程序员七七\" [level=1]\n  - text: 关注 86 粉丝 1.2万 获赞 5.0万\n  - paragraph: 抖音号：coder77 IP属地：北京 103岁\n  - img \"🧑‍💻\"\n  - text: BAT大厂在职 9年 技术专家、架构、新人导师、面... 更多\n  - button:\n    - img\n  - button \"分享主页\"\n  - button \"私信\"\n  - button \"关注\"\n  - tablist:\n    - tab \"作品 392\" [selected]:\n      - heading \"作品 392\" [level=2]\n    - tab \"推荐\"\n    - tab \"喜欢\":\n      - text: 喜欢\n      - img\n  - tabpanel \"作品 392\"\n  - tablist:\n    - tab \"作品\" [selected]\n    - tab \"合集\"\n    - tab \"短剧\"\n  - tabpanel \"作品\"\n  - img\n  - text: 搜索 Ta 的作品\n  - textbox \"搜索 Ta 的作品\"\n  - img:\n    - img\n  - text: 日期筛选\n  - img\n  - list\n  - text: 服务异常，重新刷新拉取数据\n  - contentinfo:\n    - link \"广告投放\":\n      - /url: https://www.oceanengine.com/resource/douyin\n    - link \"用户服务协议\":\n      - /url: https://www.douyin.com/agreements/?id=6773906068725565448\n    - link \"隐私政策\":\n      - /url: https://www.douyin.com/agreements/?id=6773901168964798477\n    - link \"账号找回\":\n      - /url: https://www.douyin.com/recovery_account/\n    - link \"联系我们\":\n      - /url: https://www.douyin.com/aboutus/\n    - link \"加入我们\":\n      - /url: https://www.douyin.com/aboutus/\n    - link \"友情链接\":\n      - /url: https://www.douyin.com/friend_links\n    - link \"站点地图\":\n      - /url: https://www.douyin.com/htmlmap/hotauthor_0_1\n    - link \"下载抖音\":\n      - /url: https://www.douyin.com/downloadpage/pc\n    - link \"抖音电商\":\n      - /url: https://mix.jinritemai.com/falcon/mix_page/index.html\n    - link \"网络谣言曝光台 ｜\":\n      - /url: https://www.piyao.org.cn/yybgt/index.htm\n    - link \"网上有害信息举报\":\n      - /url: https://www.12377.cn/\n    - text: ｜ 违法和不良信息举报：400-140-2108 feedback@douyin.com ｜ 算法推荐专项举报：sfjubao@bytedance.com | 体育饭圈专项举报：tyfq@bytedance.com\n    - link \"京ICP备16016397号-3\":\n      - /url: https://beian.miit.gov.cn/\n    - text: ｜ 信息网络传播视听节目许可证 0126733 ｜ 广播电视节目制作经营许可证 （京）字第11313号 ｜ 增值电信业务经营许可证 京B2-20170846 ｜ 网络文化经营许可证 京网文〔2025〕0181-061号 ｜\n    - img \"icon\"\n    - link \"京公网安备11010802050006号\":\n      - /url: https://beian.mps.gov.cn/\n    - text: ｜ 互联网宗教信息服务许可证 京（2025）0000017 ｜\n    - img \"icon\"\n    - link \"电子营业执照\":\n      - /url: https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do\n    - link \"｜（京）人服证字〔2026〕第0600005023号\":\n      - /url: https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/d1cb34abe8ebb5600b51bac36ce3247f.jpg\n    - text: 热门：\n    - link \"抖音神曲\":\n      - /url: https://www.douyin.com/jingxuan/music\n    - link \"抖音\":\n      - /url: https://www.douyin.com/jingxuan\n    - link \"郑晋说郑能量\":\n      - /url: https://www.douyin.com/user/MS4wLjABAAAAQldTq3l4vMsSdN9lqx0lQbuXWNrixe1iZjdOU5hhXLg\n    - 'link \"第 3 集《学会整理房间》 #亲子英语 #零基础学英语 #家庭英语口语 #小学英语 #每日英语打卡 一家四口的日常小故事｜学英语，懂道理 每日一集，情景口语，轻松积累小学英语。 关注不迷路，持续更新✨评论区打卡，陪孩子一起跟读！\"':\n      - /url: https://www.douyin.com/video/7700030696395476243\n    - link \"2025开封二模答案\":\n      - /url: https://www.douyin.com/topic/7509878915700377650\n    - link \"睢宁高考状元第一名2023\":\n      - /url: https://www.douyin.com/shipin/7509926585898878991\n    - link \"吉林排名多少上本科\":\n      - /url: https://www.douyin.com/search/%E5%90%89%E6%9E%97%E6%8E%92%E5%90%8D%E5%A4%9A%E5%B0%91%E4%B8%8A%E6%9C%AC%E7%A7%91\n    - link \"探秘欧洲最强战斗机内部\":\n      - /url: https://www.douyin.com/video/7606681038273776930?source=Baiduspider\n    - 'link \"选专业不重要？从记者经验复盘，聊聊学到的社会阅历&人生经验【上集】 🔥 最近张雪峰老师，关于\\\"打晕别选新闻\\\"的言论，登上热搜。‼️新闻学真的是\\\"天坑\\\"吗？普通人的第一份工作应该怎么选？职场跨行又应该如何复用自己的能力？🔔聊聊\\\"新闻专业毕业就做记者那些年，我所积累的社会阅历&人生经验😘 ‼️总结：📚选专业并非决定就业命运的关键。重要的是在过程中发现并塑造自己的优势，一起看看哪些核心竞争力是职场复用的能力吧！#张雪峰 #新闻专业还能报吗 #职场生存指南 #个人成长 #中视频伙伴计划 @DOU+上热门 @DO\"':\n      - /url: https://www.douyin.com/video/7253381019208830247?source=Baiduspider\n    - 'link \"长春—延吉旅游攻略，桂林路胡同美食街踩大雷！ #vlog #旅行vlog\"':\n      - /url: https://www.douyin.com/video/7241425566727998780?source=Baiduspider\n    - link \"500米高空俯视天台山！羊肠小道弯弯曲曲，像大地藏的温柔褶皱🌿 上帝视角看山河，才懂徒步时的每一步疲惫，都在解锁极致浪漫～ 你们猜，这条小一道我爬了多久才登顶？🤔\":\n      - /url: https://www.douyin.com/video/7581426049143262473?source=Baiduspider-sdc\n    - 'link \"黄梅戏 江丽娜老师版本《溶溶月色照梅亭》韵味浓郁，特别好听，欢迎一起学唱#黄梅戏经典唱段 #青年戏曲传播者 @DOU+小助手\"':\n      - /url: https://www.douyin.com/video/7556152133621714186?source=Baiduspider\n    - 'link \"#中视频伙伴计划 #支持抖音传播正能量 #创作者扶持计划 #原创视频 中视频伙伴计划正确的发布流程，你做对了吗？快来学起来吧，简单易学版！\"':\n      - /url: https://www.douyin.com/video/7147183040681299238?source=Baiduspider\n    - 'link \"《论语》里仁篇第四① 子曰：“里仁为美。择不处仁，焉得知？” #传扬中华文化 #唤醒真我 #智慧打开一切 #见证前行的每一步 #大成者致万境\"':\n      - /url: https://www.douyin.com/video/7153825355369958693?source=Baiduspider-sdc\n  - img\n  - text: 数字人直播工具购买\n  - textbox\n  - button \"搜索\":\n    - img\n    - text: 搜索\n  - img\n  - text: 滚动“鼠标”或点按“键盘上下键”查看更多推荐视频 同时支持点击屏幕上的「上下按钮」切换视频\n  - button \"我知道了\"\n  - img:\n    - img\n  - img:\n    - img\n  - img:\n    - img\n  - button\n  - text: 清屏\n  - button\n  - text: 连播\n  - img:\n    - img\n  - img:\n    - img\n  - link:\n    - /url: //www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk\n    - listitem\n  - img\n  - img\n  - text: \"15\"\n  - img\n  - text: \"13\"\n  - img\n  - text: \"15\"\n  - img\n  - text: \"6\"\n  - img\n  - text: 看相关\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - button\n  - img\n  - img\n  - img\n  - img\n  - text: \"@程序员七七 · 10月16日\"\n  - img\n  - text: 图文 数字人直播开发，这些坑我替你踩了。用 Codex + Vidu 折腾了一款数字人直播桌面端，名字叫映播。 最开始想得挺简单：传一张照片，让她讲商品、回评论、感谢礼物。接起来以后，问题才一条条冒出来。 同一个问题回复好几遍，上一句没说完就切到下一条，评论排了几十条，观众早走了还在回。之前一度以为是 OCR 不准，后来重点查的是消息去重、过期判断和播报时序。 这次把过程做成了 10 张图，有开发记录、Prompt 写法、视觉反馈的方法，也放了工作台和互动素材的实际截图。 提需求时，写清楚行为真的能省不少来回。比如“同一条评论只进一次队列，未处理消息超过 60 秒清理，当前回答说完再播下一条”，就能直接拿来检查结果。 改界面也是一样。参考图之外，还要说清楚人物放哪里、横竖屏怎么切、哪些卡片挡住了人、哪些东西需要能关掉。只说“高级一点”，最后很容易来回重做。 图里用的是 0.2.8 的本地演示配置，展示产品界面和 OCR 演示，没有连接实时数字人会话。直播里的口型、延迟和稳定性还要继续实测，遇到的问题也会接着记。\n  - link \"#数字人直播\":\n    - /url: //www.douyin.com/search/%E6%95%B0%E5%AD%97%E4%BA%BA%E7%9B%B4%E6%92%AD?aweme_id=7697175786456911113&enter_from=others_homepage&gid=7697175786456911113&source=pc_click_hashtag_feed\n  - link \"#VibeCoding\":\n    - /url: //www.douyin.com/search/VibeCoding?aweme_id=7697175786456911113&enter_from=others_homepage&gid=7697175786456911113&source=pc_click_hashtag_feed\n  - link \"#Codex\":\n    - /url: //www.douyin.com/search/Codex?aweme_id=7697175786456911113&enter_from=others_homepage&gid=7697175786456911113&source=pc_click_hashtag_feed\n  - text: \"#AI #独立开发\"\n  - link \"#产品开发\":\n    - /url: //www.douyin.com/search/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91?aweme_id=7697175786456911113&enter_from=others_homepage&gid=7697175786456911113&source=pc_click_hashtag_feed\n  - link \"#提示词\":\n    - /url: //www.douyin.com/search/%E6%8F%90%E7%A4%BA%E8%AF%8D?aweme_id=7697175786456911113&enter_from=others_homepage&gid=7697175786456911113&source=pc_click_hashtag_feed\n  - button \"展开\"\n  - img:\n    - img\n  - img\n  - img:\n    - img\n  - text: 00:00 / 00:23\n  - img:\n    - img\n  - img:\n    - img\n  - img:\n    - img\n  - img\n  - text: 倍速 智能\n  - button\n  - text: 清屏\n  - button\n  - text: 连播\n  - img:\n    - img\n  - img:\n    - img\n  - img\n  - link:\n    - /url: //www.douyin.com/user/MS4wLjABAAAAGpIiEOYNCzp_w4fV_HPzz-dG3iRLHcfLUhZexITMmOs\n    - listitem\n  - img\n  - img\n  - text: 2.3万\n  - img\n  - text: \"148\"\n  - img\n  - text: 2.7万\n  - img\n  - text: \"5078\"\n  - img:\n    - img\n  - text: 听抖音\n  - img\n  - img\n  - text: \"@AI小凯 · 10月8日 这是一个教你写提示词的开源工具\"\n  - link \"#提示词\":\n    - /url: //www.douyin.com/search/%E6%8F%90%E7%A4%BA%E8%AF%8D?aweme_id=7694234154862529802&enter_from=others_homepage&gid=7694234154862529802&source=pc_click_hashtag_feed\n  - link \"#工具\":\n    - /url: //www.douyin.com/search/%E5%B7%A5%E5%85%B7?aweme_id=7694234154862529802&enter_from=others_homepage&gid=7694234154862529802&source=pc_click_hashtag_feed\n  - link \"#有趣\":\n    - /url: //www.douyin.com/search/%E6%9C%89%E8%B6%A3?aweme_id=7694234154862529802&enter_from=others_homepage&gid=7694234154862529802&source=pc_click_hashtag_feed\n  - link \"#评测\":\n    - /url: //www.douyin.com/search/%E8%AF%84%E6%B5%8B?aweme_id=7694234154862529802&enter_from=others_homepage&gid=7694234154862529802&source=pc_click_hashtag_feed\n  - link \"#github\":\n    - /url: //www.douyin.com/search/github?aweme_id=7694234154862529802&enter_from=others_homepage&gid=7694234154862529802&source=pc_click_hashtag_feed\n  - img\n  - text: 消息\n  - img\n  - article:\n    - img\n    - text: 登录后免费畅享高清视频\n    - img\n    - text: 扫码登录 如何扫码\n    - img \"二维码\"\n    - img\n    - img\n    - paragraph:\n      - paragraph: 打开「抖音APP」点击左上角\n      - img\n      - paragraph: 扫一扫\n    - text: 验证码登录\n    - img\n    - text: 密码登录\n    - combobox \"国家/地区\": \"+86\"\n    - img\n    - textbox \"请输入手机号\"\n    - textbox \"请输入验证码\"\n    - text: 获取验证码 登录 登录即代表同意\n    - link \"用户协议\":\n      - /url: https://www.douyin.com/agreements/?id=6773906068725565448\n    - text: 和\n    - link \"隐私政策\":\n      - /url: https://www.douyin.com/agreements/?id=6773901168964798477"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.douyin.com/user/MS4wLjABAAAA4Ifyzc7S7vgKqqsMD1ccen4br6oLao63C8Skl6JRpyk?modal_id=REDACTED",
+              "origin": "https://www.douyin.com",
+              "query_parameter_names": [
+                "modal_id"
+              ],
+              "redacted": true
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.86",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

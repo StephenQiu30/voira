@@ -1,0 +1,30 @@
+{
+  "markdown": "文档目录+索引+\n\n复制页面\n\n# 概述\n\nVidu S 面向企业客户提供实时视频数字人与实时视频编辑能力。Vidu S2-Avatar 支持实时语音交互、复杂动作控制，并可结合参考图完成物品互动、服装更换和背景切换；Vidu S2-Editing 可基于风格、服装、主体及背景参考图，持续对输入视频流进行实时编辑。此外，产品也支持通过「一张图 + 一段音频」异步生成数字人视频。开发者使用一套 API Key 和统一的接口规范，即可接入全部能力。\n\n[开始接入](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/realtime/quick-start) [API Key](https://platform.vidu.cn/vidu-stream/doc/api-key)\n\n按产品切换 REST 入口与典型 payload：\n\nAvatar 实时版Avatar 组件版Avatar 非实时版Editing 版\n\n```\nPOST https://{host}/live/s_avatar/realtime\nAuthorization: Token vda_xxx\nContent-Type: application/json\n\n{\n  \"call_mode\": \"video\",\n  \"avatar\": {\n    \"persona\": \"你是一个友好的客服，请自然地与用户实时互动\",\n    \"image_uri\": \"https://你的数字人图片地址.png\",\n    \"voice\": \"\"\n  }\n}\n```\n\n## 选择你的 API\n\nVidu S 产品按 **实时性** 与 **集成深度** 划分。先回答两个问题即可定位：\n\n需要实时交互数字人，那么你是否已自建实时语音（ASR/LLM/TTS）链路？\n\n没有 → 选「Avatar 实时版」，Vidu S 提供全链路；已有 → 选「Avatar 组件版」，Vidu S 只负责数字人渲染与推流。\n\n尚未自建语音链路已有语音链路\n\nAvatar 实时版Avatar 组件版\n\n需要非实时交互的数字人：\n\n选「Avatar 非实时版」，提交任务、轮询结果、下载视频即可。\n\nAvatar 非实时版\n\n需要实时的视频编辑能力：\n\n若你要编辑一路已有的视频流，需要换背景、换装、换角色、改风格，则选「Editing 版」。\n\nEditing 版\n\n[**Avatar 实时版**\\\\\n\\\\\n实时互动：数字人与用户实时对话，可打断、具备双向感知。Vidu S 提供从语音到渲染的全链路](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/realtime/quick-start) [**Avatar 组件版**\\\\\n\\\\\n实时互动，但你已自带 RTC 频道与实时语音能力，只需 Vidu S 做数字人渲染并推流到你的频道](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/component/introduction) [**Avatar 非实时版**\\\\\n\\\\\n异步生成：一张角色图 \\+ 一段音频（或文本）生成口型与动作对齐的说话视频](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/async/introduction) [**Editing 版**\\\\\n\\\\\n流式视频编辑：持续接收视频流并实时输出编辑结果，可中途换参考图或切场景而不中断流](https://platform.vidu.cn/vidu-stream/doc/s2-editing/quick-start)\n\n### 集成路径\n\n[Avatar 实时版REST 创建会话 → WebSocket 发控制信令 → AliRTC 收发音视频](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/realtime/quick-start) [Avatar 组件版REST 创建（带 `rtc_info`）→ WebSocket 上行 PCM 音频与转写文本 → Vidu S 推流到你的频道](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/component/introduction) [Avatar 非实时版REST 提交任务 → 轮询任务状态（或回调）→ 下载生成物](https://platform.vidu.cn/vidu-stream/doc/s2-avatar/async/introduction) [Editing 版REST 创建编辑流 → RTC 推流并订阅结果 → WebSocket 发 `switch_prompt` 换场景](https://platform.vidu.cn/vidu-stream/doc/s2-editing/quick-start) [图片上传通过此方法作为数字人图片传入，可以极大节省创建数字人的时间](https://platform.vidu.cn/vidu-stream/doc/image-upload) [音色列表按产品与 provider 查阅可用 `voice_type`，创建会话或提交任务时直接填入](https://platform.vidu.cn/vidu-stream/doc/voice-list)\n\n### 能力边界\n\n|  | Avatar 实时版 | Avatar 组件版 | Avatar 非实时版 | Editing 版 |\n| --- | --- | --- | --- | --- |\n| 输入 | 数字人图 \\+ 人设 \\+ 用户音视频流等 | 数字人音频 \\+ 动作文本 | 数字人图 \\+ 数字人音频 \\+ 动作文本 | 用户音视频流 \\+ 替换图 |\n| 输出 | 实时音视频流 | 实时音视频流 | MP4 视频文件 | 实时音视频流 |\n| RTC | Vidu S 提供 | 你提供 | 不涉及 | Vidu S 提供 |\n| ASR | Vidu S 提供 | 你提供 | 不涉及 | 不涉及 |\n| LLM | Vidu S 提供 | 你提供 | 不涉及 | 不涉及 |\n| TTS | Vidu S 提供 | 你提供 | 你管理 | 不涉及 |\n| 实时性 | 实时流式 | 实时流式 | 异步文件 | 实时流式 |\n| 自由度 | 低，链路封闭但接入快 | 高，模型和音色全自选 | 中，可精确编排动作 | 低，链路封闭但接入快 |\n| 典型客户 | 社交陪伴、电商导购、在线教育、游戏 NPC | 已有实时语音系统，需补数字人形象 | 口播视频批量生产、课程录制、营销素材 | 直播实时换人换装换背景，或者增加风格滤镜 |\n| 费用 | 1.5 积分/秒 | 1 积分/秒 | 1 积分/秒 | 1 积分/秒 |\n\n### 接入约定\n\n四个产品共享同一套接入约定。\n\nBase URL国内环境 `https://api.vidu.cn`，海外环境 `https://api.vidu.com`。WebSocket 对应使用 `wss://`。`{host}` 为域名，不含协议\n\n认证所有 HTTP 与 WebSocket 接口统一使用 `Authorization: Token vda_xxx`。API Key 在开放平台工作台获取， **国内环境用国内 Key，海外环境用海外 Key**\n\nJSON 字段请求与响应字段统一 snake\\_case，例如 `call_mode`、`live_id`、`editing_type`、`reference_image`\n\nID 处理`live_id`、`task_id`、`stream_id` 等 int64 字段 **请一律按字符串处理**，避免 JavaScript number 精度丢失导致后续查询失败\n\n媒体传输WebSocket 只承载控制信令，不传输视频；音视频的推送与订阅全部通过 RTC 完成",
+  "links": [
+    "https://platform.vidu.cn/vidu-stream/doc/s2-avatar/realtime/quick-start",
+    "https://platform.vidu.cn/vidu-stream/doc/api-key",
+    "https://platform.vidu.cn/vidu-stream/doc/s2-avatar/component/introduction",
+    "https://platform.vidu.cn/vidu-stream/doc/s2-avatar/async/introduction",
+    "https://platform.vidu.cn/vidu-stream/doc/s2-editing/quick-start",
+    "https://platform.vidu.cn/vidu-stream/doc/image-upload",
+    "https://platform.vidu.cn/vidu-stream/doc/voice-list"
+  ],
+  "metadata": {
+    "language": "zh",
+    "description": "实时交互数字人接入规格。按会话、信令、RTC 三段阅读。",
+    "viewport": "width=device-width, initial-scale=1",
+    "title": "Vidu Live 文档",
+    "theme-color": "#fcfcfd",
+    "favicon": "https://platform.vidu.cn/logo.svg",
+    "scrapeId": "01a16ea4-c134-72f8-b61e-ee9c80b5a285",
+    "sourceURL": "https://platform.vidu.cn/vidu-stream/doc",
+    "url": "https://platform.vidu.cn/vidu-stream/doc",
+    "statusCode": 200,
+    "contentType": "text/html; charset=utf-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "bcf1998c-cf96-4b54-968a-70c3d5316434",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

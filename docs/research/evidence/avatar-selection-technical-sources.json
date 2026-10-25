@@ -1,0 +1,79 @@
+{
+  "captured_at": "2026-10-25 Asia/Shanghai",
+  "purpose": "补充原始需求中的形象驱动路线、可行实现步骤及选择条件；全部为文档/源码核验。",
+  "vidu": {
+    "source_url": "https://platform.vidu.cn/vidu-stream/doc/s2-avatar/realtime/parameters",
+    "scrape_id": "01a17198-7f77-76d8-bd16-bd9efa68a12a",
+    "claims": [
+      "实时会话REST创建；App WebSocket只承载控制；RTC传音视频。",
+      "call_mode的video对应音视频，audio对应纯语音；不能用audio假定存在人物视频。",
+      "text_dialog产生对话回复但不触发动作，text_tts直接合成音频且不进入对话；文本信号没有成功业务回执。",
+      "qwen_omni不支持text_tts；doubao支持text_tts；text_dialog的doubao国外版本有不支持标注，接入时需实测环境。",
+      "创建返回waiting不等于媒体可用；需要conn_init_ack和RTC入会/实际媒体观察。",
+      "call_hangup用于主动结束；GET live可查status/结束时间/billed_seconds/credits_cost。"
+    ],
+    "limits": [
+      "未创建会话；不证明纯订阅无设备权限的实测行为。",
+      "未验证alpha视频、当前角色保持、字幕完整性或精确播放结束事件。"
+    ]
+  },
+  "live2d": {
+    "context7_sources": [
+      "/websites/live2d_cubism-sdk-manual",
+      "/live2d/cubismwebsamples"
+    ],
+    "github": {
+      "url": "https://github.com/Live2D/CubismWebSamples/blob/develop/Samples/TypeScript/Demo/src/lappmodel.ts",
+      "ref": "develop",
+      "file_blob_sha": "366e939b9e0597750321d628716aa3fd78d09fb3"
+    },
+    "excerpts": [
+      {
+        "range": "120-149",
+        "text": "  private setupModel(setting: ICubismModelSetting): void {\n    this._updating = true;\n    this._initialized = false;\n\n    this._modelSetting = setting;\n\n    // CubismModel\n    if (this._modelSetting.getModelFileName() != '') {\n      const modelFileName = this._modelSetting.getModelFileName();\n\n      fetch(`${this._modelHomeDir}${modelFileName}`)\n        .then(response => {\n          if (response.ok) {\n            return response.arrayBuffer();\n          } else if (response.status >= 400) {\n            CubismLogError(\n              `Failed to load file ${this._modelHomeDir}${modelFileName}`\n            );\n            return new ArrayBuffer(0);\n          }\n        })\n        .then(arrayBuffer => {\n          this.loadModel(arrayBuffer, this._mocConsistency);\n          this._state = LoadStep.LoadExpression;\n\n          // callback\n          loadCubismExpression();\n        });\n\n      this._state = LoadStep.WaitLoadModel;"
+      },
+      {
+        "range": "399-417",
+        "text": "    // LipSyncIds\n    const setupLipSyncIds = (): void => {\n      const lipSyncIdCount = this._modelSetting.getLipSyncParameterCount();\n\n      this._lipSyncIds.length = lipSyncIdCount;\n      for (let i = 0; i < lipSyncIdCount; ++i) {\n        this._lipSyncIds[i] = this._modelSetting.getLipSyncParameterId(i);\n      }\n\n      // LipSync Updaterの追加\n      if (this._lipSyncIds.length > 0) {\n        const lipSyncUpdater = new CubismLipSyncUpdater(\n          this._lipSyncIds,\n          this._wavFileHandler\n        );\n        this._updateScheduler.addUpdatableList(lipSyncUpdater);\n      }\n\n      this._state = LoadStep.SetupLook;"
+      },
+      {
+        "range": "532-575",
+        "text": "  private setupTextures(): void {\n    // iPhoneでのアルファ品質向上のためTypescriptではpremultipliedAlphaを採用\n    const usePremultiply = true;\n\n    if (this._state == LoadStep.LoadTexture) {\n      // テクスチャ読み込み用\n      const textureCount: number = this._modelSetting.getTextureCount();\n\n      for (\n        let modelTextureNumber = 0;\n        modelTextureNumber < textureCount;\n        modelTextureNumber++\n      ) {\n        // テクスチャ名が空文字だった場合はロード・バインド処理をスキップ\n        if (this._modelSetting.getTextureFileName(modelTextureNumber) == '') {\n          console.log('getTextureFileName null');\n          continue;\n        }\n\n        // WebGLのテクスチャユニットにテクスチャをロードする\n        let texturePath =\n          this._modelSetting.getTextureFileName(modelTextureNumber);\n        texturePath = this._modelHomeDir + texturePath;\n\n        // ロード完了時に呼び出すコールバック関数\n        const onLoad = (textureInfo: TextureInfo): void => {\n          this.getRenderer().bindTexture(modelTextureNumber, textureInfo.id);\n\n          this._textureCount++;\n\n          if (this._textureCount >= textureCount) {\n            // ロード完了\n            this._state = LoadStep.CompleteSetup;\n          }\n        };\n\n        // 読み込み\n        this._subdelegate\n          .getTextureManager()\n          .createTextureFromPngFile(texturePath, usePremultiply, onLoad);\n        this.getRenderer().setIsPremultipliedAlpha(usePremultiply);\n      }\n\n      this._state = LoadStep.WaitLoadTexture;"
+      }
+    ],
+    "interpretation": "正式模型配置、模型二进制和纹理/参数驱动共同组成可运行模型；单张PNG不能代替。官方Web样例将音频处理器接入嘴型参数更新，不能据此宣称音素级同步或现有PNG已完成绑定。",
+    "limits": [
+      "Context7首轮包含Unity/Cocos结果，未作为Web实现依据；以Web样例源码交叉核对。",
+      "未安装SDK、导出模型、核算制作工时或验证浏览器渲染。"
+    ],
+    "updater": {
+      "url": "https://github.com/Live2D/CubismWebFramework/blob/develop/src/motion/cubismlipsyncupdater.ts",
+      "file_blob_sha": "9cbcdae11a72d5e2673e134c77d84658ddc4f9bc",
+      "observed": "onLateUpdate读取音频参数提供者的getParameter值并加到lipSyncIds对应参数，未证明音素级同步。"
+    }
+  },
+  "vrm": {
+    "sources": [
+      "https://vrm.dev/en/vrm/vrm_about/",
+      "https://vrm.dev/en/vrm/vrm_features/"
+    ],
+    "summary": "VRM为基于glTF的人形3D模型格式，标准化姿态、表情和视线；从现有二维立绘转换需要独立3D资产制作，当前不选。",
+    "limits": "仅核对官方概念文档，未创建或导入VRM。"
+  },
+  "musetalk": {
+    "source": "https://github.com/TMElyralab/MuseTalk/blob/main/README.md",
+    "file_blob_sha": "49e76c449c13ec29daef1bdf9b48457cb8909d33",
+    "summary": "作者定义为音频驱动唇形模型；README的V100性能是作者环境自报，不用于本项目承诺。它不等于包含对话、TTS、网页媒体与生命周期的一整套产品。",
+    "limits": "未下载权重、部署GPU或测试本项目二次元形象。"
+  },
+  "local_reference": {
+    "repo": "garycaogan/ai-live-avatar",
+    "commit": "5559ec5440c93814737155183dbe832df0b9f215",
+    "files": [
+      "live/vidu.py",
+      "live/session.py",
+      "static/stage.html"
+    ],
+    "use": "复用输入/控制/订阅/结束职责边界的思路，不直接运行或复制直播调度工作台。"
+  }
+}

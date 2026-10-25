@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-25",
+  "scope": "T-060首次提交前研究证据脱敏",
+  "policy": "网络捕获URL保留域名、路径及参数名，将查询值替换为REDACTED；其他证据中的签名、访问键及分享追踪参数脱敏。原件只保存在忽略的.local/research-originals目录。记录中的原始哈希不代表已提交文件仍为原始字节。",
+  "files": [
+    {
+      "path": "docs/research/evidence/avatar-douyin-rea-1.json",
+      "original_sha256": "5687da071418fb68c1628ad060ebe7f0c5c8be6f927965151d971ded88a809ed",
+      "published_sha256": "305d380663d790e8dc78f3377aabfd36ae6c23ae5dfd9a7552a0815d7f25df55",
+      "network_query_values": 18,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/avatar-douyin-rea-2.json",
+      "original_sha256": "5914ea33eeaf218cb207e2380c4b851ae9e2192462debb62416b34420c12b776",
+      "published_sha256": "106928680aaa94fe9c82fae925a79ef7bb33be274a3d68afa700d0662d51ec6f",
+      "network_query_values": 18,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-liveavatar-demo-direct.json",
+      "original_sha256": "e43c0bf0a7ee85a8b997604eb938d1a3bac12ac058fe7043d9ed489107327d4b",
+      "published_sha256": "aca890023e744eaf4ea3de28fca1e5307826d0c96cb29007b225576b4c16d530",
+      "network_query_values": 33,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-liveavatar-official.json",
+      "original_sha256": "cc07014ae04ca0c4de8d55b9ddf53cf2f0abe8eff5646f7ccf8505193bef9a8e",
+      "published_sha256": "2febd049e8c7c483de57dbbf35a99737d1afb342d60789dec409254c682d6e8c",
+      "network_query_values": 0,
+      "sensitive_query_values": 3
+    },
+    {
+      "path": "docs/research/evidence/platform-liveavatar-try.json",
+      "original_sha256": "7896f4058b60256ec113dcb7d85e44dd9135252da42dbc78653289f2b86317c2",
+      "published_sha256": "312735225cb15d52065171d9dc6e65f355ebebacc38ccba9f739983edc5b6c4b",
+      "network_query_values": 1207,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-rea-liveavatar.json",
+      "original_sha256": "ea5681c263701010066819c55584071afffdcb44c18d38518c03a30d53503d95",
+      "published_sha256": "43ec736822d9d75cad1298eaa27eee52be98993c21acf986e8f00fe0356fb41f",
+      "network_query_values": 1099,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-rea-tavus-demo.json",
+      "original_sha256": "938b48a699213e6eb0a24a92b416fe33c68adbd657658fffc14a8ab72d8be733",
+      "published_sha256": "ffe041baa182a8fdcdd4505b440d1e6100625f15cfb4e17da059ec6fc0c7bf2f",
+      "network_query_values": 3189,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-rea-tavus.json",
+      "original_sha256": "a3a9f5160fa02a974e9197c1fc7c775c0f4b0f9347e038b24fba3d0950676e9c",
+      "published_sha256": "95a71513888937b3f9d8f5ffefb4bd61b5d5b1b28aa9139cd6a89126ecf0bb2c",
+      "network_query_values": 270,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/platform-tavus-end.json",
+      "original_sha256": "159a5872b22e121d6d4458c8740c59e8a2eddaf0fb5fd1d8f973783c1d97324c",
+      "published_sha256": "728a983443aae12dabe2ba8f02790d4a7da186fae6fe197d1f350ff5420521ec",
+      "network_query_values": 0,
+      "sensitive_query_values": 3
+    },
+    {
+      "path": "docs/research/evidence/platform-tavus-official.json",
+      "original_sha256": "59ee1bea44ca5af4f3f352bc3936ed88b27059668d29efc88ba135c0c77ae989",
+      "published_sha256": "20ce8915d46c787e01916a0905be4156dd75f8003977fc0f050bfbb61af01321",
+      "network_query_values": 0,
+      "sensitive_query_values": 3
+    },
+    {
+      "path": "docs/research/evidence/platform-tavus-try.json",
+      "original_sha256": "b59e47eef17acb2ed4e7ceff2ae6bc2fb9103db8a0a6f332d4b7421aa1fd979e",
+      "published_sha256": "bf2f830d24390b5108dd0cb29d309d5bb0a0a665716085b9c2358ee08c78e462",
+      "network_query_values": 3338,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/rea-douyin-observation.json",
+      "original_sha256": "39012a369952ad33c205fa968a4c270b6e14ce31a679a40bd39c653c78a272ee",
+      "published_sha256": "61bf25c9c70cd95a8025de78129a98a8b3fa9812a8dd64dcc01c609ac9cef6cf",
+      "network_query_values": 3,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/rea-douyin-requirements-review.json",
+      "original_sha256": "04272864b26a24908c0fe5bd0de4db003d4f40e0fa1c0c8a66e2ac5d2ca5b287",
+      "published_sha256": "849c03a9cfcad255b38872cbfa5dfd63dab8b807ea8794474294dbbf8e3979fe",
+      "network_query_values": 4,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/rea-vidu-entry.json",
+      "original_sha256": "53040857aaeb876bd73c52cc44dcc6025fb74c451acb383dff3e66c8353175cb",
+      "published_sha256": "67a2cf6d1401e439149aec67c97a778bc0393f2501cb9a3d3231e7c8f8da649b",
+      "network_query_values": 9,
+      "sensitive_query_values": 0
+    },
+    {
+      "path": "docs/research/evidence/rea-vidu-quickstart.json",
+      "original_sha256": "b347886850e62e6dd6e6d242d8884548f1464e173be4d7e618c37c0d0d82b306",
+      "published_sha256": "a250129fc7fa7d3f50af80b4d3850b69b11c5f69457485c45b67fbe5a7eaf5f1",
+      "network_query_values": 87,
+      "sensitive_query_values": 2
+    }
+  ]
+}

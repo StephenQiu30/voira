@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-10-25 Asia/Shanghai",
+  "method": "Firecrawl搜索发现候选；web search读取平台索引文稿；Firecrawl maxAge=0直读；REA临时Chrome公开页面交叉核验身份与章节。",
+  "tutorials": [
+    {
+      "url": "https://www.douyin.com/video/7545752556867358011",
+      "author": "木子李叔",
+      "published_at": "2025-09-03 18:48",
+      "title": "自己的形象数字人，如何配上自己的声音，教你2种方法#即梦AI",
+      "takeaways": [
+        "公开章节显示先录音后对口型、克隆音色复用两条离线制作路线。",
+        "搜索索引智能文稿描述固定机位短片复制/倒放延长；此工艺不证明实时互动。"
+      ],
+      "rea_file": "avatar-douyin-rea-1.json",
+      "firecrawl": {
+        "metadata": {
+          "viewport": [
+            "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+            "width=device-width, initial-scale=1.0"
+          ],
+          "mobile-web-app-capable": "yes",
+          "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+          "scrapeId": "01a1718e-f364-714d-8ac0-4b314735a2f9",
+          "sourceURL": "https://www.douyin.com/video/7545752556867358011",
+          "url": "https://www.douyin.com/video/7545752556867358011",
+          "statusCode": 200,
+          "contentType": "text/html; charset=utf-8",
+          "timezone": "America/New_York",
+          "proxyUsed": "basic",
+          "indexId": "f56555fb-5201-4bb4-8a88-db0ac0993929",
+          "creditsUsed": 1,
+          "concurrencyLimited": false
+        },
+        "observed_status": "视频数据加载中；HTTP200不代表内容可用"
+      },
+      "rea": {
+        "evidence_id": "ev_48d56171e51f876276e98726b6df1c456380f50f645fe52f27314e56ec2af421",
+        "completion": {
+          "status": "incomplete",
+          "equality_eligible": false,
+          "missing_sections": [
+            "events"
+          ],
+          "truncated_sections": []
+        },
+        "retained": 400,
+        "dropped": 768,
+        "cleanup": "terminated-owned-process"
+      }
+    },
+    {
+      "url": "https://www.douyin.com/video/7552387185937239337",
+      "author": "美塑人生",
+      "published_at": "2025-09-21 11:59",
+      "title": "如何使用即梦AI换脸，制作和自己一模一样的数字人。",
+      "takeaways": [
+        "公开章节将背景、人物主体、相貌还原、声音分步骤处理。",
+        "作者使用自己的照片/声音制作离线数字分身；不是本项目素材或服务授权。"
+      ],
+      "rea_file": "avatar-douyin-rea-2.json",
+      "firecrawl": {
+        "metadata": {
+          "theme-color": "#161823",
+          "title": "在抖音记录美好生活20261025 - 抖音",
+          "google": "notranslate",
+          "lark:url:video_brand_name": "抖音",
+          "lark:url:video_cover_image_url": "",
+          "applicable-device": "pc",
+          "viewport": [
+            "width=device-width,initial-scale=0.5,user-scalable=no,viewport-fit=cover",
+            "width=device-width, initial-scale=1.0"
+          ],
+          "lark:url:video_iframe_url": "https://www.douyin.com/light/7552387185937239337",
+          "lark:url:enable": "false",
+          "lark:url:video_icon_url": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico",
+          "keywords": "抖音,抖音短视频,抖音官网",
+          "description": "于20261025发布在抖音，已经收获了0个喜欢，来抖音，记录美好生活！",
+          "lark:url:video_title": "在抖音记录美好生活20261025 - 抖音",
+          "mobile-agent": "format=[html5]; url=https://m.douyin.com/share/video/7552387185937239337",
+          "mobile-web-app-capable": "yes",
+          "baidu-site-verification": "code-2WPwEy0bEv",
+          "favicon": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/2025_0313_logo.png",
+          "scrapeId": "01a1718e-f4c2-70f9-b105-fa068ce15e1a",
+          "sourceURL": "https://www.douyin.com/video/7552387185937239337",
+          "url": "https://www.douyin.com/video/7552387185937239337",
+          "statusCode": 200,
+          "contentType": "text/html; charset=utf-8",
+          "timezone": "America/New_York",
+          "proxyUsed": "basic",
+          "indexId": "f038f4cc-8f73-4e0f-be40-4787438da97f",
+          "creditsUsed": 1,
+          "concurrencyLimited": false
+        },
+        "observed_status": "服务器出现问题及登录入口；通用当天标题非真实发布时间"
+      },
+      "rea": {
+        "evidence_id": "ev_b587d098f3e41e6072666054e8043ce97539a28b618174b174bd6d3dcd808acf",
+        "completion": {
+          "status": "incomplete",
+          "equality_eligible": false,
+          "missing_sections": [
+            "events"
+          ],
+          "truncated_sections": []
+        },
+        "retained": 400,
+        "dropped": 716,
+        "cleanup": "terminated-owned-process"
+      }
+    }
+  ],
+  "limits": [
+    "只用公开文本、章节要点与索引智能文稿，不宣称已观看/听完教程。",
+    "两次REA网络事件预算达到400，网络覆盖不完整；不推断抖音后台或实时生成机制。",
+    "未登录、点赞、评论、下载视频或调用教程中收费生成。",
+    "未采用教程促销、免费额度或质量排名作为当前供应商结论。"
+  ]
+}
