@@ -4,8 +4,8 @@
 
 ## 01 当前可用能力
 
-- 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。DeepSeek／Gemini／Claude／Grok／ChatGPT各五态正式图，Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
-- 后端已有三视图、设定卡、独立坐姿三套Skill、角色profiles和只返回prepared的任务准备接口；无真实生图适配器。启动／检查以[前端README](frontend/README.md)与[后端README](backend/README.md)为准。
+- 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。DeepSeek默认采用成女五态站姿，五种状态均可选；Gemini／Claude／Grok／ChatGPT各五态正式图，Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
+- 后端已有三视图、设定卡、独立坐姿三套输出Skill，以及Q版／少女／成女／礼服四套制作侧风格Skill；角色profiles及只返回prepared的接口可用，无真实生图适配器。启动／检查以[前端README](frontend/README.md)与[后端README](backend/README.md)为准。
 - 七角色一一对应AI及Vidu协同已有设计；会话、真实AI问答、Vidu音视频、完整聊天记录未完成。直播输出／评论台已有Figma设计，运行能力后置。
 
 - 预设接入流程已同步Figma桌面／手机明暗主题，含独立连接、必要凭据输入、检测／切换及Vidu分区；见[设计32](docs/design/32-个人中心与AI接入管理界面.md)。仅设计，未实现真实保存或调用。
@@ -36,6 +36,26 @@ T-116已完成ChatGPT七图采用与25张五态目录迁移；T-121修正四张�
 
 ## 04 文档维护与恢复
 
+成女五态T-141：按当前短款花瓣裙定稿使用内置imagegen制作自然陪伴、认真倾听、轻松闲聊、俏皮回应、托腮思考五张1024×1536 RGBA站姿，均保留鲸鱼伙伴。依此前“其余四态生成后启用”授权，正式图已采用至根public与frontend/public的adult/deepseek目录，文件使用五个pose_id；母图与三视图保留身份参考。前端五态均可选，自然图兼作头像；跨角色切回成女保留受支持状态。主体alpha≥128高度97.72%—98.57%、原始alpha 0—254，PNG／哈希及5张HTTP 200核对通过；8项前端测试、生产构建含类型检查通过。桌面已检查五态、深色边缘、浅色思考图和Claude↔DeepSeek思考状态保留，浏览器无warn/error；未重验手机或真机。细饰与鲸鱼位置存在轻微生成差异，发丝边缘alpha最大5，保留原像素。参考、提示词、清单与深浅截图在`output/character-design/temp/deepseek-adult-states/`；未提交推送。
+
+礼服资源采用T-140：经用户确认，身份统一后的立绘与设定卡已逐字节采用至`public/characters/gown/deepseek/`和`frontend/public/characters/gown/deepseek/`，文件固定为master.png／card.png。原礼服7张素材已校验备份后移至`output/character-design/temp/deepseek-gown-adoption/previous/`，该目录已验证被Git忽略；新礼服三视图及五态待制作。Skill、资源目录及设计说明指向新立绘与卡片，前端页面仍默认成女。4份正式副本与源图哈希一致、PNG解码及alpha核对完成，37条本地链接、8项前端测试和差异空白检查通过；未重跑构建或浏览器，未提交推送。
+
+礼服身份统一T-139：礼服沿用当前成女的脸型、浅雾蓝长发、宽松波浪、双侧肩前细编发、大弧线环形呆毛与轻薄白褶头饰，保留藏蓝米白礼服。profile、礼服Skill和设计20同步；旧礼服参考仅控制衣装，当前成女三视图控制身份。内置imagegen生成透明立绘1024×1536 RGBA（alpha 0—254）及白底设定卡1536×1024 RGB，主图、四表情和两动作已目视核对；细饰仍有生成差异，卡面上缘个别呆毛留白偏紧。结果、提示词、参考副本、profile与哈希在`output/character-design/temp/deepseek-gown-identity/`，取代T-138礼服候选作为当前评审入口，旧图保留临时目录。39项后端角色素材测试及差异空白检查通过；生成阶段未改正式素材，后续采用见T-140；未提交推送。
+
+少女设定卡T-137：按少女母图与当前profile，使用内置imagegen生成1536×1024 RGB白底设定卡候选，含完整站姿、四表情、两动作、鲸鱼伙伴、领结／颈饰、合手袖口与双鞋特写。已目视核对少女身份、白色纽扣腰身、短裙、手部及双鞋，未见明显多肢或双脚融合；细饰仍有生成差异。PNG解码与哈希检查通过，源图、提示词、profile及清单位于`output/character-design/temp/deepseek-maiden-card/`。未改public或前端，卡面细节不等于独立透明文件；未运行应用测试，未提交推送。
+
+前端首次采用T-136：曾按用户选择仅启用成女自然状态，其余四态等待生成；该限制已由T-141五态交付替代。首次桌面／手机验证与旧图备份保留在`output/character-design/temp/deepseek-frontend-adoption/`，手机证据不代表当前五态版本已验收。
+
 知识库只维护现行需求、设计、契约、验收及必要研究结论；不恢复逐轮交付计划、素材生成日志或重复提示词。共享功能设计合并到design03，人物资产归design20／运行Skill，完整故事归design24；根任务与交接保持精简。
 
 本次整理前的174份文件原件保存在本机被忽略的`.local/document-backups/2026-10-26-t120/`，包含SHA-256清单；其中研究原始证据和参考源码保留原字节，已移出docs。该副本仅用于恢复，不是第二份知识库，也不进入运行服务或提交范围。
+
+素材审查T-124：38张公开PNG元数据及部分目视审查已完成，发现跨角色椅子差异；完整审查与座椅修正仍暂缓。按用户新要求补充不带椅子的DeepSeek礼服站姿优化图，保留藏蓝米白长礼服、蓝宝石和金色刺绣。候选、参考副本、提示词及哈希位于`output/character-design/temp/deepseek-gown-standing/`；1024×1536 RGBA、alpha范围0—254，已目视检查全身、双鞋和无椅构图；尚待采用，未替换public最终图或前端。
+
+DeepSeek形象整理T-128：最终10张图片按`public/characters/{chibi,maiden,adult,gown}/deepseek/`保存，全部英文命名，不设版本或历史层级。旧目录、旧清单和profile快照已移入被忽略的`output/character-design/temp/deepseek-before-style-layout/`，此前候选仍在output。少女与成女平行保留；前端现用资源及页面不变，椅子修正和新三种形象的卡片／五态仍未完成，三视图候选见T-134。已核对10张图迁移前后哈希、英文目录、临时目录忽略规则和引用链接，38张前端PNG未变；git diff --check通过。本次仅整理文件与说明，未重跑应用测试；未提交／推送。
+
+四风格三视图T-134：使用内置imagegen真实生成Q版／少女／成女／礼服四张1536×1024 RGB白底候选，每张含正面、侧面、背面全身和右侧大幅特写；礼服参考最新站姿候选，另修订构图与背面双鞋。Q版首次连接失败，重试成功。已查看四图并核对尺寸与哈希；部分侧面仍轻微偏三分之四，发丝／裙缘白隙可细化，不能宣称严格正交定稿验收通过。背面结构为保守新推导。图片、参考副本、当前profile、提示词及清单位于`output/character-design/temp/deepseek-turnarounds/{chibi,maiden,adult,gown}/`；未覆盖public或前端，未运行应用测试，未提交推送。
+
+成女校正与其余设定卡T-138：用户最新指定短款花瓣裙三视图，已替代T-135中长裙方向；对应立绘与三视图同步至根public及frontend/public的adult/deepseek目录，profile、风格Skill与前端缓存引用一致。前端8项测试、相关格式检查及生产构建含类型检查通过，桌面浏览器已复核短裙图、透明底与其余四态禁用；本轮未重复手机或真机验证。Q版／成女／礼服三张1536×1024白底设定卡已生成，成女鲸鱼已修正为原定圆滚蓝鲸；礼服另有1024×1536透明站姿优化稿，调整腰线、裙片与刺绣分布。已目视检查整图及手脚，PNG解码、尺寸和哈希通过；细饰仍有生成差异，新卡与礼服优化稿均保持候选，未覆盖正式礼服素材。参考、提示词、profile、备份、清单及前端截图位于`output/character-design/temp/deepseek-card-set/`；卡面特写不等于独立透明素材，未提交推送。
+
+当前人物定义T-131：四套`character-style-*` Skill及共用制作流程位于`backend/app/skills/`，Q版／少女／成女分别使用deepseek-chibi、deepseek-maiden、deepseek-adult配置，礼服使用当前deepseek配置。提示词直接描述现行人物外观、服装、比例、配色和气质；默认查询返回最新礼服站姿定义。四套Skill通过skill-creator校验，四份配置均经HTTP TestClient验证完整进入prepared的request与prompt，默认查询一致，39项后端测试与git diff --check通过。HTTP仍只注册三种输出任务，四套风格Skill供项目Agent读取；本次未真实生图、未替换图片、未提交推送。

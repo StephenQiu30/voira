@@ -87,7 +87,13 @@ const fivePoseSources = (id: CharacterId, revision?: string) => {
   };
 };
 const portraits: Record<CharacterId, Partial<Record<PoseId, string>>> = {
-  deepseek: fivePoseSources("deepseek"),
+  deepseek: {
+    natural: "/characters/adult/deepseek/natural.png?v=63cec7bd",
+    listening: "/characters/adult/deepseek/listening.png?v=84a399be",
+    casual: "/characters/adult/deepseek/casual.png?v=763897ee",
+    playful: "/characters/adult/deepseek/playful.png?v=8444d8ea",
+    thinking: "/characters/adult/deepseek/thinking.png?v=24b6f458",
+  },
   gemini: fivePoseSources("gemini"),
   claude: fivePoseSources("claude"),
   grok: fivePoseSources("grok"),

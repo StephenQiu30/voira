@@ -16,6 +16,8 @@ metadata:
 
 白色无场景底，transparent_background=false。独立导出的道具、表情、动作和人物素材必须另用真实PNG alpha，不带白色矩形或棋盘格背景；本卡面不等于那些独立文件。除用户提供的display_name及短persona原文外，不新增传记、参数、数据标签或模型能力宣称，文字需清晰准确。
 
-保持character.invariants，遵守exclusions，不改角色身份。检查各特写与主图同款，指节、握持、座椅支撑和布料遮挡合理。候选需要人工视觉评审，不自动替换正式图；缺少图像工具时仅交付已准备任务，不声称生成成功。
+保持character.invariants，遵守exclusions，不改角色身份。检查各特写与主图同款，指节、握持、动作支撑和布料遮挡合理。候选需要人工视觉评审，不自动替换正式图；缺少图像工具时仅交付已准备任务，不声称生成成功。
 
 本Skill采用Casting公开示例的主肖像、表情与结构分区思路，并按Voira用户要求增加道具及动作。没有取得或运行Casting私有正文，不将公开案例推断为平台内部算法。
+
+DeepSeek制作先通过[当前形象定义](../references/deepseek/README.md)选择Q版、少女、成女或礼服的风格Skill与profile。人物描述直接使用该profile的当前完整定义，动作与输出规则再叠加；Agent手动读取风格Skill，prepare只组装请求中的character。不同特点不互相替代。

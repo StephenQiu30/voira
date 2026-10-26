@@ -4,7 +4,7 @@
 
 T-084已初始化Next.js App Router应用，完成BasicLayout（Header／Content／Footer）、单人物舞台、人物档案、固定头像栏、姿态Tabs及明暗主题。桌面／平板／手机采用响应式结构，不把Figma画板坐标直接固定到视口。
 
-T-111已同步最新Figma：七位AI入口、五态Tabs（自然陪伴／认真倾听／轻松闲聊／俏皮回应／托腮思考）、紧凑液态玻璃卡片及固定人物中心。T-116采用ChatGPT新版后，DeepSeek／Gemini／Claude／Grok／ChatGPT各五态可选；Kimi／Qwen显示形象准备中。切换角色优先保留状态，缺素材时原子回退自然陪伴；禁用状态不借图。
+T-111已同步最新Figma：七位AI入口、五态Tabs（自然陪伴／认真倾听／轻松闲聊／俏皮回应／托腮思考）、紧凑液态玻璃卡片及固定人物中心。DeepSeek默认采用成女五态站姿，五种状态均可选；Gemini／Claude／Grok／ChatGPT各五态可选；Kimi／Qwen显示形象准备中。切换角色优先保留状态，缺素材时原子回退自然陪伴；禁用状态不借图。
 
 当前只有形象选择页面。角色／姿态切换是本地静态展示，不表示接入七个模型；交流按钮禁用并显示服务未连接。聊天、完整记录、直播、队列、真实音视频与API均未实现。后续按[计划09](../docs/plan/09-网页PoC逐功能实现与验收计划.md)分批推进。
 
@@ -36,7 +36,7 @@ npm run start -- --hostname 127.0.0.1 --port 3000
 - src/features/character-stage：角色静态数据与展示交互；页面装配保持在src/app/page.tsx。
 - src/components/ui：shadcn Radix版组件源码；共享变体与焦点态集中维护。
 - src/app/globals.css：黑白灰语义token、液态玻璃材质与响应式规则。字体本地加载Geist，中文使用系统回退。
-- public/characters：通过characters.ts的显式可用性映射读取截至T-116已采用素材；五位角色统一使用01-natural／02-listening／03-casual／04-playful／05-thinking，每目录五张同名角色PNG；cards／turnarounds单独保留。旧stage及旧姿态目录已移除。未采用的生成候选不进入页面。
+- public/characters：通过characters.ts的显式可用性映射读取已采用素材；DeepSeek使用adult/deepseek下的natural／listening／casual／playful／thinking五态，master.png与turnaround.png保留身份参考，其余四位五态角色使用01-natural／02-listening／03-casual／04-playful／05-thinking；cards／turnarounds保留对应现用角色资源。gown/deepseek/master.png及card.png存放已采用礼服资源，尚未接入页面选择。旧stage及旧姿态目录已移除。未采用的生成候选不进入页面。
 - public/scenes、public/brand：复用既有背景和SVG标志，无临时Figma素材URL。
 
 主题偏好存储键为voira-theme，初次访问默认暗色。无自动轮播；头像切换不改尺寸，方向键仅移动Tab焦点，Enter／Space确认选择；支持减少动效偏好。T-113在实际DOM解码后同中心叠化：人物420ms／姿态280ms，旧图保持到新图就绪，不再移动或缩放人物；失败提示持续留在舞台正文并支持重新加载。小高度手机优先保留人物、档案名称、五态、角色和开始入口，收起营销标题及副标题；320px窄屏头像栏内部横向滚动，页面不横向溢出。

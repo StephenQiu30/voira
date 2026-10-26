@@ -218,7 +218,9 @@ export function CharacterStage() {
       <p id="pose-availability" className="sr-only" aria-live="polite">
         {!portraitSource(characterId, "natural")
           ? "形象准备中，五种状态暂不可用。"
-          : "五种状态均可选择。"}
+          : poses.every((item) => portraitSource(characterId, item.id))
+            ? "五种状态均可选择。"
+            : "当前可选择自然陪伴，其余状态素材准备中。"}
       </p>
       <div className="carousel-arrows">
         <Button

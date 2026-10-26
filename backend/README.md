@@ -1,8 +1,8 @@
 # backend — 角色美术Agent服务
 
-采用Python、FastAPI和Pydantic。T-090已将三视图、角色设定卡与五种坐姿制作方法整理为三套本地Skill，提供可运行的查询与任务准备服务。数字人会话、真实生图适配器及前端调用尚未接入。
+采用Python、FastAPI和Pydantic。T-090已将三视图、角色设定卡与五种坐姿制作方法整理为三套输出任务Skill，提供可运行的查询与任务准备服务；另有四套人物风格Skill供项目Agent读取。数字人会话、真实生图适配器及前端调用尚未接入。
 
-## 01 三套Skill
+## 01 输出任务与人物风格Skill
 
 - [character-turnaround](app/skills/character-turnaround/SKILL.md)：左侧正面／严格侧面／背面站姿，右侧正脸特写；适配用户选定的ce1406d8公开Skill。
 - [character-card](app/skills/character-card/SKILL.md)：主立绘、已有道具配饰、表情与动作特写；依据Casting公开示例与用户要求编写，非其私有正文。
@@ -15,6 +15,18 @@
 T-101统一三视图右侧大幅半身特写，占比匹配DeepSeek基准；使用自然轮廓与柔边改善方块感，不缩成小头像。具体比例与验收以character-turnaround为准。
 
 Skill随backend加载，不写入个人全局技能目录；不依赖本机output或临时附件路径。三视图和卡面使用白底；独立坐姿任务固定2:3真实透明PNG，仍不提供拆图或实际生图接口。纯准备结果不代表已查看参考图片、已出图或已验收。
+
+DeepSeek按四种特点维护当前完整人物定义：
+
+| 特点 | 制作Skill | profile |
+|---|---|---|
+| Q版 | [character-style-chibi](app/skills/character-style-chibi/SKILL.md) | [deepseek-chibi](app/skills/profiles/deepseek-chibi.json) |
+| 少女 | [character-style-maiden](app/skills/character-style-maiden/SKILL.md) | [deepseek-maiden](app/skills/profiles/deepseek-maiden.json) |
+| 成女 | [character-style-adult](app/skills/character-style-adult/SKILL.md) | [deepseek-adult](app/skills/profiles/deepseek-adult.json) |
+| 礼服 | [character-style-gown](app/skills/character-style-gown/SKILL.md) | [deepseek](app/skills/profiles/deepseek.json) |
+
+风格Skill读取对应profile，直接将当前脸型、比例、发型、衣装、配色和气质用于提示词；共用[制作流程](app/skills/references/character-style-workflow.md)。默认DeepSeek查询端点返回最新礼服站姿定义，其余特点通过现有prepare的character字段提交完整配置。风格Skill供项目Agent读取，HTTP仍只注册三套输出任务，不接收风格Skill名或新增style_id字段；独立立绘由聊天图像工具执行。当前前端已采用成女五态站姿；身份统一后的礼服立绘与设定卡已采用，保留为独立资源。最终资源按[public人物目录](../public/characters/README.md)保存，旧图和候选临时放output。
+
 
 ## 02 本机启动与接口
 

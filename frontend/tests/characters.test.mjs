@@ -27,8 +27,8 @@ test("every enabled portrait resolves to an adopted public asset", () => {
   }
 });
 
-test("the five completed characters expose all five states", () => {
-  for (const id of ["deepseek", "gemini", "claude", "grok", "chatgpt"]) {
+test("the four completed characters expose all five states", () => {
+  for (const id of ["gemini", "claude", "grok", "chatgpt"]) {
     const sources = poses.map((pose) => portraitSource(id, pose.id));
     assert.ok(sources.every(Boolean));
     assert.equal(new Set(sources).size, 5);
@@ -41,6 +41,23 @@ test("the five completed characters expose all five states", () => {
         "04-playful",
         "05-thinking",
       ].map((directory) => `/characters/${directory}/${id}.png`),
+    );
+  }
+});
+
+test("DeepSeek exposes five adult poses and preserves supported selection", () => {
+  const sources = poses.map((pose) => portraitSource("deepseek", pose.id));
+  assert.equal(new Set(sources).size, 5);
+  for (const pose of poses) {
+    const src = portraitSource("deepseek", pose.id);
+    assert.ok(src);
+    assert.equal(
+      new URL(src, "http://localhost").pathname,
+      `/characters/adult/deepseek/${pose.id}.png`,
+    );
+    assert.deepEqual(
+      selectCharacter({ characterId: "claude", pose: pose.id }, "deepseek"),
+      { characterId: "deepseek", pose: pose.id },
     );
   }
 });

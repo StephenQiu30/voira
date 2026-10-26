@@ -21,10 +21,11 @@
 | frontend/src/features | 按业务组织的状态、视图和交互 |
 | frontend/src/api | Umi OpenAPI生成的类型与HTTP请求；接入时生成，不手写DTO替代 |
 | frontend/src/lib、hooks、stores、types | 基础请求／配置、共享Hook、必要Zustand状态、非生成类型；按实际需要添加 |
+| public/characters | 按特点／人物保存最终确定的图片，英文命名、不设版本层级；旧图暂存output，非Next.js自动发布目录 |
 | frontend/public | 正式人物、场景和品牌资源 |
 | backend/app/api、schemas、services | 功能路由、Pydantic边界、用例编排 |
 | backend/app/core、integrations | 配置／基础设施、外部AI及媒体适配；按实现需要增加 |
-| backend/app/skills | 三套运行规则、poses.json和独立角色profiles；不存生成中间图 |
+| backend/app/skills | 三套输出任务规则、四套人物风格Skill、poses.json和当前角色profiles；不存生成中间图 |
 | frontend/tests、backend/tests | 对应端检查；不默认调用付费服务 |
 | docs | 可持久维护的需求、设计、验收、计划和规范；导航定义阅读入口 |
 | output、.local | Git忽略的过程产物／恢复副本，不属于知识库或运行服务 |
@@ -64,6 +65,6 @@ Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers�
 
 ## 06 设计交付资产
 
-最终资源置于frontend/public/characters、scenes、brand。角色五态按01-natural、02-listening、03-casual、04-playful、05-thinking分目录；三视图放turnarounds，卡面放cards，文件为稳定角色ID.png。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
+最终资源置于frontend/public/characters、scenes、brand。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。其余四位角色五态按01-natural、02-listening、03-casual、04-playful、05-thinking分目录，三视图放turnarounds、卡面放cards，文件为稳定角色ID.png。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
 
 候选、旧稿、参考图、生成清单放output，不在public或docs另建history／pending／review-set。造型和正式资源入口归[视觉设定20](docs/design/20-人物三视图视觉设定.md)；运行Skill与角色配置是制作规则唯一来源，prepared不代表真实生图，静态资源不代表AI或数字人会话已接通。
