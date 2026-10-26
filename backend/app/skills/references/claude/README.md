@@ -9,6 +9,8 @@
 | 成女 | [adult](../../character-style-adult/SKILL.md) | [claude-adult](../../profiles/claude-adult.json) | [立绘](../../../../../public/characters/adult/claude/master.png) |
 | 礼服 | [gown](../../character-style-gown/SKILL.md) | [claude](../../profiles/claude.json) | [立绘](../../../../../public/characters/gown/claude/master.png) |
 
-四张立绘已正式收录，新三视图、设定卡和五态待制作。前端现用坐姿五态仍保留，不作为新形象的身份基准。
+四张立绘已采用DeepSeek对应画风重制结果：Q版短泡袖，少女轻纱长袖与合手短裙，成女扶镜及米白深棕花瓣短裙，礼服深棕宽幅外裙与米白蕾丝内层。四种设定卡已采用，新三视图和五态待制作。前端现用坐姿五态仍保留，不作为新形象的身份基准。
 
 按[共用制作流程](../character-style-workflow.md)读取完整正向定义，附加动作及输出形式。现有prepare接受所选profile作为character，不新增HTTP字段或Claude查询端点；prepared只表示任务准备完成。
+
+当前四风格设定卡：[Q版](../../../../../public/characters/chibi/claude/card.png)、[少女](../../../../../public/characters/maiden/claude/card.png)、[成女](../../../../../public/characters/adult/claude/card.png)、[礼服](../../../../../public/characters/gown/claude/card.png)。卡面特写尚未拆分为独立透明素材。

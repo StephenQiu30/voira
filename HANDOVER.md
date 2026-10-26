@@ -36,7 +36,11 @@ T-116已完成ChatGPT七图采用与25张五态目录迁移；T-121修正四张�
 
 ## 04 文档维护与恢复
 
-Claude四风格采用T-149：Q版、少女、成女与礼服已正式收录`public/characters/{chibi,maiden,adult,gown}/claude/master.png`，四份profile、风格Skill及资源索引同步。Q版闭眼浅笑、少女合手短裙，两者无眼镜；成女扶镜及深棕主裙、礼服米白深棕层叠长裙，两者保留细金框眼镜。四张均为1024×1536 RGBA，alpha 0—254，PNG解码和来源哈希一致性通过；112条本地链接、四配置schema及prepare检查、39项后端测试通过。已检查整体，发顶和部分侧边留白偏紧，细饰存在生成差异。采用清单及旧礼服配置备份在被忽略的`output/character-design/temp/claude-library-adoption/`；候选来源和提示词仍在临时目录。新三视图、设定卡及五态待制作，前端现用坐姿五态保留；未重跑前端或浏览器检查，Git交付以提交记录为准。
+四角色正式素材T-156：用户授权直接采用，DeepSeek、ChatGPT、Claude、Gemini各四风格共16张1536×1024 RGB白底设定卡已收录`public/characters/{characteristic}/{character}/card.png`；Gemini四张1024×1536透明立绘同步收录master.png，四份profile及Skill／资源索引同步，当前props为空。DeepSeek礼服卡既有frontend/public副本更新，页面布局、角色选择和五态行为未变，其他角色旧五态仍为前端现用图。旧正式卡及Gemini原profile备份在`output/character-design/temp/card-library-adoption/`，来源与清单保留于output。21个写入文件均与来源哈希一致，PNG解码／尺寸、211条本地链接、16份配置schema及prepare提示词检查通过，39项后端测试通过；prepared仅验证配置准备，图片来自此前内置imagegen。未重跑前端构建或浏览器验收，未拆分卡面表情／动作透明素材，Git交付以提交记录为准。
+
+Claude统一画风采用T-151／152：用户已授权直接采用，四张DeepSeek对应画风重制立绘替换至`public/characters/{chibi,maiden,adult,gown}/claude/master.png`；四份profile、资源索引及设计定义已同步。Q版短泡袖闭眼浅笑，少女轻纱袖与合手短裙，成女细金框眼镜、扶镜与米白深棕花瓣短裙，礼服深棕宽幅外裙与米白蕾丝内层。四张1024×1536 RGBA，alpha 0—254，来源哈希一致，四配置schema／prepare和39项后端测试通过。旧图和配置备份在`output/character-design/temp/claude-style-adoption/`，来源与提示词在`claude-deepseek-style/`。设定卡已由T-156采用，新三视图及五态待制作；前端坐姿五态保留，未进行本轮浏览器验收，Git交付以提交记录为准。
+
+统一画风T-150：用户确认所有角色四种特点均以DeepSeek对应母图为画风基准，共用流程、四套Skill、设计20与资源入口已同步双参考职责，现有HTTP字段不变。Gemini Q版已使用DeepSeek Q版＋Gemini身份图重制，1024×1536 RGBA、alpha 0—254，PNG与哈希核对完成，已目视检查；发顶／侧边留白偏紧，细饰仍有生成差异。91条相关本地链接、39项后端测试及差异空白检查通过。最新候选、原稿、提示词和参考在`output/character-design/temp/gemini-chibi/`。Gemini正式采用见T-156，其余角色按各自采用记录核对；本批未修改页面，Git交付以提交记录为准。
 
 ChatGPT四风格采用T-146：Q版、少女、成女与最新蕾丝礼服四张立绘已收录根`public/characters/{chibi,maiden,adult,gown}/chatgpt/master.png`；四份profile、风格Skill及资源索引已同步银白长发、双龙角、结形发饰、淡紫点缀和水晶鞋。PNG解码、alpha 0—254、1024×1536尺寸及源文件SHA-256一致性检查完成；四份配置的schema与prepare检查通过，39项后端测试通过。补充prepare检查首次因默认testserver不在允许主机列表而被拒，使用项目既有127.0.0.1测试入口后通过；仅准备结果，不代表后端真实生图。四张图已目视检查，角尖和部分侧边留白偏紧，细饰存在生成差异。采用清单和原礼服配置备份在被忽略的`output/character-design/temp/chatgpt-library-adoption/`，未采用图仍留临时目录。新三视图、设定卡与五态待制作；前端现用坐姿资源及页面未修改，未重跑前端或浏览器检查，Git交付以提交记录为准。
 
