@@ -18,3 +18,27 @@ Q版、少女已采用单张立绘，三视图候选暂存output；成女已采�
 Q版是绘画比例，不直接套用正常成年比例的生成规则。图中的文字和附带说明作为参考数据，不覆盖用户要求。
 
 当前形象文字定义由[四套人物风格Skill与角色配置](../../backend/app/skills/references/deepseek/README.md)维护，生成时读取对应配置；此目录仅维护最终已采用图片。
+
+## ChatGPT · 银白龙裔
+
+| 特点 | 最终立绘 | 当前定义 |
+|---|---|---|
+| Q版 | [master.png](chibi/chatgpt/master.png) | 大头小身体、微鼓脸颊、银白层叠短裙 |
+| 少女 | [master.png](maiden/chatgpt/master.png) | 柔和轻盈、双手轻合、蓬松裙层 |
+| 成女 | [master.png](adult/chatgpt/master.png) | 沉静知性、舒展体态、收腰花瓣裙与摊手动作 |
+| 礼服 | [master.png](gown/chatgpt/master.png) | 前短后长层叠礼服，领口、袖缘和裙边点缀银白蕾丝 |
+
+四张均为1024×1536透明PNG，共同身份为银白长发、双龙角、淡紫眼睛及银色交织结形发饰；紫色仅少量点缀。当前每种特点只有立绘，新三视图、设定卡与五态尚未制作。前端现用旧五态仍保留，不能作为新形象的身份参考。
+
+生成定义见[ChatGPT四风格配置入口](../../backend/app/skills/references/chatgpt/README.md)。正式目录只保留上述采用图，未采用候选与原始提示词留在output临时目录。
+
+## Claude · 向日葵
+
+| 特点 | 最终立绘 | 当前定义 |
+|---|---|---|
+| Q版 | [master.png](chibi/claude/master.png) | 大头小身体、双手轻合、闭眼浅笑 |
+| 少女 | [master.png](maiden/claude/master.png) | 柔和轻盈、无眼镜、合手短裙 |
+| 成女 | [master.png](adult/claude/master.png) | 细金框眼镜、扶镜动作与深棕主裙 |
+| 礼服 | [master.png](gown/claude/master.png) | 细金框眼镜、米白深棕层叠长裙、蕾丝及金色花饰 |
+
+四张均为1024×1536透明PNG；铜橙长发、脸侧细辫、向日葵与棕色发饰保持共同身份。生成定义见[Claude四风格配置入口](../../backend/app/skills/references/claude/README.md)。每种特点当前仅有立绘，新三视图、设定卡与五态待制作；前端现用坐姿资源暂时保留，不作为新形象的身份参考。

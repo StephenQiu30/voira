@@ -9,7 +9,7 @@
 - [character-seated-poses](app/skills/character-seated-poses/SKILL.md)：单次选择自然陪伴、认真倾听、轻松闲聊、俏皮回应或托腮思考，准备独立透明坐姿。
 - [DeepSeek配置](app/skills/profiles/deepseek.json)：角色身份、衣饰、道具和表演独立于Skill。其他角色可提交自定义配置，支持anime、photorealistic、illustration。
 - [Grok配置](app/skills/profiles/grok.json)：金发双马尾、黑红金礼服与机智活泼表演；T-097制作输入，可作为prepare的character提交，未新增Grok查询端点。
-- [Claude配置](app/skills/profiles/claude.json)：铜橙长发、细框眼镜、向日葵与象牙白深棕礼服；T-100制作输入，复用通用prepare。
+- [Claude四风格配置](app/skills/references/claude/README.md)：Q版、少女、成女与礼服立绘已采用；铜橙长发、向日葵与米白深棕衣装，按特点读取眼镜、比例及衣装定义，复用通用prepare。
 - [Gemini配置](app/skills/profiles/gemini.json)：蓝紫长发、猫耳、琥珀双瞳和金色星饰；T-105三视图与设定卡输入，复用通用prepare。
 
 T-101统一三视图右侧大幅半身特写，占比匹配DeepSeek基准；使用自然轮廓与柔边改善方块感，不缩成小头像。具体比例与验收以character-turnaround为准。
@@ -88,4 +88,4 @@ uv run --locked pytest -q
 
 动作唯一来源为Skill目录的poses.json。Skill版本同时覆盖SKILL.md与动作资源，修改姿态正文会改变版本；服务只把选中动作组装到prompt，不要求一次生成五张。新Skill为用户方案的本项目整理，因此source_url为null，provenance说明来源，不捏造外部Skill链接。当前接口没有前端消费者，OpenAPI客户端兼容仍未验收。
 
-ChatGPT制作输入见[独立配置](app/skills/profiles/chatgpt.json)与[视觉设定20](../docs/design/20-人物三视图视觉设定.md)：银白淡紫花饰银龙王、匹配双龙角及水晶鞋，复用现有三套prepare；T-114卡片／三视图与T-115五态已按T-116正式采用，后端仍仅准备任务。
+ChatGPT四种特点的制作输入见[当前配置与母图入口](app/skills/references/chatgpt/README.md)：Q版、少女、成女及蕾丝礼服立绘已收录根public，共同采用银白长发、双龙角、结形发饰与水晶鞋。新三视图、设定卡与五态待制作；前端仍展示旧坐姿五态。复用现有prepare的character字段，后端仍仅准备任务。

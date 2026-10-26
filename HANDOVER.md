@@ -36,6 +36,10 @@ T-116已完成ChatGPT七图采用与25张五态目录迁移；T-121修正四张�
 
 ## 04 文档维护与恢复
 
+Claude四风格采用T-149：Q版、少女、成女与礼服已正式收录`public/characters/{chibi,maiden,adult,gown}/claude/master.png`，四份profile、风格Skill及资源索引同步。Q版闭眼浅笑、少女合手短裙，两者无眼镜；成女扶镜及深棕主裙、礼服米白深棕层叠长裙，两者保留细金框眼镜。四张均为1024×1536 RGBA，alpha 0—254，PNG解码和来源哈希一致性通过；112条本地链接、四配置schema及prepare检查、39项后端测试通过。已检查整体，发顶和部分侧边留白偏紧，细饰存在生成差异。采用清单及旧礼服配置备份在被忽略的`output/character-design/temp/claude-library-adoption/`；候选来源和提示词仍在临时目录。新三视图、设定卡及五态待制作，前端现用坐姿五态保留；未重跑前端或浏览器检查，Git交付以提交记录为准。
+
+ChatGPT四风格采用T-146：Q版、少女、成女与最新蕾丝礼服四张立绘已收录根`public/characters/{chibi,maiden,adult,gown}/chatgpt/master.png`；四份profile、风格Skill及资源索引已同步银白长发、双龙角、结形发饰、淡紫点缀和水晶鞋。PNG解码、alpha 0—254、1024×1536尺寸及源文件SHA-256一致性检查完成；四份配置的schema与prepare检查通过，39项后端测试通过。补充prepare检查首次因默认testserver不在允许主机列表而被拒，使用项目既有127.0.0.1测试入口后通过；仅准备结果，不代表后端真实生图。四张图已目视检查，角尖和部分侧边留白偏紧，细饰存在生成差异。采用清单和原礼服配置备份在被忽略的`output/character-design/temp/chatgpt-library-adoption/`，未采用图仍留临时目录。新三视图、设定卡与五态待制作；前端现用坐姿资源及页面未修改，未重跑前端或浏览器检查，Git交付以提交记录为准。
+
 成女五态T-141：按当前短款花瓣裙定稿使用内置imagegen制作自然陪伴、认真倾听、轻松闲聊、俏皮回应、托腮思考五张1024×1536 RGBA站姿，均保留鲸鱼伙伴。依此前“其余四态生成后启用”授权，正式图已采用至根public与frontend/public的adult/deepseek目录，文件使用五个pose_id；母图与三视图保留身份参考。前端五态均可选，自然图兼作头像；跨角色切回成女保留受支持状态。主体alpha≥128高度97.72%—98.57%、原始alpha 0—254，PNG／哈希及5张HTTP 200核对通过；8项前端测试、生产构建含类型检查通过。桌面已检查五态、深色边缘、浅色思考图和Claude↔DeepSeek思考状态保留，浏览器无warn/error；未重验手机或真机。细饰与鲸鱼位置存在轻微生成差异，发丝边缘alpha最大5，保留原像素。参考、提示词、清单与深浅截图在`output/character-design/temp/deepseek-adult-states/`；未提交推送。
 
 礼服资源采用T-140：经用户确认，身份统一后的立绘与设定卡已逐字节采用至`public/characters/gown/deepseek/`和`frontend/public/characters/gown/deepseek/`，文件固定为master.png／card.png。原礼服7张素材已校验备份后移至`output/character-design/temp/deepseek-gown-adoption/previous/`，该目录已验证被Git忽略；新礼服三视图及五态待制作。Skill、资源目录及设计说明指向新立绘与卡片，前端页面仍默认成女。4份正式副本与源图哈希一致、PNG解码及alpha核对完成，37条本地链接、8项前端测试和差异空白检查通过；未重跑构建或浏览器，未提交推送。
