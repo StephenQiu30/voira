@@ -68,7 +68,7 @@ uv run --locked mypy app
 uv run --locked pytest -q
 ```
 
-遵循[后端规范](../docs/templates/08-后端开发规范.md)，80字符行宽、Google docstring结构；D415因不识别中文句号而豁免，保留其他docstring检查。测试覆盖合法任务、角色隔离、参考用途、无效输入、状态边界、OpenAPI和Host／Origin限制；使用TestClient，不调用模型。来源和业务契约见[DES-018第07节](../docs/design/04-角色形象素材设计.md)，实际检查见[计划09第14节](../docs/plan/09-网页PoC逐功能实现与验收计划.md)。
+遵循[后端规范](../docs/templates/08-后端开发规范.md)，80字符行宽、Google docstring结构；D415因不识别中文句号而豁免，保留其他docstring检查。测试覆盖合法任务、角色隔离、参考用途、无效输入、状态边界、OpenAPI和Host／Origin限制；使用TestClient，不调用模型。来源和业务契约见[DES-018第06节](../docs/design/04-角色形象素材设计.md)，验证摘要见[HANDOVER](../HANDOVER.md)。
 
 ## 04 五种坐姿调用
 
@@ -76,4 +76,4 @@ uv run --locked pytest -q
 
 动作唯一来源为Skill目录的poses.json。Skill版本同时覆盖SKILL.md与动作资源，修改姿态正文会改变版本；服务只把选中动作组装到prompt，不要求一次生成五张。新Skill为用户方案的本项目整理，因此source_url为null，provenance说明来源，不捏造外部Skill链接。当前接口没有前端消费者，OpenAPI客户端兼容仍未验收。
 
-ChatGPT制作输入见[独立配置](app/skills/profiles/chatgpt.json)与[视觉设定20](../docs/design/20-人物三视图视觉设定.md)：银白淡紫花饰银龙王、匹配双龙角及水晶鞋，复用现有三套prepare；七张正式图已采用，独立坐姿经占幅修订，后端仍仅准备任务。
+ChatGPT制作输入见[独立配置](app/skills/profiles/chatgpt.json)与[视觉设定20](../docs/design/20-人物三视图视觉设定.md)：银白淡紫花饰银龙王、匹配双龙角及水晶鞋，复用现有三套prepare；T-114卡片／三视图与T-115五态已按T-116正式采用，后端仍仅准备任务。

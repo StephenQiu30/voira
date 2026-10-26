@@ -1,4 +1,0 @@
-aiohttp>=3.9
-Pillow>=10
-numpy>=1.26
-
