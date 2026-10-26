@@ -1,7 +1,9 @@
 export const poses = [
-  { id: "natural", label: "自然坐姿", directory: "01-natural" },
-  { id: "crossed", label: "翘腿坐姿", directory: "02-crossed" },
-  { id: "leaning", label: "侧斜坐姿", directory: "03-leaning" },
+  { id: "natural", label: "自然陪伴" },
+  { id: "listening", label: "认真倾听" },
+  { id: "casual", label: "轻松闲聊" },
+  { id: "playful", label: "俏皮回应" },
+  { id: "thinking", label: "托腮思考" },
 ] as const;
 export type PoseId = (typeof poses)[number]["id"];
 export const characters = [
@@ -18,42 +20,96 @@ export const characters = [
     id: "gemini",
     name: "Gemini",
     shortName: "Gemini",
-    tagline: "把每一个好奇，都变成新发现。",
-    description:
-      "跟着你的灵感一起出发。无论是天马行空的想法，还是日常里的小发现，都值得聊一聊。",
-    traits: ["好奇活泼", "灵感丰富", "爱探索"],
+    tagline: "让好奇心，带你走远一点。",
+    description: "总对新鲜事保持好奇。一个小问题，也能聊出几种意想不到的可能。",
+    traits: ["好奇心", "想象力", "灵动"],
   },
   {
     id: "claude",
     name: "Claude",
     shortName: "Claude",
-    tagline: "认真听，也细腻地回应。",
+    tagline: "慢慢听，细细想。",
     description:
-      "把复杂的思绪慢慢展开，陪你找到清晰的表达。温和而从容，让对话有自己的节奏。",
-    traits: ["细腻体贴", "从容认真", "善于倾听"],
+      "不急着给出答案，先把你的话听完整。用细腻的观察，陪你梳理复杂的想法。",
+    traits: ["沉稳", "细腻", "克制"],
   },
   {
     id: "grok",
     name: "Grok",
     shortName: "Grok",
-    tagline: "一点直率，一点意想不到。",
+    tagline: "一点腹黑，让聊天更有趣。",
     description:
-      "用新鲜的角度打开话题，在认真之间留一点幽默。让每一次交流，都多一些轻松和趣味。",
-    traits: ["直率坦诚", "幽默风趣", "不拘一格"],
+      "活泼里藏着一点腹黑，接话快，也爱抛出出其不意的观点。让日常聊天多一点趣味。",
+    traits: ["腹黑", "活泼", "机智"],
   },
   {
     id: "chatgpt",
     name: "ChatGPT",
     shortName: "ChatGPT",
-    tagline: "让纷繁的想法，慢慢变清晰。",
+    tagline: "从容倾听，把想法说清楚。",
     description:
-      "从一个小问题聊起，一起梳理想法、寻找可能。清晰而亲切，陪你把思路向前推进。",
-    traits: ["清晰亲切", "耐心细致", "思路开阔"],
+      "从容地接住不同想法，把纷杂的问题说得清楚。温和鼓励，也愿意与你一起推敲。",
+    traits: ["从容", "知性", "包容"],
+  },
+  {
+    id: "kimi",
+    name: "Kimi",
+    shortName: "Kimi",
+    tagline: "把你的故事，认真记在心里。",
+    description:
+      "安静专注的夜读者，记得你提过的小事。用耐心的倾听和一点冷幽默，陪你把思绪写成故事。",
+    traits: ["安静专注", "耐心细致", "冷幽默"],
+  },
+  {
+    id: "qwen",
+    name: "Qwen",
+    shortName: "Qwen",
+    tagline: "旧故事，也可以有新的讲法。",
+    description:
+      "温雅细致的书坊姑娘，珍惜旧故事，也愿意听见新的想法。把周到藏进日常，为意外留一点余地。",
+    traits: ["温雅周到", "细致有礼", "有主见"],
   },
 ] as const;
 export type Character = (typeof characters)[number];
-// White-background source masters stay intact; the stage uses the transparent Figma baseline.
-export function portraitSource(id: Character["id"], pose: PoseId) {
-  if (id === "deepseek") return `/characters/stage/deepseek-${pose}.png`;
-  return `/characters/${poses.find((item) => item.id === pose)!.directory}/${id}.png`;
+export type CharacterId = Character["id"];
+export type Selection = { characterId: CharacterId; pose: PoseId };
+
+// Explicit availability keeps unadopted candidates out of the live selector.
+const threePoseSources = (id: CharacterId) => ({
+  natural: `/characters/01-natural/${id}.png`,
+  casual: `/characters/02-crossed/${id}.png`,
+  playful: `/characters/03-leaning/${id}.png`,
+});
+const fivePoseSources = (id: CharacterId) => ({
+  ...threePoseSources(id),
+  listening: `/characters/stage/${id}-listening.png`,
+  thinking: `/characters/stage/${id}-thinking.png`,
+});
+const portraits: Record<CharacterId, Partial<Record<PoseId, string>>> = {
+  deepseek: {
+    ...fivePoseSources("deepseek"),
+    natural: "/characters/stage/deepseek-natural.png",
+    casual: "/characters/stage/deepseek-crossed.png",
+    playful: "/characters/stage/deepseek-leaning.png",
+  },
+  gemini: fivePoseSources("gemini"),
+  claude: fivePoseSources("claude"),
+  grok: fivePoseSources("grok"),
+  chatgpt: threePoseSources("chatgpt"),
+  kimi: {},
+  qwen: {},
+};
+
+export function portraitSource(id: CharacterId, pose: PoseId): string | null {
+  return portraits[id][pose] ?? null;
+}
+
+export function selectCharacter(
+  current: Selection,
+  characterId: CharacterId,
+): Selection {
+  return {
+    characterId,
+    pose: portraitSource(characterId, current.pose) ? current.pose : "natural",
+  };
 }
