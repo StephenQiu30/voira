@@ -143,7 +143,7 @@ Vidu仅承担发声/形象：按已核实字段建议farewell_enabled=false、pe
 
 以下是FR-031的新契约草案，覆盖旧的固定deepseek／全部调用Codex限制；不新增独立消息桥或浏览器WS。HTTP八个端点沿用第03.1节，只有角色配置、绑定和回执字段扩展。CLI专用参数仍只在第03.3节定义。
 
-**角色配置与可用性。** 后端配置以character_id索引，绑定`binding_version / adapter_id / provider / model / persona_version / credential_ref`及既有资产／音色配置。credential_ref只引用后端秘密来源，不包含秘密值；不接受网页上传任意endpoint、命令或凭据。每个角色只有一份当前绑定，创建会话时冻结其版本。模型空缺或品牌不匹配必须拒绝，禁止使用一个默认模型替代缺项。
+**角色配置与可用性。** 后端配置以character_id索引，绑定`binding_version / adapter_id / provider / model / persona_version / credential_ref`及既有资产／音色配置。credential_ref只引用后端秘密来源，不包含秘密值；会话接口不接受endpoint、命令或凭据。管理表单独立按下述预设规则接收配置及一次性秘密写入。每个角色只有一份当前绑定，创建会话时冻结其版本。模型空缺或品牌不匹配必须拒绝，禁止使用一个默认模型替代缺项。
 
 GET /api/poc返回characters数组：`character_id / display_name / preview_url / config_version / answer_source / readiness`。answer_source仅含可公开的`provider / model`；readiness含`ai / asset / voice / budget`各项状态（missing、unverified、ready、unavailable）及原因、`checked_at`和汇总`can_start`。ready须有仍有效的配置与核验依据；只安装CLI或存在环境变量只能算unverified。查询只读取已有准备结果，不触发模型探测、上传、试听或创建。任一项不是ready则该角色不能开始；不影响其他已就绪角色。既有未结清会话仍全局阻止新建。准备状态不能保证随后调用一定成功，运行失败按既有异常路径处理。
 
@@ -157,9 +157,26 @@ SessionSnapshot增加`character_id / binding_version / answer_source`，创建�
 
 **上下文与失败。** 默认每轮显式发送三轮快照；任何远端续聊机制须证明不会保留超出窗口的内容，否则不采用。结束后取消／清除本次上下文，不影响个人CLI或其他服务会话；切角色须走结束和新建。未确认播完不进入模型窗口，Vidu出错不重新请求AI，AI出错不切Vidu问答或其他品牌。资产制作Skill与会话回答适配器分开：prepared不是生成完成，也不是AI服务就绪。
 
+### 03.5 服务预设与连接配置
+
+对应FR-033／DES-039，以下为管理能力的数据边界草案；第03.1节八个会话端点保持独立。管理HTTP路径及权限契约须在实现前补齐，不能通过会话端点顺带修改配置。
+
+| 对象 | 必要信息与约束 |
+|---|---|
+| 预设模板 | `preset_id / preset_version / service_kind / provider / adapter_id / auth_mode`，以及受控地址、协议、必填字段和模型选择规则；不含密钥。service_kind区分回答AI与数字人媒体，具体值由已验证适配器提供 |
+| 已保存连接 | `connection_id / connection_version / preset_id / preset_version / provider / adapter_id / model / credential_ref`及经校验的地址配置；保存模板快照及用户覆盖值。显示名称可改，provider身份不可由名称推断；秘密只存后端秘密存储，不进入普通配置或日志 |
+| 角色绑定 | 原binding_version引用固定的connection_id及connection_version；七位角色各有一个启用连接，可保存同服务的其他候选。创建会话冻结连接、模型与凭据版本，停用／删除及轮换不能破坏活动会话 |
+| 检测结果 | 关联连接版本、检测类别、时间与结果；配置／凭据／模型变更使结果失效，晚到的旧检测不得更新新版本。模型目录读取成功不等于文本生成通过，AI文本通过不等于Vidu媒体就绪 |
+
+模板来源为应用维护的受控清单；预设更新只提示可更新，用户选择后生成新连接版本并重新检测。自定义连接复用已支持协议，不执行任意命令；后端校验目标、重定向与地址范围，拒绝嵌入凭据的URL，本机桥仅允许已注册目标。不能仅凭“OpenAI兼容”推断实际模型是OpenAI；角色绑定还须核对真实服务和模型归属。
+
+管理页凭据输入只作一次性写入，取消／提交完成后清空；响应仅返回已配置状态和不可用于访问秘密的标识，不含原文或可逆形式。密钥不写localStorage、URL、遥测、示例或Git；运行接口不得回传。已有环境配置可作只读凭据引用，新建凭据通过后端秘密存储提供，存储实现与本机管理鉴权在开发前落实。
+
+保存、模型目录查询、文本检测和Vidu媒体验证是不同操作；保存不出网，目录查询按适配器能力由用户主动触发，失败允许使用模板批准模型或后端校验的手填模型ID，不自动生成答案。收费检测沿用FR-025的额度确认与未知不重试。Vidu连接另行配置并引用角色资产／voice ID，不作为第八个回答AI，也不复用AI密钥。
+
 ## 04 数据与恢复
 
-建议SQLite只用于单机恢复，不作为多用户数据库；图片和非秘密角色配置为本地文件，长期密钥为后端环境配置。不开新数据库端口。生产/分享访问须重新评审访问与并发。
+建议SQLite只用于单机恢复，不作为多用户数据库；图片和非秘密角色配置为本地文件，长期密钥由后端环境配置或受控秘密存储提供，连接仅持有引用。不开新数据库端口。生产/分享访问须重新评审访问与并发。
 
 下表给出最小字段组；组内字段具有相同类型和约束。所有状态列由设计枚举CHECK约束。未写默认值的字段必须显式赋值；null表示尚未取得，不能解释为成功或零。
 
