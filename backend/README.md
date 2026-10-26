@@ -75,3 +75,5 @@ uv run --locked pytest -q
 请求skill_id设为character-seated-poses，并传入pose_id：natural（自然陪伴）、listening（认真倾听）、casual（轻松闲聊）、playful（俏皮回应）、thinking（托腮思考）。角色配置与references格式沿用上例。其他Skill不可携带非空pose_id；不传或传非法坐姿返回422。输出包含所选动作pose，输出规格自动设置2:3、transparent_background=true、background=transparent；输入不能覆盖背景规则。
 
 动作唯一来源为Skill目录的poses.json。Skill版本同时覆盖SKILL.md与动作资源，修改姿态正文会改变版本；服务只把选中动作组装到prompt，不要求一次生成五张。新Skill为用户方案的本项目整理，因此source_url为null，provenance说明来源，不捏造外部Skill链接。当前接口没有前端消费者，OpenAPI客户端兼容仍未验收。
+
+ChatGPT制作输入见[独立配置](app/skills/profiles/chatgpt.json)与[视觉设定20](../docs/design/20-人物三视图视觉设定.md)：银白淡紫花饰银龙王、匹配双龙角及水晶鞋，复用现有三套prepare；七张正式图已采用，独立坐姿经占幅修订，后端仍仅准备任务。

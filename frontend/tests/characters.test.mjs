@@ -27,11 +27,21 @@ test("every enabled portrait resolves to an adopted public asset", () => {
   }
 });
 
-test("the four completed characters expose all five states", () => {
-  for (const id of ["deepseek", "gemini", "claude", "grok"]) {
+test("the five completed characters expose all five states", () => {
+  for (const id of ["deepseek", "gemini", "claude", "grok", "chatgpt"]) {
     const sources = poses.map((pose) => portraitSource(id, pose.id));
     assert.ok(sources.every(Boolean));
     assert.equal(new Set(sources).size, 5);
+    assert.deepEqual(
+      sources.map((src) => new URL(src, "http://localhost").pathname),
+      [
+        "01-natural",
+        "02-listening",
+        "03-casual",
+        "04-playful",
+        "05-thinking",
+      ].map((directory) => `/characters/${directory}/${id}.png`),
+    );
   }
 });
 
@@ -39,8 +49,6 @@ test("unavailable images never borrow another character or pose", () => {
   for (const id of ["kimi", "qwen"]) {
     for (const pose of poses) assert.equal(portraitSource(id, pose.id), null);
   }
-  assert.equal(portraitSource("chatgpt", "listening"), null);
-  assert.equal(portraitSource("chatgpt", "thinking"), null);
 });
 
 test("switching character preserves supported states and resets unsupported ones atomically", () => {
@@ -51,7 +59,7 @@ test("switching character preserves supported states and resets unsupported ones
   });
   assert.deepEqual(selectCharacter(current, "chatgpt"), {
     characterId: "chatgpt",
-    pose: "natural",
+    pose: "thinking",
   });
   assert.deepEqual(selectCharacter(current, "kimi"), {
     characterId: "kimi",

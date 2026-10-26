@@ -75,27 +75,23 @@ export type CharacterId = Character["id"];
 export type Selection = { characterId: CharacterId; pose: PoseId };
 
 // Explicit availability keeps unadopted candidates out of the live selector.
-const threePoseSources = (id: CharacterId) => ({
-  natural: `/characters/01-natural/${id}.png`,
-  casual: `/characters/02-crossed/${id}.png`,
-  playful: `/characters/03-leaning/${id}.png`,
-});
-const fivePoseSources = (id: CharacterId) => ({
-  ...threePoseSources(id),
-  listening: `/characters/stage/${id}-listening.png`,
-  thinking: `/characters/stage/${id}-thinking.png`,
-});
+const fivePoseSources = (id: CharacterId, revision?: string) => {
+  const source = (directory: string) =>
+    `/characters/${directory}/${id}.png${revision ? `?v=${revision}` : ""}`;
+  return {
+    natural: source("01-natural"),
+    listening: source("02-listening"),
+    casual: source("03-casual"),
+    playful: source("04-playful"),
+    thinking: source("05-thinking"),
+  };
+};
 const portraits: Record<CharacterId, Partial<Record<PoseId, string>>> = {
-  deepseek: {
-    ...fivePoseSources("deepseek"),
-    natural: "/characters/stage/deepseek-natural.png",
-    casual: "/characters/stage/deepseek-crossed.png",
-    playful: "/characters/stage/deepseek-leaning.png",
-  },
+  deepseek: fivePoseSources("deepseek"),
   gemini: fivePoseSources("gemini"),
   claude: fivePoseSources("claude"),
   grok: fivePoseSources("grok"),
-  chatgpt: threePoseSources("chatgpt"),
+  chatgpt: fivePoseSources("chatgpt", "t121"),
   kimi: {},
   qwen: {},
 };

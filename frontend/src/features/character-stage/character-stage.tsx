@@ -218,9 +218,7 @@ export function CharacterStage() {
       <p id="pose-availability" className="sr-only" aria-live="polite">
         {!portraitSource(characterId, "natural")
           ? "形象准备中，五种状态暂不可用。"
-          : characterId === "chatgpt"
-            ? "认真倾听和托腮思考素材准备中，其余状态可选。"
-            : "五种状态均可选择。"}
+          : "五种状态均可选择。"}
       </p>
       <div className="carousel-arrows">
         <Button

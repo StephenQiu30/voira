@@ -45,11 +45,11 @@ voira/
 │   ├── README.md                 # 前端说明
 │   ├── public/                   # 可公开访问的静态资源
 │   │   ├── characters/           # 最终坐姿、三视图与设定图
-│   │   │   ├── 01-natural/       # 状态一：自然坐姿
-│   │   │   ├── 02-crossed/       # 状态二：翘腿坐姿
-│   │   │   ├── 03-leaning/       # 状态三：侧斜坐姿
-│   │   │   ├── 04-forward/       # 前倾坐姿
-│   │   │   ├── 05-side-rest/     # 侧倚坐姿
+│   │   │   ├── 01-natural/       # 自然陪伴
+│   │   │   ├── 02-listening/     # 认真倾听
+│   │   │   ├── 03-casual/        # 轻松闲聊
+│   │   │   ├── 04-playful/       # 俏皮回应
+│   │   │   ├── 05-thinking/      # 托腮思考
 │   │   │   ├── turnarounds/      # 最终三视图
 │   │   │   └── cards/            # 最终角色设定图
 │   │   ├── scenes/               # 最终场景背景
@@ -114,7 +114,7 @@ T-090已提供角色素材准备接口及自动文档端点；该接口尚无前
 
 ## 06 设计交付资产
 
-最终图片统一放在frontend/public：characters存角色，scenes存场景，brand存Logo与字标。角色坐姿按01-natural、02-crossed、03-leaning、04-forward、05-side-rest分目录；三视图放turnarounds，设定图放cards。文件名统一为角色名.png，不带版本号；只保留实际完成的角色，不补空文件。
+最终图片统一放在frontend/public：characters存角色，scenes存场景，brand存Logo与字标。角色按自然陪伴01-natural、认真倾听02-listening、轻松闲聊03-casual、俏皮回应04-playful、托腮思考05-thinking分目录；三视图放turnarounds，设定图放cards。文件名统一为角色名.png，不带版本号；只保留实际完成的角色，不补空文件。
 
 旧稿、参考、候选、生成清单和校验过程统一放本地output，已由.gitignore排除，不提交GitHub。docs只维护设计、当前提示词与最终素材引用；不得在public或docs另建history、references、pending、review-set版本目录。当前DeepSeek七张最终稿见[素材记录](docs/design/02-五位角色素材生成记录.md)，可复用提示词见[设计26](docs/design/26-DeepSeek角色生成提示词.md)。静态图片交付不代表前端应用或动态服务已实现。
 
@@ -134,7 +134,7 @@ T-060已按用户授权审阅并提交推送220个文件，包括文档、设计
 
 ## 09 T-084 前端布局基线
 
-用户明确授权从布局开始实现，交付入口见[frontend README](frontend/README.md)。BasicLayout只负责Header／Content／Footer，人物选择状态位于功能组件。Figma桌面61:2473／手机61:2803为视觉依据，最新DeepSeek白底母版保留，透明舞台三图独立保存在public/characters/stage；不改并行素材。当前不接入API、媒体、直播或队列业务。实际检查见计划09第12节。
+用户明确授权从布局开始实现，交付入口见[frontend README](frontend/README.md)。BasicLayout只负责Header／Content／Footer，人物选择状态位于功能组件。Figma桌面61:2473／手机61:2803为视觉依据，T-084曾单独保存stage透明图，T-116已统一归入五态目录并移除重复副本。当前不接入API、媒体、直播或队列业务。实际检查见计划09第12节。
 
 ## 10 T-090 角色美术Skill服务
 

@@ -11,7 +11,7 @@
 
 **T-086适用范围更新**：下文第02—04节及第05节角色卡原文服务于既有二次元DeepSeek套图，不作为新真人版本的通用提示词。用户已明确LLM拟人化允许真人风格；新三视图采用[设计20第03.1节](20-人物三视图视觉设定.md#031-当前采用的skill与适配)指定的ce1406d8 Skill及左三视图／右正脸特写布局。若制作真人版本，须按其媒介重新编写该角色提示词，不直接执行下文锁定2D anime CG的原文。T-089已按用户新上传的DeepSeek坐姿参考生成一张二次元三视图候选；不代表七人统一采用二次元。
 
-原生成输入已移入本地output；后续以各正式路径下的最终图作为连续性参考。本文保留DeepSeek样稿提示词与实际生成证据；T-090运行服务使用[backend两套Skill和独立角色配置](../../backend/README.md)，不自动执行本文历史原文。坐姿提示词遵循已确认要求：**不同坐姿、一种姿势一张图、不要抱枕、不要过度设计**。参考用户指定的[原自然坐姿](../../frontend/public/characters/01-natural/deepseek.png)，并实际查看同目录五人及DeepSeek的[交叠腿](../../frontend/public/characters/02-crossed/deepseek.png)、[侧斜坐姿](../../frontend/public/characters/03-leaning/deepseek.png)。只生成DeepSeek，不混用其他人的脸或服装。
+原生成输入已移入本地output；后续以各正式路径下的最终图作为连续性参考。本文保留DeepSeek样稿提示词与实际生成证据；T-090运行服务使用[backend两套Skill和独立角色配置](../../backend/README.md)，不自动执行本文历史原文。坐姿提示词遵循已确认要求：**不同坐姿、一种姿势一张图、不要抱枕、不要过度设计**。参考用户指定的[原自然坐姿](../../frontend/public/characters/01-natural/deepseek.png)，并实际查看同目录五人及DeepSeek的[交叠腿](../../frontend/public/characters/03-casual/deepseek.png)、[侧斜坐姿](../../frontend/public/characters/04-playful/deepseek.png)。只生成DeepSeek，不混用其他人的脸或服装。
 
 当前只维护有效提示词；已撤销的抱枕与拼版原文随本次清理移除。角色故事见[设计24](24-七位角色背景与人设.md)。
 
@@ -50,7 +50,7 @@ NATURAL SEATED POSE: Keep the original natural seated posture almost unchanged: 
 
 ### 4.2 交叠腿
 
-输出：[deepseek-02-crossed.png](../../frontend/public/characters/02-crossed/deepseek.png)。有序参考：本轮自然叠手→public交叠腿；第二张仅供姿势。
+输出：[deepseek-02-crossed.png](../../frontend/public/characters/03-casual/deepseek.png)。有序参考：本轮自然叠手→public交叠腿；第二张仅供姿势。
 
 ```text
 LEG-CROSSED SEATED POSE: Reference 1 is the approved identity baseline and MUST control face, clothes, white tights, chair and scale. Reference 2 supplies ONLY the existing project's crossed-leg posture. Sit comfortably back with one thigh naturally crossed over the other at the knee, the upper shin angling diagonally and its shoe lifted clear, lower foot grounded. Hands loosely folded on the upper knee, torso upright and relaxed, gentle confident small smile. Clearly visible crossed-leg silhouette, correct two legs and joints, not merely crossed ankles. Dress covers lap modestly and drapes naturally over the crossed thighs. Do not copy reference 2's dark background or nude-looking leg material.
@@ -58,7 +58,7 @@ LEG-CROSSED SEATED POSE: Reference 1 is the approved identity baseline and MUST 
 
 ### 4.3 双腿侧斜
 
-输出：[deepseek-03-side-legs.png](../../frontend/public/characters/03-leaning/deepseek.png)。有序参考：本轮自然叠手→public侧斜图；第二张仅供姿势。
+输出：[deepseek-03-side-legs.png](../../frontend/public/characters/04-playful/deepseek.png)。有序参考：本轮自然叠手→public侧斜图；第二张仅供姿势。
 
 ```text
 SIDE-ANGLED LEGS SEATED POSE: Reference 1 controls identity, clothes, WHITE tights, chair and scale. Reference 2 supplies ONLY the existing project's leaning/diagonally grouped legs pose. Hips remain on center of chair, torso leans gently to viewer-right to balance both knees and lower legs angled together toward viewer-left. Knees remain adjacent and uncrossed, both shoes side by side near the left front of the chair. Both hands folded on the lap. A calm small smile and subtle head tilt; clearly asymmetric body silhouette and diagonal parallel legs, not the baseline vertical legs. Keep the chair facing straight forward and unrotated. Do not copy the dark background or skin-colored hosiery from reference 2.
@@ -66,7 +66,7 @@ SIDE-ANGLED LEGS SEATED POSE: Reference 1 controls identity, clothes, WHITE tigh
 
 ### 4.4 前倾倾听
 
-输出：[deepseek-04-forward.png](../../frontend/public/characters/04-forward/deepseek.png)。唯一参考：本轮自然叠手图。
+输出：[deepseek-04-forward.png](../../frontend/public/characters/02-listening/deepseek.png)。唯一参考：本轮自然叠手图。
 
 ```text
 FORWARD-LEANING SEATED POSE: Same woman and fixed frontal chair/camera as the reference. Hips stay supported on the front half of the chair seat, upper body inclines gently forward from the hips toward viewer in engaged listening, shoulders relaxed, chin slightly lowered, attentive soft eyes and a tiny closed-mouth smile. Both hands rest separately and lightly on her knees over the skirt, left hand on left knee and right hand on right knee. Knees adjacent, both opaque-white-stockinged lower legs vertical with both feet planted slightly back under knees. Clearly different torso angle and separated hands versus baseline; no theatrical wave, no exaggerated bow, no crouching, no hands fused into lace. Whole figure remains in original framing.
@@ -74,7 +74,7 @@ FORWARD-LEANING SEATED POSE: Same woman and fixed frontal chair/camera as the re
 
 ### 4.5 侧倚托腮
 
-输出：[deepseek-05-side-rest.png](../../frontend/public/characters/05-side-rest/deepseek.png)。唯一参考：本轮自然叠手图。
+输出：[deepseek-05-side-rest.png](../../frontend/public/characters/05-thinking/deepseek.png)。唯一参考：本轮自然叠手图。
 
 ```text
 RELAXED SIDE-REST SEATED POSE: Same woman and fixed frontal chair/camera as reference. Hips remain supported in the chair, torso visibly but gently inclines toward the armrest on viewer-left. Her RIGHT elbow rests securely on that armrest and her right hand lightly supports the side of her cheek near jaw, head inclined toward that hand. Her LEFT hand rests relaxed on the skirt in her lap. Knees close, both legs extend gently toward viewer-right with parallel opaque-white-stockinged shins, ankles uncrossed and both shoes grounded. Warm thoughtful half-smile, relaxed and comfortable, no dramatic acting. Show a believable supported elbow and natural wrist, no arm passing through wooden frame. Clear side-weighted silhouette that differs from upright and forward poses.
