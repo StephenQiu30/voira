@@ -58,7 +58,7 @@
 
 [![chatgpt成女立绘](frontend/public/characters/adult/chatgpt/master.png)](frontend/public/characters/adult/chatgpt/master.png)
 
-这些是项目中的角色视觉设定，不代表相关模型厂商的官方角色或合作关系，也不代表已接通七项AI。Kimi与Qwen的完整背景见[七人人设](docs/design/24-七位角色背景与人设.md)；当前造型、制作规则与正式资源见[角色资产规范](docs/design/20-人物三视图视觉设定.md)。
+这些是项目中的角色视觉设定，不代表相关模型厂商的官方角色或合作关系，也不代表已接通七项AI。Kimi与Qwen的完整背景见[七人人设](docs/design/05-七位角色背景与人设.md)；当前造型、制作规则与正式资源见[角色资产规范](docs/design/04-人物三视图视觉设定.md)。
 
 ## 我们想做怎样的交流体验
 
@@ -95,9 +95,9 @@
 本地服务端目录为 `voira-server/`，对应本 GitHub 仓库 `StephenQiu30/voira`。网页前后端及知识库在本仓库维护；[Voira Pet](https://github.com/StephenQiu30/voira-pet) 是同级独立仓库，共享美术资源位于仓库外的 `../public/`。服务启动见 [前端](frontend/README.md) 与 [后端](backend/README.md)。
 
 - **想看产品：** [Figma 设计稿](https://www.figma.com/design/ZO9RS5jCJqDWBnAxB8yV2w) → [网页体验设计](docs/design/01-网页体验界面设计.md)。
-- **想参与设计：** [角色设定与素材](docs/design/20-人物三视图视觉设定.md) → [统一视觉规范](DESIGN.md)。
-- **想参与开发：** [需求索引](docs/requirement/01-数字人MVP需求草案.md) → [功能设计](docs/design/00-功能设计索引.md) → [实施计划](docs/plan/09-网页PoC逐功能实现与验收计划.md)。
-- **想研究技术：** [调研索引](docs/research/00-调研索引.md) → [网页 PoC 验证计划](docs/plan/07-网页数字人PoC验证计划.md)。
+- **想参与设计：** [角色设定与素材](docs/design/04-人物三视图视觉设定.md) → [统一视觉规范](DESIGN.md)。
+- **想参与开发：** [需求索引](docs/requirement/01-数字人MVP需求草案.md) → [功能设计](docs/design/00-功能设计索引.md) → [实施计划](docs/plan/02-网页PoC逐功能实现与验收计划.md)。
+- **想研究技术：** [调研索引](docs/research/00-调研索引.md) → [网页 PoC 验证计划](docs/plan/01-网页数字人PoC验证计划.md)。
 
 更多资料见[知识库导航](docs/00-知识库导航.md)。本地阅读时，可用 Obsidian 打开 `docs/` 文件夹。
 

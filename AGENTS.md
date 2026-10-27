@@ -2,16 +2,16 @@
 
 ## 01 阅读入口与规范归属
 
-1. 先读[知识库导航](docs/00-知识库导航.md)和[文档规范](docs/templates/06-文档编写规范.md)。
+1. 先读[知识库导航](docs/00-知识库导航.md)和[文档规范](docs/templates/01-文档编写规范.md)。
 2. 读[BLACKLOG](BLACKLOG.md)、[HANDOVER](HANDOVER.md)，开始前核对当前目录和Git状态。
-3. 按任务读取[需求索引](docs/requirement/01-数字人MVP需求草案.md) → [设计](docs/design/00-功能设计索引.md) → [PRD](docs/prd/01-网页数字人PoC产品与验收标准.md) → [计划09](docs/plan/09-网页PoC逐功能实现与验收计划.md)，真实测试见[计划07](docs/plan/07-网页数字人PoC验证计划.md)。
-4. 工程读[PROJECT](PROJECT.md)，视觉读[DESIGN](DESIGN.md)；开发相应端时读[前端规范](docs/templates/07-前端开发规范.md)／[前端AGENTS](frontend/AGENTS.md)或[后端规范](docs/templates/08-后端开发规范.md)／[后端AGENTS](backend/AGENTS.md)。研究按需查[来源结论](docs/research/00-调研索引.md)。
+3. 按任务读取[需求索引](docs/requirement/01-数字人MVP需求草案.md) → [设计](docs/design/00-功能设计索引.md) → [PRD](docs/prd/01-网页数字人PoC产品与验收标准.md) → [计划02](docs/plan/02-网页PoC逐功能实现与验收计划.md)，真实测试见[计划01](docs/plan/01-网页数字人PoC验证计划.md)。
+4. 工程读[PROJECT](PROJECT.md)，视觉读[DESIGN](DESIGN.md)；开发相应端时读[前端规范](docs/templates/02-前端开发规范.md)／[前端AGENTS](frontend/AGENTS.md)或[后端规范](docs/templates/03-后端开发规范.md)／[后端AGENTS](backend/AGENTS.md)。研究按需查[来源结论](docs/research/00-调研索引.md)。
 
 用户新指令优先于旧文档；冲突直接更新所属正文，不保留互相覆盖的“本轮修订”。
 
 ## 02 当前范围与边界
 
-- 七位形象分别对应自己的AI服务，数字人保留；以FR-031／DES-037及共享设计03.4为准。Codex仅为ChatGPT候选，不能代答其他六项；图像、CLI安装和聊天插件可用不等于Voira后端接通。
+- 七位形象分别对应自己的AI服务，数字人保留；以FR-031／DES-037及共享设计02第03.4节为准。Codex仅为ChatGPT候选，不能代答其他六项；图像、CLI安装和聊天插件可用不等于Voira后端接通。
 - 网页、本地优先、一次一个活动会话、Vidu合成画面、提问后回答、人工听完继续及最近三轮已确认上下文有效；本次页面完整记录另行维护。直播／评论后置，外部平台权限与旧长时压测不阻塞网页阶段。
 - 已有静态形象选择页与素材任务准备服务；真实会话／AI／媒体未验收。布局先行不代表T-030客户端全部完成，prepared不代表生图。具体实现与检查边界只看HANDOVER。
 - 已确认选择不重复询问。Q-004剩余具体voice ID、送模及观感；Q-005/006实际调用前落实账号与额度；Q-014核对七项连接。其他问题按后置或分享前条件处理。
@@ -19,7 +19,7 @@
 
 ## 03 执行与交付
 
-- 执行BLACKLOG中依赖满足且已授权的任务；常规细节按既有规范推进。文档整理不因未决业务参数被阻塞；G-CODE／G-CALL按计划09分别约束业务代码和真实调用。
+- 执行BLACKLOG中依赖满足且已授权的任务；常规细节按既有规范推进。文档整理不因未决业务参数被阻塞；G-CODE／G-CALL按计划02分别约束业务代码和真实调用。
 - 业务实现前落实需求、设计、验收与依赖，保持FR/NFR → DES → US/AC → T → TC追溯。新增业务取舍先回到所属需求，不以研究替代确认。
 - API按功能组织、无版本号分层；FastAPI生成OpenAPI／Swagger，生成前端API位于frontend/src/api；不创建自定义脚本文件或目录。
 - 视觉遵循黑白灰与无装饰边框，保留焦点和持续错误；不擅加功能。
@@ -28,7 +28,7 @@
 
 ## 04 文件维护
 
-每项功能单独维护requirement和唯一主FR；总需求只作范围／共享NFR／Q路由。设计可按职责合并，契约统一在design03；PRD维护AC，plan维护依赖和测试规格。PROJECT、DESIGN、BLACKLOG与HANDOVER各有唯一归属。
+每项功能单独维护requirement和唯一主FR；总需求只作范围／共享NFR／Q路由。设计可按职责合并，契约统一在design02；PRD维护AC，plan维护依赖和测试规格。PROJECT、DESIGN、BLACKLOG与HANDOVER各有唯一归属。
 
 中文编写，稳定ID不复用，移动／合并同步链接。知识库不保存过程日志、旧稿全集、抓取／OCR、生成记录或重复提示词；原始材料需要保留时移到被忽略的本地目录，不重写原件。运行Skill／配置、正式素材和Obsidian运行文件按实际用途保护。合并删除须保留独有决策、必要来源与未决项，不用新归档文档继续堆积旧过程。
 

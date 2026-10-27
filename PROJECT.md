@@ -52,7 +52,7 @@
 
 依赖版本以各端package.json／package-lock.json、pyproject.toml／uv.lock为准，避免本文再复制一份版本清单。后端使用uv；启动和检查命令分别由[frontend README](frontend/README.md)与[backend README](backend/README.md)维护。
 
-Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers重复实现核心规则。共享会话以服务端为准，浏览器状态不能作为计费或任务成功依据。部署本机优先；七项AI适配与Vidu边界见[共享设计](docs/design/03-Vidu网页PoC最小业务设计.md)。
+Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers重复实现核心规则。共享会话以服务端为准，浏览器状态不能作为计费或任务成功依据。部署本机优先；七项AI适配与Vidu边界见[共享设计](docs/design/02-Vidu网页PoC最小业务设计.md)。
 
 ## 04 接口与生成代码协作
 
@@ -66,10 +66,10 @@ Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers�
 
 ## 05 安全与维护
 
-长期密钥仅后端持有，frontend/public、NEXT_PUBLIC变量及浏览器props均视为公开内容；示例配置只含占位。生成器和schema读取不能创建收费会话。共享规范见[前端](docs/templates/07-前端开发规范.md)与[后端](docs/templates/08-后端开发规范.md)；提交规则归[AGENTS](AGENTS.md)。
+长期密钥仅后端持有，frontend/public、NEXT_PUBLIC变量及浏览器props均视为公开内容；示例配置只含占位。生成器和schema读取不能创建收费会话。共享规范见[前端](docs/templates/02-前端开发规范.md)与[后端](docs/templates/03-后端开发规范.md)；提交规则归[AGENTS](AGENTS.md)。
 
 ## 06 设计交付资产
 
 完整最终资源放在仓库外共享 `../public/characters`、`../public/scenes`、`../public/brand`。`frontend/public` 按现有 URL 保存页面所需资源，部署使用 `frontend/public`。当前展示集合为9张人物、2张场景与1张品牌SVG。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。其余四位当前引用characters/adult/{character_id}/master.png，只启用自然陪伴；缺失动作生成并采用后再启用。四风格均以特点／人物组织master.png与card.png；旧编号姿态、cards及turnarounds目录移到被忽略的output。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
 
-候选、旧稿、参考图、生成清单放output，不在public或docs另建history／pending／review-set。造型和正式资源入口归[视觉设定20](docs/design/20-人物三视图视觉设定.md)；运行Skill与角色配置是制作规则唯一来源，prepared不代表真实生图，静态资源不代表AI或数字人会话已接通。
+候选、旧稿、参考图、生成清单放output，不在public或docs另建history／pending／review-set。造型和正式资源入口归[视觉设定04](docs/design/04-人物三视图视觉设定.md)；运行Skill与角色配置是制作规则唯一来源，prepared不代表真实生图，静态资源不代表AI或数字人会话已接通。
