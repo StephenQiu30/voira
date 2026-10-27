@@ -4,14 +4,15 @@
 
 任务状态仅在本文件维护；详细交付与依赖见[计划09](docs/plan/09-网页PoC逐功能实现与验收计划.md)，当前能力与验证边界见[HANDOVER](HANDOVER.md)。状态使用待办／阻塞／进行中／已完成。文档、实现和真实验收分别判断，不因编号已分配而自动启动。
 
-T-001—180及历史KB编号已占用，后续从T-181分配。历史过程由Git与本地恢复副本保留，不继续追加交付日记。曾重复使用的T-010、T-084、T-109按任务名称区分，不重分配或推断新增授权。
+T-001—181及历史KB编号已占用，后续从T-182分配。历史过程由Git与本地恢复副本保留，不继续追加交付日记。曾重复使用的T-010、T-084、T-109按任务名称区分，不重分配或推断新增授权。
 
 ## 02 待落实的基线与并行任务
 
 | 任务 | 状态 | 剩余条件 |
 |---|---|---|
+| T-181 Grok星冠双马尾公开发布 | 已完成 | voira-pet@0.5.0已公开发布，latest为0.5.0；list含五位，install grok写入voira-grok。Codex Pets页Grok · 星冠双马尾已通过，描述只含人设与形象。GitHub Release v0.5.0含五个独立ZIP及同一tgz，公网校验通过。源码b106d1e已推送main。见HANDOVER |
 | T-180 Gemini星辰猫耳公开发布 | 已完成 | voira-pet@0.4.0已公开发布，latest为0.4.0；list含四位，install gemini与既有三位分目录且互不覆盖。Codex Pets页Gemini · 星辰猫耳已通过，描述只含人设与形象。GitHub Release v0.4.0含四个独立ZIP及同一tgz，公网校验通过。源码0e1d1b1已推送main。见HANDOVER |
-| T-179 Grok星冠双马尾宠物 | 进行中 | 基于已更新Q版立绘／设定卡继续制作桌宠，完成九态／16方向、预览、校验及Pets创建并接入本地安装器；保留原图和既有四位 |
+| T-179 Grok星冠双马尾宠物 | 已完成 | 73帧v2九态／16方向、预览、质量检查及Pets创建回读完成；源码支持grok独立安装，12项测试及实际打包npx五角色并存通过。原图和既有四位保留；公开发布见T-181 |
 | T-178 GitHub Release v0.3.0 | 已完成 | 标签v0.3.0指向cc30944。Release含DeepSeek、ChatGPT、Claude三个独立ZIP、与npm 0.3.0相同的tgz及SHA256SUMS；公网下载校验通过。v0.1.0保留。见HANDOVER |
 | T-177 Gemini星辰猫耳宠物 | 已完成 | 73帧v2九态／16方向、预览、质量检查及Pets创建回读完成；源码支持gemini独立安装，11项测试及真实打包npx四角色并存通过。原图和既有三位保留，源码ea90b9c已推送main；公开发布见T-180 |
 | T-176 双仓库目录区分与Claude源码交付 | 已完成 | 服务端迁入voira-server并保留GitHub voira，宠物与共享public同级；文章原稿归voira-pet/articles。迁移及三端检查通过，Pet的a834ed2已推送main，服务端规范与链接随本提交交付；见HANDOVER |
