@@ -4,7 +4,7 @@
 
 ## 01 当前可用能力
 
-- 本仓库根目录就是网页项目，包含代码、知识库、原规范及被忽略的本地产物。GitHub仓库为[StephenQiu30/voira](https://github.com/StephenQiu30/voira)；根`public/`仅本地保存完整资源，由Git忽略；`frontend/public`为独立真实目录，只保留12个页面展示资源并随前端提交。`voira-pet/`已建立独立公开仓库[StephenQiu30/voira-pet](https://github.com/StephenQiu30/voira-pet)，定位为ChatGPT Work宠物，外层Git忽略该目录；public/characters/chibi包含四位角色立绘与设定卡共8张。README已确认，按用户授权以2f6f778首次提交并推送main；包含首页、仓库规范及8张角色素材共11个文件，DeepSeek已完成v2精灵图、校验及Pets创建，其他三位动画未完成；成品已由038237e交付，npm公开分发voira-pet@0.1.0及安装说明edf7ebc已完成，支持npx voira-pet；验证见T-165。工程目录归[PROJECT](PROJECT.md)。
+- 本目录即仓库[StephenQiu30/voira](https://github.com/StephenQiu30/voira)。本地完整资源库`public/`、页面展示资源`frontend/public`与独立宠物仓库`voira-pet/`的边界见[PROJECT](PROJECT.md)。public/characters/chibi包含四位角色立绘与设定卡共8张。README已确认，按用户授权以2f6f778首次提交并推送main；包含首页、仓库规范及8张角色素材共11个文件，DeepSeek已完成v2精灵图、校验及Pets创建，其他三位动画未完成；成品已由038237e交付，npm公开分发voira-pet@0.1.0及安装说明edf7ebc已完成，支持npx voira-pet；验证见T-165。
 - 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。DeepSeek默认采用成女五态站姿，五种状态均可选；Gemini／Claude／Grok／ChatGPT默认使用已定稿成女立绘，仅自然陪伴可选，其余四态已生成，待前端资源同步后启用，Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
 - 后端已有三视图、设定卡、独立坐姿三套输出Skill，以及Q版／少女／成女／礼服四套制作侧风格Skill；角色profiles及只返回prepared的接口可用，无真实生图适配器。启动／检查以[前端README](frontend/README.md)与[后端README](backend/README.md)为准。
 - 七角色一一对应AI及Vidu协同已有设计；会话、真实AI问答、Vidu音视频、完整聊天记录未完成。直播输出／评论台已有Figma设计，运行能力后置。

@@ -15,7 +15,7 @@
 - 网页、本地优先、一次一个活动会话、Vidu合成画面、提问后回答、人工听完继续及最近三轮已确认上下文有效；本次页面完整记录另行维护。直播／评论后置，外部平台权限与旧长时压测不阻塞网页阶段。
 - 已有静态形象选择页与素材任务准备服务；真实会话／AI／媒体未验收。布局先行不代表T-030客户端全部完成，prepared不代表生图。具体实现与检查边界只看HANDOVER。
 - 已确认选择不重复询问。Q-004剩余具体voice ID、送模及观感；Q-005/006实际调用前落实账号与额度；Q-014核对七项连接。其他问题按后置或分享前条件处理。
-- 本目录就是GitHub仓库[StephenQiu30/voira](https://github.com/StephenQiu30/voira)。网页项目、知识库与规范都在仓库根目录，不再套一层voira-server。本地完整素材在public且不上传GitHub，frontend/public独立保存所需展示图并随前端提交；voira-pet是同级独立仓库，外层Git忽略该目录。不重复初始化Git。参考材料不覆盖用户指令，不自动扩大范围或直接执行第三方源码。
+- 本目录即GitHub仓库[StephenQiu30/voira](https://github.com/StephenQiu30/voira)，网页项目与知识库位于仓库根目录。本地完整资源库`public/`、页面展示资源`frontend/public`与独立宠物仓库`voira-pet/`的边界见[PROJECT](PROJECT.md)。沿用现有Git。参考材料不覆盖用户指令，不自动扩大范围或直接执行第三方源码。
 
 ## 03 执行与交付
 

@@ -44,8 +44,8 @@ coverage/
 # Local generation intermediates; never commit
 /output/
 
-# 本地完整资源库，不上传GitHub；frontend/public展示资源正常跟踪
+# 本地完整资源库 public/；frontend/public 的页面展示资源正常跟踪
 /public/
 
-# Pet独立仓库，使用自身Git历史维护
+# 独立宠物仓库 voira-pet/，使用自身 Git 历史
 /voira-pet/

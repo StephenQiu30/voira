@@ -32,13 +32,13 @@ npm run start -- --hostname 127.0.0.1 --port 3000
 
 ## 03 结构与资源
 
-本目录的public为独立真实目录，保存页面需要的9张人物、2张场景和1张品牌SVG，随前端提交，浏览器URL不变。仓库根public保存完整素材，仅本地保留并由Git忽略；前端运行与部署不依赖它。
+本目录的 public 保存页面展示资源：9张人物、2张场景和1张品牌SVG，随前端提交，浏览器URL不变。完整素材在仓库根目录 `public/`，只留在本机；页面运行与部署使用本目录的 public。
 
 - src/components/layout/basic-layout.tsx：品牌、场景背景、主内容槽和页脚；不维护会话业务状态。
 - src/features/character-stage：角色静态数据与展示交互；页面装配保持在src/app/page.tsx。
 - src/components/ui：shadcn Radix版组件源码；共享变体与焦点态集中维护。
 - src/app/globals.css：黑白灰语义token、液态玻璃材质与响应式规则。字体本地加载Geist，中文使用系统回退。
-- public/characters：frontend/public独立保存页面需要的展示图；characters.ts显式引用已采用成女素材。DeepSeek使用adult/deepseek下的五态PNG，其余四位使用adult/{character}/master.png并禁用缺失动作。未用于页面的四风格立绘与设定卡保留在本地根public中；旧编号姿态、cards、turnarounds目录已移入被忽略的output。
+- public/characters：frontend/public独立保存页面需要的展示图；characters.ts显式引用已采用成女素材。DeepSeek使用adult/deepseek下的五态PNG，其余四位使用adult/{character}/master.png并禁用缺失动作。未用于页面的四风格立绘与设定卡保留在本地 `public/`；旧编号姿态、cards、turnarounds目录已移入被忽略的output。
 - public/scenes、public/brand：复用既有背景和SVG标志，无临时Figma素材URL。
 
 主题偏好存储键为voira-theme，初次访问默认暗色。无自动轮播；头像切换不改尺寸，方向键仅移动Tab焦点，Enter／Space确认选择；支持减少动效偏好。T-113在实际DOM解码后同中心叠化：人物420ms／姿态280ms，旧图保持到新图就绪，不再移动或缩放人物；失败提示持续留在舞台正文并支持重新加载。小高度手机优先保留人物、档案名称、五态、角色和开始入口，收起营销标题及副标题；320px窄屏头像栏内部横向滚动，页面不横向溢出。

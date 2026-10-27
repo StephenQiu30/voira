@@ -88,4 +88,4 @@ uv run --locked pytest -q
 
 动作唯一来源为Skill目录的poses.json。Skill版本同时覆盖SKILL.md与动作资源，修改姿态正文会改变版本；服务只把选中动作组装到prompt，不要求一次生成五张。新Skill为用户方案的本项目整理，因此source_url为null，provenance说明来源，不捏造外部Skill链接。当前接口没有前端消费者，OpenAPI客户端兼容仍未验收。
 
-ChatGPT四种特点的制作输入见[当前配置与母图入口](app/skills/references/chatgpt/README.md)：Q版、少女、成女及蕾丝礼服立绘已收录根public，共同采用银白长发、双龙角、结形发饰与水晶鞋。四风格设定卡已采用，新三视图与五态待制作；前端仍展示旧坐姿五态。复用现有prepare的character字段，后端仍仅准备任务。
+ChatGPT四种特点的制作输入见[当前配置与母图入口](app/skills/references/chatgpt/README.md)：Q版、少女、成女及蕾丝礼服立绘已收录 `public/`，共同采用银白长发、双龙角、结形发饰与水晶鞋。四风格设定卡已采用，新三视图与五态待制作；前端仍展示旧坐姿五态。复用现有prepare的character字段，后端仍仅准备任务。
