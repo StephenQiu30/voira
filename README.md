@@ -92,6 +92,8 @@
 
 ## 从这里开始
 
+本地服务端目录为 `voira-server/`，对应本 GitHub 仓库 `StephenQiu30/voira`。网页前后端及知识库在本仓库维护；[Voira Pet](https://github.com/StephenQiu30/voira-pet) 是同级独立仓库，共享美术资源位于仓库外的 `../public/`。服务启动见 [前端](frontend/README.md) 与 [后端](backend/README.md)。
+
 - **想看产品：** [Figma 设计稿](https://www.figma.com/design/ZO9RS5jCJqDWBnAxB8yV2w) → [网页体验设计](docs/design/01-网页体验界面设计.md)。
 - **想参与设计：** [角色设定与素材](docs/design/20-人物三视图视觉设定.md) → [统一视觉规范](DESIGN.md)。
 - **想参与开发：** [需求索引](docs/requirement/01-数字人MVP需求草案.md) → [功能设计](docs/design/00-功能设计索引.md) → [实施计划](docs/plan/09-网页PoC逐功能实现与验收计划.md)。

@@ -43,7 +43,7 @@ flowchart LR
 
 ### 02.1 角色、媒体与页面
 
-早期基线为`character_id=deepseek`、显示名“蓝色大肥鱼”。character_id支持FR-031的七项，DeepSeek角色须由DeepSeek服务回答；以下素材路径仅说明该角色的基线，不代表其余六项配置。可复用[自然陪伴](../../public/characters/adult/deepseek/natural.png)与[浅色舞台](../../public/scenes/voira-studio.png)评审送模组合；正式静态图不等于送模已冻结，具体裁切和动态观感仍待核验。
+早期基线为`character_id=deepseek`、显示名“蓝色大肥鱼”。character_id支持FR-031的七项，DeepSeek角色须由DeepSeek服务回答；以下素材路径仅说明该角色的基线，不代表其余六项配置。可复用[自然陪伴](../../../public/characters/adult/deepseek/natural.png)与[浅色舞台](../../../public/scenes/voira-studio.png)评审送模组合；正式静态图不等于送模已冻结，具体裁切和动态观感仍待核验。
 
 角色配置必填：`config_version`、母版/送模文件与SHA-256、使用范围记录、云资产ID及就绪状态、模型/provider/运行地区、voice ID、人设版本。送模图无UI和其他人物，脸嘴清楚；构图以实际媒体区评审，不臆定供应商像素门槛。回答生成另记录适配器版本、模型、隔离配置与人设版本；音色方向、人设及回答长度已确认；具体voice ID和送模图仍待Q-004评审。
 

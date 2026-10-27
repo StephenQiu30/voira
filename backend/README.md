@@ -25,7 +25,7 @@ DeepSeek按四种特点维护当前完整人物定义：
 | 成女 | [character-style-adult](app/skills/character-style-adult/SKILL.md) | [deepseek-adult](app/skills/profiles/deepseek-adult.json) |
 | 礼服 | [character-style-gown](app/skills/character-style-gown/SKILL.md) | [deepseek](app/skills/profiles/deepseek.json) |
 
-风格Skill读取对应profile，直接将当前脸型、比例、发型、衣装、配色和气质用于提示词；共用[制作流程](app/skills/references/character-style-workflow.md)。默认DeepSeek查询端点返回最新礼服站姿定义，其余特点通过现有prepare的character字段提交完整配置。风格Skill供项目Agent读取，HTTP仍只注册三套输出任务，不接收风格Skill名或新增style_id字段；独立立绘由聊天图像工具执行。当前前端已采用成女五态站姿；身份统一后的礼服立绘与设定卡已采用，保留为独立资源。最终资源按[public人物目录](../public/characters/README.md)保存，旧图和候选临时放output。
+风格Skill读取对应profile，直接将当前脸型、比例、发型、衣装、配色和气质用于提示词；共用[制作流程](app/skills/references/character-style-workflow.md)。默认DeepSeek查询端点返回最新礼服站姿定义，其余特点通过现有prepare的character字段提交完整配置。风格Skill供项目Agent读取，HTTP仍只注册三套输出任务，不接收风格Skill名或新增style_id字段；独立立绘由聊天图像工具执行。当前前端已采用成女五态站姿；身份统一后的礼服立绘与设定卡已采用，保留为独立资源。最终资源按[public人物目录](../../public/characters/README.md)保存，旧图和候选临时放output。
 
 
 ## 02 本机启动与接口

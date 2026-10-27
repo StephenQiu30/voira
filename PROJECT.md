@@ -8,9 +8,9 @@
 
 ## 01 工程定位
 
-本目录即仓库 [StephenQiu30/voira](https://github.com/StephenQiu30/voira)，本机路径为 `/Users/stephenqiu/Desktop/StephenQiu/Voira`。网页项目、知识库与规范都在仓库根目录。
+本目录即仓库 [StephenQiu30/voira](https://github.com/StephenQiu30/voira)，本机路径为 `/Users/stephenqiu/Desktop/StephenQiu/Voira/voira-server`，本地目录名与GitHub仓库名分开维护。网页项目、知识库与规范都在仓库根目录。
 
-`public/` 是本地完整资源库，由 `.gitignore` 的 `/public/` 忽略。`frontend/public` 保存页面展示资源，随前端提交。`voira-pet/` 是独立的 [ChatGPT Work 宠物仓库](https://github.com/StephenQiu30/voira-pet)，由 `/voira-pet/` 忽略。运行、开发与供应商秘密均以本机实际配置为准。
+工作区容器 `Voira/` 不持有 Git：`voira-server/` 与 `voira-pet/` 各自保留独立 `.git`、`main` 和远端。共享 `../public/` 是本地完整资源库，位于两个仓库之外，不随任一仓库提交。`frontend/public` 保存服务端项目的页面展示资源，随前端提交。`../voira-pet/` 是独立的 [ChatGPT Work 宠物仓库](https://github.com/StephenQiu30/voira-pet)，拥有自己的素材副本、安装器和发布配置。文章 Markdown／Word 原稿保存在 `../voira-pet/articles/`，不放工作区或服务端根目录。运行、开发与供应商秘密均以本机实际配置为准。
 
 业务范围见[需求索引](docs/requirement/01-数字人MVP需求草案.md)，当前实现与未测项见[HANDOVER](HANDOVER.md)。本文只维护工程职责，不追加交付历史。
 
@@ -25,9 +25,9 @@
 | frontend/src/features | 按业务组织的状态、视图和交互 |
 | frontend/src/api | Umi OpenAPI生成的类型与HTTP请求；接入时生成，不手写DTO替代 |
 | frontend/src/lib、hooks、stores、types | 基础请求／配置、共享Hook、必要Zustand状态、非生成类型；按实际需要添加 |
-| public/characters、scenes、brand | 本地完整资源库，由 .gitignore 的 /public/ 忽略；按特点／人物保存最终图片，旧图暂存 output |
+| ../public/characters、scenes、brand | 两个仓库之外的本地共享资源；按特点／人物保存最终图片，旧图暂存 output |
 | frontend/public | 独立真实目录，只保存页面实际展示的人物、场景和品牌资源；随前端提交，不依赖本地素材库 |
-| voira-pet/public/characters/chibi | Q版立绘与设定卡的独立副本；已交付宠物成品见 voira-pet/public/pets |
+| ../voira-pet/public/characters/chibi | 宠物仓库的Q版立绘与设定卡独立副本；成品见 ../voira-pet/public/pets |
 | backend/app/api、schemas、services | 功能路由、Pydantic边界、用例编排 |
 | backend/app/core、integrations | 配置／基础设施、外部AI及媒体适配；按实现需要增加 |
 | backend/app/skills | 三套输出任务规则、四套人物风格Skill、poses.json和当前角色profiles；不存生成中间图 |
@@ -70,6 +70,6 @@ Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers�
 
 ## 06 设计交付资产
 
-完整最终资源放在本地 `public/characters`、`scenes`、`brand`。`frontend/public` 按现有 URL 保存页面所需资源，部署使用 `frontend/public`。当前展示集合为9张人物、2张场景与1张品牌SVG。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。其余四位当前引用characters/adult/{character_id}/master.png，只启用自然陪伴；缺失动作生成并采用后再启用。四风格均以特点／人物组织master.png与card.png；旧编号姿态、cards及turnarounds目录移到被忽略的output。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
+完整最终资源放在仓库外共享 `../public/characters`、`../public/scenes`、`../public/brand`。`frontend/public` 按现有 URL 保存页面所需资源，部署使用 `frontend/public`。当前展示集合为9张人物、2张场景与1张品牌SVG。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。其余四位当前引用characters/adult/{character_id}/master.png，只启用自然陪伴；缺失动作生成并采用后再启用。四风格均以特点／人物组织master.png与card.png；旧编号姿态、cards及turnarounds目录移到被忽略的output。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
 
 候选、旧稿、参考图、生成清单放output，不在public或docs另建history／pending／review-set。造型和正式资源入口归[视觉设定20](docs/design/20-人物三视图视觉设定.md)；运行Skill与角色配置是制作规则唯一来源，prepared不代表真实生图，静态资源不代表AI或数字人会话已接通。

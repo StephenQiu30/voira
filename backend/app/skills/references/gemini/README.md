@@ -4,10 +4,10 @@
 
 | 特点 | 制作Skill | 当前profile | 立绘 | 设定卡 |
 |---|---|---|---|---|
-| Q版 | [chibi](../../character-style-chibi/SKILL.md) | [gemini-chibi](../../profiles/gemini-chibi.json) | [master](../../../../../public/characters/chibi/gemini/master.png) | [card](../../../../../public/characters/chibi/gemini/card.png) |
-| 少女 | [maiden](../../character-style-maiden/SKILL.md) | [gemini-maiden](../../profiles/gemini-maiden.json) | [master](../../../../../public/characters/maiden/gemini/master.png) | [card](../../../../../public/characters/maiden/gemini/card.png) |
-| 成女 | [adult](../../character-style-adult/SKILL.md) | [gemini-adult](../../profiles/gemini-adult.json) | [master](../../../../../public/characters/adult/gemini/master.png) | [card](../../../../../public/characters/adult/gemini/card.png) |
-| 礼服 | [gown](../../character-style-gown/SKILL.md) | [gemini](../../profiles/gemini.json) | [master](../../../../../public/characters/gown/gemini/master.png) | [card](../../../../../public/characters/gown/gemini/card.png) |
+| Q版 | [chibi](../../character-style-chibi/SKILL.md) | [gemini-chibi](../../profiles/gemini-chibi.json) | [master](../../../../../../public/characters/chibi/gemini/master.png) | [card](../../../../../../public/characters/chibi/gemini/card.png) |
+| 少女 | [maiden](../../character-style-maiden/SKILL.md) | [gemini-maiden](../../profiles/gemini-maiden.json) | [master](../../../../../../public/characters/maiden/gemini/master.png) | [card](../../../../../../public/characters/maiden/gemini/card.png) |
+| 成女 | [adult](../../character-style-adult/SKILL.md) | [gemini-adult](../../profiles/gemini-adult.json) | [master](../../../../../../public/characters/adult/gemini/master.png) | [card](../../../../../../public/characters/adult/gemini/card.png) |
+| 礼服 | [gown](../../character-style-gown/SKILL.md) | [gemini](../../profiles/gemini.json) | [master](../../../../../../public/characters/gown/gemini/master.png) | [card](../../../../../../public/characters/gown/gemini/card.png) |
 
 四种特点均已采用立绘与设定卡。Q版短泡袖与圆润比例；少女轻纱袖、抬指短裙；成女结构腰封、花瓣裙与摊手讲解；礼服星轨长裙、层叠蕾丝及菱格中短袜。当前props为空，不加座具或手持道具。成女三视图与五态素材已齐，其余特点三视图待制作；前端已使用成女自然立绘，新增四态尚未同步启用。
 

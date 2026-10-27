@@ -4,13 +4,13 @@
 
 | 特点 | 制作Skill | 当前profile | 母图 |
 |---|---|---|---|
-| Q版 | [chibi](../../character-style-chibi/SKILL.md) | [chatgpt-chibi](../../profiles/chatgpt-chibi.json) | [立绘](../../../../../public/characters/chibi/chatgpt/master.png) |
-| 少女 | [maiden](../../character-style-maiden/SKILL.md) | [chatgpt-maiden](../../profiles/chatgpt-maiden.json) | [立绘](../../../../../public/characters/maiden/chatgpt/master.png) |
-| 成女 | [adult](../../character-style-adult/SKILL.md) | [chatgpt-adult](../../profiles/chatgpt-adult.json) | [立绘](../../../../../public/characters/adult/chatgpt/master.png) |
-| 礼服 | [gown](../../character-style-gown/SKILL.md) | [chatgpt](../../profiles/chatgpt.json) | [立绘](../../../../../public/characters/gown/chatgpt/master.png) |
+| Q版 | [chibi](../../character-style-chibi/SKILL.md) | [chatgpt-chibi](../../profiles/chatgpt-chibi.json) | [立绘](../../../../../../public/characters/chibi/chatgpt/master.png) |
+| 少女 | [maiden](../../character-style-maiden/SKILL.md) | [chatgpt-maiden](../../profiles/chatgpt-maiden.json) | [立绘](../../../../../../public/characters/maiden/chatgpt/master.png) |
+| 成女 | [adult](../../character-style-adult/SKILL.md) | [chatgpt-adult](../../profiles/chatgpt-adult.json) | [立绘](../../../../../../public/characters/adult/chatgpt/master.png) |
+| 礼服 | [gown](../../character-style-gown/SKILL.md) | [chatgpt](../../profiles/chatgpt.json) | [立绘](../../../../../../public/characters/gown/chatgpt/master.png) |
 
 读取profile完整正向定义，附加动作与输出要求；制作前查看对应母图。四张立绘与四张设定卡已采用，成女三视图与五态素材已齐，其余特点三视图待制作。前端已使用成女自然立绘，新增四态尚未同步启用。
 
 依照[共用制作流程](../character-style-workflow.md)操作；现有prepare接受所选完整profile作为character，不新增HTTP风格字段或ChatGPT查询端点。独立立绘使用图像工具，prepared不等于真实生图完成。
 
-当前四风格设定卡：[Q版](../../../../../public/characters/chibi/chatgpt/card.png)、[少女](../../../../../public/characters/maiden/chatgpt/card.png)、[成女](../../../../../public/characters/adult/chatgpt/card.png)、[礼服](../../../../../public/characters/gown/chatgpt/card.png)。卡面特写尚未拆分为独立透明素材。
+当前四风格设定卡：[Q版](../../../../../../public/characters/chibi/chatgpt/card.png)、[少女](../../../../../../public/characters/maiden/chatgpt/card.png)、[成女](../../../../../../public/characters/adult/chatgpt/card.png)、[礼服](../../../../../../public/characters/gown/chatgpt/card.png)。卡面特写尚未拆分为独立透明素材。

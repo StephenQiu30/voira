@@ -6,10 +6,10 @@
 
 | 特点 | 唯一画风参考 |
 |---|---|
-| Q版 | [DeepSeek Q版](../../../../public/characters/chibi/deepseek/master.png) |
-| 少女 | [DeepSeek少女](../../../../public/characters/maiden/deepseek/master.png) |
-| 成女 | [DeepSeek成女](../../../../public/characters/adult/deepseek/master.png) |
-| 礼服 | [DeepSeek礼服](../../../../public/characters/gown/deepseek/master.png) |
+| Q版 | [DeepSeek Q版](../../../../../public/characters/chibi/deepseek/master.png) |
+| 少女 | [DeepSeek少女](../../../../../public/characters/maiden/deepseek/master.png) |
+| 成女 | [DeepSeek成女](../../../../../public/characters/adult/deepseek/master.png) |
+| 礼服 | [DeepSeek礼服](../../../../../public/characters/gown/deepseek/master.png) |
 
 制作前同时查看两类参考：DeepSeek对应图控制头身比例、脸部绘制方式、线条、光影、材质、发束组织、服装层次与饰物密度；目标角色母图和profile控制身份、发色、眼色、配色、识别饰物及个性。构图按同一输出类型对齐主体占幅，保持合理姿态差异。统一画风不复制DeepSeek的鲸鱼、头饰、具体花纹或专属服装。
 
@@ -34,7 +34,7 @@
 
 ## 保存与检查
 
-正式图位于仓库根目录`public/characters/{characteristic}/{character_id}/`，特点为chibi、maiden、adult、gown。目录和文件使用英文，正式目录只留最终确定素材，不添加版本／日期／历史层级。候选和旧图放被忽略的`output/character-design/temp/`；采用新结果前先保存被替换文件，用户当前已授权采用时直接完成，不重复要求确认。
+正式图位于服务端仓库外的共享`../public/characters/{characteristic}/{character_id}/`（路径相对voira-server根目录），特点为chibi、maiden、adult、gown。目录和文件使用英文，正式目录只留最终确定素材，不添加版本／日期／历史层级。候选和旧图放被忽略的`output/character-design/temp/`；采用新结果前先保存被替换文件，用户当前已授权采用时直接完成，不重复要求确认。
 
 检查实际脸型、头身关系、发型、衣饰结构、配色和神态是否符合本次profile，再检查手指、腿脚、鞋履与衣料遮挡。独立图实测alpha、深浅底边缘和完整构图。保存图片、提示词与输入参考记录，说明真实完成项；已有立绘不代表已经具备三视图、设定卡或五态。
 
