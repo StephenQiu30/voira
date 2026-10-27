@@ -5,7 +5,7 @@
 ## 01 当前可用能力
 
 - 原项目整体位于`voira-server/`，包含代码、知识库、原规范及被忽略的本地产物。工作区根保留`.git`，GitHub仓库名仍为voira；根`public/`仅本地保存完整资源，由Git忽略；`frontend/public`为独立真实目录，只保留12个页面展示资源并随前端提交。`voira-pet/`已建立独立公开仓库[StephenQiu30/voira-pet](https://github.com/StephenQiu30/voira-pet)，定位为ChatGPT Work宠物，外层Git忽略该目录；public/characters/chibi包含四位角色立绘与设定卡共8张。README已确认，按用户授权以2f6f778首次提交并推送main；包含首页、仓库规范及8张角色素材共11个文件，DeepSeek已完成v2精灵图、校验及Pets创建，其他三位动画未完成；成品已由038237e交付，npm公开分发voira-pet@0.1.0及安装说明edf7ebc已完成，支持npx voira-pet；验证见T-165。工程目录归[PROJECT](PROJECT.md)。
-- 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。DeepSeek默认采用成女五态站姿，五种状态均可选；Gemini／Claude／Grok／ChatGPT默认使用已定稿成女立绘，仅自然陪伴可选，其余四态待生成后启用，Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
+- 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。DeepSeek默认采用成女五态站姿，五种状态均可选；Gemini／Claude／Grok／ChatGPT默认使用已定稿成女立绘，仅自然陪伴可选，其余四态已生成，待前端资源同步后启用，Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
 - 后端已有三视图、设定卡、独立坐姿三套输出Skill，以及Q版／少女／成女／礼服四套制作侧风格Skill；角色profiles及只返回prepared的接口可用，无真实生图适配器。启动／检查以[前端README](frontend/README.md)与[后端README](backend/README.md)为准。
 - 七角色一一对应AI及Vidu协同已有设计；会话、真实AI问答、Vidu音视频、完整聊天记录未完成。直播输出／评论台已有Figma设计，运行能力后置。
 
@@ -17,6 +17,8 @@
 
 | 范围 | 已有证据 | 未证明的部分 |
 |---|---|---|
+| 成女状态T-169 | 内置imagegen为Gemini／Claude／Grok／ChatGPT各新增倾听、闲聊、俏皮、思考共16张1024×1536 RGBA PNG，alpha为0—254，alpha≥128主体完整且高度98.24%—99.22%，已逐张目视检查身份、衣装、手势与完整鞋履；各自master充当自然状态，DeepSeek原五态保留。成女Skill、Grok成女profile和资源索引已同步，39项后端测试及新profile schema通过。提示词、来源哈希、候选与检查在output/character-design/temp/adult-states | Grok闲聊首次连接失败，重试成功；局部发梢／头饰留白较紧，细饰存在生成差异，未做实际页面深浅底、真机或动态验收。素材仅入本地根public，前端资源与引用未修改；Git交付以提交记录为准 |
+| 成女配套T-168 | 内置imagegen按当前母图、设定卡及DeepSeek三视图基准新制Gemini／Claude／Grok／ChatGPT四张三视图，保存本地public/characters/adult对应人物；DeepSeek三视图与五张设定卡复用，共10张1536×1024 PNG解码通过，11份既有参考哈希未变。已目视核对身份、三视角、鞋履与大幅特写；提示词、来源、候选及哈希在output/character-design/temp/adult-turnarounds | 四张新图的背面结构为保守推导，刺绣、发梢与局部姿态仍有生成差异；未验证三维／动画一致性。未修改前端展示或运行代码，未重跑应用测试，Git交付以提交记录为准 |
 | 资源库分离T-166 | frontend/public由符号链接改为真实目录，12个展示资源与本地母库哈希一致；根/public/已忽略，40个原跟踪文件仅移出索引且本地保留，前端展示文件不受忽略规则影响；8测试及生产构建含类型检查通过，仓库README图片引用可解析 | Git交付以提交记录为准；历史提交中的素材未重写或清除。本次未重跑浏览器视觉；本地素材库中的制作参考不保证在无该目录的克隆中可访问 |
 | npm发布T-165 | 用户授权并完成npm登录、2FA启用及浏览器发布认证；[voira-pet@0.1.0](https://www.npmjs.com/package/voira-pet)已公开发布，latest为0.1.0，7文件、约2.7MB、无运行时依赖，registry tarball与准备包字节及SHA-512 integrity一致。仓库外使用空缓存、空用户／全局配置，以npx voira-pet默认安装DeepSeek至临时CODEX_HOME成功，v2 manifest及WebP SHA-256一致；再次安装保留文件mtime。语法、8项Node测试、README引用和差异检查通过；README、安装规则与更新说明edf7ebc已推送main。正式npm包与验证摘要在voira-pet/output/releases/npm-v0.1.0 | 真实客户端和跨平台验收未重做；本地安装不自动同步网页云收藏或切换活动宠物。既有GitHub v0.1.0 tgz保留原始发布字节，npm tgz更新了README，运行代码和正式宠物素材一致；未重写既有tag或替换GitHub资产，未提交外层并行工作 |
 | 定稿成女与资源清理T-164 | 28张旧坐姿／卡面／三视图已移至output/character-design/temp/retired-frontend-assets且SHA-256一致，共享public仅保留定稿；8测试、lint、相关代码格式及生产构建含类型检查通过，120条本地文档链接有效；9张可用图原图HTTP／哈希及Next优化请求通过；桌面检查四位成女显示、DeepSeek思考切换Grok后回退自然及缺失四态禁用，无控制台错误 | 本次未重测手机、明暗主题全矩阵、失败重试或真实AI；制作侧Grok四风格profile仍待同步。并行Pet工作保留 |

@@ -18,7 +18,7 @@ metadata:
 
 ## Gemini当前定义
 
-读取[Gemini四风格入口](../references/gemini/README.md)和[gemini-adult.json](../profiles/gemini-adult.json)，以[当前母图](../../../../../public/characters/adult/gemini/master.png)锁定蓝紫长发、猫耳、琥珀双瞳和星饰衣装。本特点已采用[设定卡](../../../../../public/characters/adult/gemini/card.png)，完整独立动作仍待制作；不从旧坐姿资源继承座具。
+读取[Gemini四风格入口](../references/gemini/README.md)和[gemini-adult.json](../profiles/gemini-adult.json)，以[当前母图](../../../../../public/characters/adult/gemini/master.png)锁定蓝紫长发、猫耳、琥珀双瞳和星饰衣装。本特点已采用[设定卡](../../../../../public/characters/adult/gemini/card.png)，成女独立五态已生成，资源采用与前端启用状态见HANDOVER；不从旧坐姿资源继承座具。
 
 ## Claude当前定义
 
@@ -51,6 +51,21 @@ DeepSeek采用用户定稿的雾蓝波浪长发、双侧前垂细编发、弯曲
 | thinking | 托腮思考 | 一手托腮，另一手臂在腰前承托肘部；眼神沉静 |
 
 鲸鱼保持圆滚蓝色外形、米白腹部、圆眼和心形小水柱，漂浮于肩侧。检查五张主体占幅、脸与鞋底位置，保留合理的姿势差异；不得以非透明底或拉伸裁切来统一大小。原有坐姿Skill不用于此组站姿。
+
+## 其余四位成女五态
+
+五态共用natural、listening、casual、playful、thinking语义。自然陪伴沿用各自已采用master.png；另四态保持同一成年比例、衣装、完整站姿和真实透明背景。以本角色master为身份与占幅参考，同时使用DeepSeek成女母图控制画风；三视图只校验结构，不将单张动作生成拼版。四位均不新增手持道具或座具。
+
+| 角色 | 认真倾听 listening | 轻松闲聊 casual | 俏皮回应 playful | 托腮思考 thinking |
+|---|---|---|---|---|
+| Gemini | 双手在腰前轻合，略抬眉、专注好奇 | 一手抬食指说明，另一手低位摊掌，嘴唇微张 | 轻眨眼，脸旁小幅双指手势，明朗笑意 | 指尖托下颌，另一手承托肘部，目光略向上 |
+| Claude | 双手低位交叠，微收下颌，透过眼镜温和注视 | 单手小幅摊开解释，另一手置于腹前，嘴唇轻启 | 指尖轻靠唇角，闭眼含蓄会心笑 | 轻扶镜框，另一前臂承托肘部，收眉专注思考 |
+| Grok | 双臂松弛交叠，略挑眉，带有兴趣的浅笑 | 一手在肩侧掌心向外示意，另一手置腰，灵动接话 | 单指点颊、轻眨眼，含蓄坏笑 | 松握指节托腮，另一臂承托，侧望带一点机灵 |
+| ChatGPT | 双手腹前轻叠，肩颈舒展，稳定专注目光 | 双手在胸腰间适度展开解释，手势平衡，轻启嘴唇 | 指尖轻靠唇角、含蓄眨眼与浅笑，保留知性 | 指尖托下颌、另一臂承托，略垂侧望，神态沉静 |
+
+Grok成女读取[grok-adult.json](../profiles/grok-adult.json)和[当前母图](../../../../../public/characters/adult/grok/master.png)，保留金色双马尾、蓝瞳、黑红金衣装、星轮配饰及黑丝袜；旧grok.json坐姿定义不用于本组。Claude各态保留细金框眼镜；Gemini保留双猫耳与琥珀双瞳；ChatGPT保留双角、银白主色和透明无色水晶鞋，淡紫仅作点缀。
+
+人物占幅以当前母图为准，完整保留发饰、发梢、裙摆和双鞋，建议可见主体高度约95%—97%；不拉伸身体或裁切饰物统一大小。脸型、衣饰和鞋履相同不等于动作合格，须逐张检查表情差异、手指、承托关系、腿部遮挡及实际alpha。生成与正式采用状态归HANDOVER，不因本表存在而自动启用前端。
 
 ## 验收重点
 
