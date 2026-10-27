@@ -4,14 +4,16 @@
 
 任务状态仅在本文件维护；详细交付与依赖见[计划09](docs/plan/09-网页PoC逐功能实现与验收计划.md)，当前能力与验证边界见[HANDOVER](HANDOVER.md)。状态使用待办／阻塞／进行中／已完成。文档、实现和真实验收分别判断，不因编号已分配而自动启动。
 
-T-001—176及历史KB编号已占用，后续从T-177分配。历史过程由Git与本地恢复副本保留，不继续追加交付日记。曾重复使用的T-010、T-084、T-109按任务名称区分，不重分配或推断新增授权。
+T-001—178及历史KB编号已占用，后续从T-179分配。历史过程由Git与本地恢复副本保留，不继续追加交付日记。曾重复使用的T-010、T-084、T-109按任务名称区分，不重分配或推断新增授权。
 
 ## 02 待落实的基线与并行任务
 
 | 任务 | 状态 | 剩余条件 |
 |---|---|---|
+| T-178 GitHub Release v0.3.0 | 已完成 | 标签v0.3.0指向cc30944。Release含DeepSeek、ChatGPT、Claude三个独立ZIP、与npm 0.3.0相同的tgz及SHA256SUMS；公网下载校验通过。v0.1.0保留。见HANDOVER |
+| T-177 Gemini星辰猫耳宠物 | 进行中 | 基于现有Q版立绘／设定卡制作v2九态、16方向、预览与Pets创建；接入本地安装器，保留原图和既有三位，尚未提交或发布 |
 | T-176 双仓库目录区分与Claude源码交付 | 已完成 | 服务端迁入voira-server并保留GitHub voira，宠物与共享public同级；文章原稿归voira-pet/articles。迁移及三端检查通过，Pet的a834ed2已推送main，服务端规范与链接随本提交交付；见HANDOVER |
-| T-175 Claude向日葵公开发布 | 已完成 | voira-pet@0.3.0已公开发布，latest为0.3.0；list含三位，install claude与DeepSeek、ChatGPT分目录且互不覆盖。Codex Pets页Claude · 向日葵已通过，描述只含人设与形象。源码交付见T-176，GitHub Release v0.1.0保持原状；见HANDOVER |
+| T-175 Claude向日葵公开发布 | 已完成 | voira-pet@0.3.0已公开发布，latest为0.3.0；list含三位，install claude与DeepSeek、ChatGPT分目录且互不覆盖。Codex Pets页Claude · 向日葵已通过，描述只含人设与形象。源码交付见T-176，GitHub Release见T-178；见HANDOVER |
 | T-174 Figma成女五态同步与占幅优化 | 已完成 | 25张成女站姿替换现有母组件、同步头像与状态页，统一安全留白并修复手机嵌套实例裁切；保留现有布局、主题和原型。Git先以6564a0b推送制作规则；Figma验证与前端差异见HANDOVER |
 | T-173 Claude向日葵宠物 | 已完成 | 73帧v2九态／16方向、预览与质量检查完成，Pets创建及回读通过；源码支持claude独立安装，10项测试与真实打包npx三角色并存通过。原角色及既有宠物未覆盖；公开分发见T-175 |
 | T-172 Pet仓库交付与Grok首页同步 | 已完成 | 9fe1891先交付当前宠物代码；7c6cc43同步Grok两图与五角色首页，28a698e同步已发布npm 0.2.0说明，均已推送main；GitHub简介已更新，源码与远端一致，验证见HANDOVER |
