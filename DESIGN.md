@@ -47,4 +47,4 @@ prefers-reduced-motion下关闭装饰循环和位移；后台／离屏停止不�
 
 ## 05 规范归属
 
-业务范围见[需求索引](docs/requirement/01-数字人MVP需求草案.md)，工程见[PROJECT](PROJECT.md)，当前视觉与状态设计见[界面设计01](docs/design/01-网页体验界面设计.md)。本文只维护现行通用视觉规则，不追加按任务编号排列的历史修订。
+业务范围见[需求索引](docs/requirement/01-数字人MVP需求草案.md)，工程见[PROJECT](PROJECT.md)，当前视觉与状态设计见[界面设计01](docs/design/01-网页体验界面设计.md)。组件安装、组合和 Vercel CLI 归[前端规范](docs/standard/frontend/01-前端开发规范.md)。本文的黑白灰、无装饰边框和已确认玻璃优先于 shadcn 示例里的默认面板主题。本文只维护现行通用视觉规则，不追加按任务编号排列的历史修订。

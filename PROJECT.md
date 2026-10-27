@@ -32,7 +32,7 @@
 | backend/app/core、integrations | 配置／基础设施、外部AI及媒体适配；按实现需要增加 |
 | backend/app/skills | 三套输出任务规则、四套人物风格Skill、poses.json和当前角色profiles；不存生成中间图 |
 | frontend/tests、backend/tests | 对应端检查；不默认调用付费服务 |
-| docs | 可持久维护的需求、设计、验收、计划和规范；导航定义阅读入口 |
+| docs | 知识库。需求、设计、验收、计划、研究与规范的位置见[文档目录规范](docs/standard/02-文档目录规范.md) |
 | output、.local | Git忽略的过程产物／恢复副本，不属于知识库或运行服务 |
 
 不预建微服务、空抽象、脚本目录或供应商专属工程；数据库迁移按正式设计必要性增加。SQLite意图账本为业务方案，尚未实现。
@@ -42,8 +42,9 @@
 | 端 | 技术 | 工程职责 |
 |---|---|---|
 | 前端 | Next.js + React + TypeScript | 使用 App Router；TypeScript strict 作为初始化要求；渲染、页面与交互 |
-| 前端 | shadcn/ui + Radix UI | 采用 Radix 版本的组件；shadcn 源码置于 components/ui，复杂交互复用 Radix primitives |
+| 前端 | shadcn/ui + Radix UI | 已锁定 radix-nova 与统一包 `radix-ui`；用 shadcn CLI 在 frontend 添加组件，源码置于 components/ui。不重新 init，不换 Base UI |
 | 前端 | Tailwind CSS | 样式与统一设计变量，避免在不同组件重复维护主题值 |
+| 前端 | Vercel CLI | 只操作 frontend 的 Next.js 应用。当前未链接项目；链接、环境和部署先核对目标。日常开发仍用 npm 脚本 |
 | 前端 | Prettier + ESLint | 分别负责格式和代码质量；配置不得互相冲突 |
 | 前端 | Axios | 统一 HTTP 请求、取消、超时与错误适配 |
 | 前端 | Zustand | 需要跨组件共享的客户端状态；普通局部状态留在 React |
@@ -66,7 +67,7 @@ Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers�
 
 ## 05 安全与维护
 
-长期密钥仅后端持有，frontend/public、NEXT_PUBLIC变量及浏览器props均视为公开内容；示例配置只含占位。生成器和schema读取不能创建收费会话。共享规范见[前端](docs/templates/02-前端开发规范.md)与[后端](docs/templates/03-后端开发规范.md)；提交规则归[AGENTS](AGENTS.md)。
+长期密钥仅后端持有，frontend/public、NEXT_PUBLIC变量及浏览器props均视为公开内容；示例配置只含占位。生成器和schema读取不能创建收费会话。`.vercel/` 与拉取的环境文件不提交。共享规范见[前端](docs/standard/frontend/01-前端开发规范.md)与[后端](docs/standard/backend/01-后端开发规范.md)；提交规则归[AGENTS](AGENTS.md)。
 
 ## 06 设计交付资产
 

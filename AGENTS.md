@@ -2,10 +2,10 @@
 
 ## 01 阅读入口与规范归属
 
-1. 先读[知识库导航](docs/00-知识库导航.md)和[文档规范](docs/templates/01-文档编写规范.md)。
+1. 先读[知识库导航](docs/00-知识库导航.md)、[文档规范](docs/standard/01-文档编写规范.md)和[目录规范](docs/standard/02-文档目录规范.md)。
 2. 读[BLACKLOG](BLACKLOG.md)、[HANDOVER](HANDOVER.md)，开始前核对当前目录和Git状态。
 3. 按任务读取[需求索引](docs/requirement/01-数字人MVP需求草案.md) → [设计](docs/design/00-功能设计索引.md) → [PRD](docs/prd/01-网页数字人PoC产品与验收标准.md) → [计划02](docs/plan/02-网页PoC逐功能实现与验收计划.md)，真实测试见[计划01](docs/plan/01-网页数字人PoC验证计划.md)。
-4. 工程读[PROJECT](PROJECT.md)，视觉读[DESIGN](DESIGN.md)；开发相应端时读[前端规范](docs/templates/02-前端开发规范.md)／[前端AGENTS](frontend/AGENTS.md)或[后端规范](docs/templates/03-后端开发规范.md)／[后端AGENTS](backend/AGENTS.md)。研究按需查[来源结论](docs/research/00-调研索引.md)。
+4. 工程读[PROJECT](PROJECT.md)，视觉读[DESIGN](DESIGN.md)；开发相应端时读[前端规范](docs/standard/frontend/01-前端开发规范.md)／[前端AGENTS](frontend/AGENTS.md)或[后端规范](docs/standard/backend/01-后端开发规范.md)／[后端AGENTS](backend/AGENTS.md)。研究按需查[来源结论](docs/research/00-调研索引.md)。
 
 用户新指令优先于旧文档；冲突直接更新所属正文，不保留互相覆盖的“本轮修订”。
 
@@ -28,7 +28,7 @@
 
 ## 04 文件维护
 
-每项功能单独维护requirement和唯一主FR；总需求只作范围／共享NFR／Q路由。设计可按职责合并，契约统一在design02；PRD维护AC，plan维护依赖和测试规格。PROJECT、DESIGN、BLACKLOG与HANDOVER各有唯一归属。
+每项功能单独维护requirement和唯一主FR；总需求只作范围／共享NFR／Q路由。设计可按职责合并，契约统一在design02；PRD维护AC，plan维护依赖和测试规格。文件放在哪见[目录规范](docs/standard/02-文档目录规范.md)。PROJECT、DESIGN、BLACKLOG与HANDOVER各有唯一归属。
 
 中文编写，稳定ID不复用，移动／合并同步链接。知识库不保存过程日志、旧稿全集、抓取／OCR、生成记录或重复提示词；原始材料需要保留时移到被忽略的本地目录，不重写原件。运行Skill／配置、正式素材和Obsidian运行文件按实际用途保护。合并删除须保留独有决策、必要来源与未决项，不用新归档文档继续堆积旧过程。
 

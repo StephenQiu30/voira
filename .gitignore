@@ -9,6 +9,9 @@ docs/.obsidian/workspace-mobile.json
 !.env.example
 !.env.*.example
 
+# Vercel 项目链接与本地拉取结果
+.vercel/
+
 # 依赖、构建及测试缓存
 node_modules/
 .next/

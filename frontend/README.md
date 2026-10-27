@@ -30,6 +30,8 @@ npm run start -- --hostname 127.0.0.1 --port 3000
 
 端口占用时选空闲应用端口，不终止其他项目。以上命令在frontend目录执行，不需要后端、密钥或模型账户。
 
+Vercel CLI 的链接、环境与部署见[前端规范](../docs/standard/frontend/01-前端开发规范.md)。本目录尚未链接项目，不把上述 npm 命令换成未核对的 `vercel dev` 或 `vercel deploy`。
+
 ## 03 结构与资源
 
 本目录的 public 保存页面展示资源：9张人物、2张场景和1张品牌SVG，随前端提交，浏览器URL不变。完整素材在服务端仓库外共享 `../../public/`，只留在本机；页面运行与部署使用本目录的 public。
@@ -43,7 +45,7 @@ npm run start -- --hostname 127.0.0.1 --port 3000
 
 主题偏好存储键为voira-theme，初次访问默认暗色。无自动轮播；头像切换不改尺寸，方向键仅移动Tab焦点，Enter／Space确认选择；支持减少动效偏好。T-113在实际DOM解码后同中心叠化：人物420ms／姿态280ms，旧图保持到新图就绪，不再移动或缩放人物；失败提示持续留在舞台正文并支持重新加载。小高度手机优先保留人物、档案名称、五态、角色和开始入口，收起营销标题及副标题；320px窄屏头像栏内部横向滚动，页面不横向溢出。
 
-工程与视觉规范见[PROJECT](../PROJECT.md)、[DESIGN](../DESIGN.md)和[前端规范](../docs/templates/02-前端开发规范.md)。Axios、Zustand与Umi OpenAPI保留为后续真实功能依赖，本批没有为了布局安装或伪造生成客户端。
+工程与视觉规范见[PROJECT](../PROJECT.md)、[DESIGN](../DESIGN.md)和[前端规范](../docs/standard/frontend/01-前端开发规范.md)。Axios、Zustand与Umi OpenAPI保留为后续真实功能依赖，本批没有为了布局安装或伪造生成客户端。
 
 ## 04 舞台动效
 
