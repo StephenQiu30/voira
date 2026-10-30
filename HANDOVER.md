@@ -5,7 +5,7 @@
 ## 01 当前可用能力
 
 - 本目录`voira-server/`对应仓库[StephenQiu30/voira](https://github.com/StephenQiu30/voira)。共享完整资源库`../public/`与独立宠物仓库`../voira-pet/`位于同级，页面展示资源仍在`frontend/public`，边界见[PROJECT](PROJECT.md)。已收录DeepSeek、ChatGPT、Claude、Gemini、Grok五位Q版角色共10张立绘／设定卡；五位均已完成v2动画、校验及Pets创建。公开npm latest为voira-pet@0.5.0，含全部五位；无参数仍安装DeepSeek。GitHub Release v0.5.0提供五位独立ZIP及同一份tgz。Codex Pets已收录五位且描述只写人设与形象。Grok制作见T-179，本次分发见T-181。Gemini分发见T-180，Claude分发见T-175与T-178。
-- 前端已有单人物选择页、七角色入口、五态、明暗主题、固定选择卡、响应式与连续叠化。前五位成女五种状态均可选；Gemini／Claude／Grok／ChatGPT的自然陪伴使用各自master.png，其余四态使用已采用站姿。Kimi／Qwen仍为独立占位。开始交流禁用，真实服务未连接。
+- 前端选择页已改为数字人直播间待机画面：人物居中，主持信息在侧，右侧直播间保持空白，底部保留五态和七位形象。Header显示待机。前五位成女五种状态均可选；Kimi／Qwen仍为独立占位。开始交流禁用，不显示观众、评论或开播中。真实服务未连接。这次风格调整尚未推送。
 - 后端已有三视图、设定卡、独立坐姿三套输出Skill，以及Q版／少女／成女／礼服四套制作侧风格Skill；角色profiles及只返回prepared的接口可用，无真实生图适配器。启动／检查以[前端README](frontend/README.md)与[后端README](backend/README.md)为准。
 - 七角色一一对应AI及Vidu协同已有设计；会话、真实AI问答、Vidu音视频、完整聊天记录未完成。直播输出／评论台已有Figma设计，运行能力后置。
 
@@ -17,6 +17,7 @@
 
 | 范围 | 已有证据 | 未证明的部分 |
 |---|---|---|
+| 直播间待机画面 | 本地窄屏暗色已看到居中人物、名条、直播间“当前未开启”、五态、七位入口、禁用的开始交流及“交流服务尚未连接”。切换到Gemini后五种状态仍可选。1280宽的布局为左舞台、右直播间、底部控制条，名条与立绘不重叠 | 未重验浅色主题、真机和评论操作台。页面不表示已经开播 |
 | 五位成女五态前端T-183 | 16张已采用站姿按字节复制到frontend/public，与共享库SHA-256一致。前端8项测试通过。本地页面暗色窄屏已核对Gemini自然与托腮思考、Claude／Grok／ChatGPT托腮思考保留、Kimi占位且五态禁用；20个原图HTTP 200且为PNG，已加载的优化图无失败请求 | 未重验浅色主题、桌面宽屏截图、真机和键盘以外的点击激活。开始交流仍禁用，真实AI／媒体未接通 |
 | Grok公开发布T-181 | registry回读latest为0.5.0，tarball SHA-1为a9137fd7c301931dddff699ed53e85a32db87386。发布包list列出五位；install grok写入voira-grok，精灵图SHA-256为8177cbc1317ecda9a5ffb7054a969df8c9d54980c02e2d0cbc138f0838968129。[GitHub Release v0.5.0](https://github.com/StephenQiu30/voira-pet/releases/tag/v0.5.0)六个资产公网SHA-256均匹配。Codex Pets页[Grok · 星冠双马尾](https://www.codexpets.app/pets/github-com-stephenqiu30-grok)状态为Approved，描述只含人设与形象。说明与成品提交b106d1e已推送main | 未在真实客户端重新选择或逐平台验收。本地安装不切换活动宠物，也不等于网页云收藏。v0.4.0及更早Release保留。服务端状态文档随本提交同步 |
 | Gemini公开发布T-180 | registry回读latest为0.4.0，tarball SHA-1为89c76d9f06b43953366a441e672fb312f8cf8ea7。发布包list列出四位；install gemini与DeepSeek分别写入voira-gemini、voira-deepseek，Gemini精灵图SHA-256为a6a088aae5919b1572f3cb1a72c93fcbc5b0c6e09d0f741e49578229ecd29c57。[GitHub Release v0.4.0](https://github.com/StephenQiu30/voira-pet/releases/tag/v0.4.0)五个资产公网SHA-256均匹配。Codex Pets页[Gemini · 星辰猫耳](https://www.codexpets.app/pets/github-com-stephenqiu30-gemini)状态为Approved，描述只含人设与形象。说明提交0e1d1b1已推送main | 未在真实客户端重新选择或逐平台验收。本地安装不切换活动宠物，也不等于网页云收藏。v0.3.0与v0.1.0资产保留 |

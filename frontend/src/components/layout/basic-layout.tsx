@@ -30,6 +30,10 @@ export function BasicLayout({ children }: { children: React.ReactNode }) {
             <span className="brand-mark" aria-hidden="true" />
             声伴 · Voira
           </Link>
+          <p className="room-status">
+            <strong>待机</strong>
+            <span>直播间未开启</span>
+          </p>
           <ThemeToggle />
         </header>
         <main id="main-content" className="site-content" tabIndex={-1}>

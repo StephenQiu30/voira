@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 export const metadata: Metadata = {
   title: "声伴 · Voira",
-  description: "遇见你的 AI 伙伴，从一次轻松的交流开始。",
+  description: "声伴 · Voira 数字人直播间。选择一位形象，服务接通后开始交流。",
   robots: { index: false, follow: false },
 };
 export default function RootLayout({

@@ -2,7 +2,7 @@
 
 ## 01 当前交付
 
-T-084已初始化Next.js App Router应用，完成BasicLayout（Header／Content／Footer）、单人物舞台、人物档案、固定头像栏、姿态Tabs及明暗主题。桌面／平板／手机采用响应式结构，不把Figma画板坐标直接固定到视口。
+T-084已初始化Next.js App Router应用，完成BasicLayout（Header／Content／Footer）、单人物舞台、人物档案、固定头像栏、姿态Tabs及明暗主题。当前页是数字人直播间的待机画面：人物居中，主持信息在侧，直播间保持空白，底部保留五态和七位形象。桌面／平板／手机采用响应式结构，不把Figma画板坐标直接固定到视口。
 
 T-111已同步最新Figma：七位AI入口、五态Tabs（自然陪伴／认真倾听／轻松闲聊／俏皮回应／托腮思考）、紧凑液态玻璃卡片及固定人物中心。前五位成女五种状态均可选；Gemini／Claude／Grok／ChatGPT的自然陪伴使用各自master.png，其余四态使用已采用的独立站姿。Kimi／Qwen显示形象准备中。切换角色优先保留状态，缺素材时原子回退自然陪伴；禁用状态不借图。
 
