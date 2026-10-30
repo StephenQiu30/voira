@@ -28,7 +28,7 @@ npm run build
 npm run start -- --hostname 127.0.0.1 --port 3000
 ```
 
-端口占用时选空闲应用端口，不终止其他项目。以上命令在frontend目录执行，不需要后端、密钥或模型账户。
+端口占用时选空闲应用端口，不终止其他项目。以上命令在frontend目录执行，不需要后端、密钥或模型账户。推送 main 与拉取请求时，[CI](../.github/workflows/ci.yml) 运行同一组前端命令。
 
 Vercel CLI 的链接、环境与部署见[前端规范](../docs/standard/frontend/01-前端开发规范.md)。本目录尚未链接项目，不把上述 npm 命令换成未核对的 `vercel dev` 或 `vercel deploy`。
 

@@ -51,7 +51,7 @@
 | 前端 | Umi OpenAPI（`@umijs/openapi`） | 从后端契约生成 TypeScript 类型与请求代码，作为开发工具使用；不引入 Umi 应用框架 |
 | 后端 | Python + FastAPI + Pydantic | 接口、校验、业务编排及 OpenAPI 契约；遵循 Google Python Style Guide 和 FastAPI 官方指南 |
 
-依赖版本以各端package.json／package-lock.json、pyproject.toml／uv.lock为准，避免本文再复制一份版本清单。后端使用uv；启动和检查命令分别由[frontend README](frontend/README.md)与[backend README](backend/README.md)维护。
+依赖版本以各端package.json／package-lock.json、pyproject.toml／uv.lock为准，避免本文再复制一份版本清单。后端使用uv；启动和检查命令分别由[frontend README](frontend/README.md)与[backend README](backend/README.md)维护。持续集成只运行这两组命令，见[.github/workflows/ci.yml](.github/workflows/ci.yml)。
 
 Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers重复实现核心规则。共享会话以服务端为准，浏览器状态不能作为计费或任务成功依据。部署本机优先；七项AI适配与Vidu边界见[共享设计](docs/design/02-Vidu网页PoC最小业务设计.md)。
 

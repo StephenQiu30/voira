@@ -80,7 +80,7 @@ uv run --locked mypy app
 uv run --locked pytest -q
 ```
 
-遵循[后端规范](../docs/standard/backend/01-后端开发规范.md)，80字符行宽、Google docstring结构；D415因不识别中文句号而豁免，保留其他docstring检查。测试覆盖合法任务、角色隔离、参考用途、无效输入、状态边界、OpenAPI和Host／Origin限制；使用TestClient，不调用模型。来源和业务契约见[DES-018第06节](../docs/design/03-角色形象素材设计.md)，验证摘要见[HANDOVER](../HANDOVER.md)。
+遵循[后端规范](../docs/standard/backend/01-后端开发规范.md)，80字符行宽、Google docstring结构；D415因不识别中文句号而豁免，保留其他docstring检查。推送 main 与拉取请求时，[CI](../.github/workflows/ci.yml) 运行同一组后端命令。测试覆盖合法任务、角色隔离、参考用途、无效输入、状态边界、OpenAPI和Host／Origin限制；使用TestClient，不调用模型。来源和业务契约见[DES-018第06节](../docs/design/03-角色形象素材设计.md)，验证摘要见[HANDOVER](../HANDOVER.md)。
 
 ## 04 五种坐姿调用
 
