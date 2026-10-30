@@ -27,20 +27,20 @@ test("every enabled portrait resolves to an adopted public asset", () => {
   }
 });
 
-test("characters awaiting new actions expose only the adopted adult portrait", () => {
+test("adopted adults expose five poses and preserve a supported selection", () => {
   for (const id of ["gemini", "claude", "grok", "chatgpt"]) {
     assert.equal(
       portraitSource(id, "natural"),
       `/characters/adult/${id}/master.png`,
     );
     for (const pose of poses.filter((item) => item.id !== "natural")) {
-      assert.equal(portraitSource(id, pose.id), null);
+      assert.equal(
+        portraitSource(id, pose.id),
+        `/characters/adult/${id}/${pose.id}.png`,
+      );
       assert.deepEqual(
         selectCharacter({ characterId: "deepseek", pose: pose.id }, id),
-        {
-          characterId: id,
-          pose: "natural",
-        },
+        { characterId: id, pose: pose.id },
       );
     }
   }
@@ -73,11 +73,11 @@ test("switching character preserves supported states and resets unsupported ones
   const current = { characterId: "deepseek", pose: "thinking" };
   assert.deepEqual(selectCharacter(current, "claude"), {
     characterId: "claude",
-    pose: "natural",
+    pose: "thinking",
   });
   assert.deepEqual(selectCharacter(current, "chatgpt"), {
     characterId: "chatgpt",
-    pose: "natural",
+    pose: "thinking",
   });
   assert.deepEqual(selectCharacter(current, "kimi"), {
     characterId: "kimi",
@@ -85,7 +85,7 @@ test("switching character preserves supported states and resets unsupported ones
   });
   assert.deepEqual(
     selectCharacter({ characterId: "deepseek", pose: "casual" }, "chatgpt"),
-    { characterId: "chatgpt", pose: "natural" },
+    { characterId: "chatgpt", pose: "casual" },
   );
   assert.deepEqual(current, { characterId: "deepseek", pose: "thinking" });
 });

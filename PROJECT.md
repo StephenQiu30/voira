@@ -71,6 +71,6 @@ Next.js负责页面和必要代理，FastAPI负责业务；不在Route Handlers�
 
 ## 06 设计交付资产
 
-完整最终资源放在仓库外共享 `../public/characters`、`../public/scenes`、`../public/brand`。`frontend/public` 按现有 URL 保存页面所需资源，部署使用 `frontend/public`。当前展示集合为9张人物、2张场景与1张品牌SVG。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。其余四位当前引用characters/adult/{character_id}/master.png，只启用自然陪伴；缺失动作生成并采用后再启用。四风格均以特点／人物组织master.png与card.png；旧编号姿态、cards及turnarounds目录移到被忽略的output。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
+完整最终资源放在仓库外共享 `../public/characters`、`../public/scenes`、`../public/brand`。`frontend/public` 按现有 URL 保存页面所需资源，部署使用 `frontend/public`。当前展示集合为25张人物、2张场景与1张品牌SVG。DeepSeek五态保存在characters/adult/deepseek下，以pose_id.png命名；礼服立绘与卡片保存在gown/deepseek。Gemini／Claude／Grok／ChatGPT的自然陪伴引用characters/adult/{character_id}/master.png，其余四态引用同目录已采用站姿；Kimi／Qwen仍无展示图。四风格均以特点／人物组织master.png与card.png；旧编号姿态、cards及turnarounds目录移到被忽略的output。同路径替换可用版本查询参数刷新缓存，须同时核对Next Image优化器兼容。
 
 候选、旧稿、参考图、生成清单放output，不在public或docs另建history／pending／review-set。造型和正式资源入口归[视觉设定04](docs/design/04-人物三视图视觉设定.md)；运行Skill与角色配置是制作规则唯一来源，prepared不代表真实生图，静态资源不代表AI或数字人会话已接通。

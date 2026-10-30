@@ -75,6 +75,17 @@ export type CharacterId = Character["id"];
 export type Selection = { characterId: CharacterId; pose: PoseId };
 
 // Explicit availability keeps unadopted candidates out of the live selector.
+function adultPoses(
+  id: Exclude<CharacterId, "deepseek" | "kimi" | "qwen">,
+): Record<PoseId, string> {
+  return {
+    natural: `/characters/adult/${id}/master.png`,
+    listening: `/characters/adult/${id}/listening.png`,
+    casual: `/characters/adult/${id}/casual.png`,
+    playful: `/characters/adult/${id}/playful.png`,
+    thinking: `/characters/adult/${id}/thinking.png`,
+  };
+}
 const portraits: Record<CharacterId, Partial<Record<PoseId, string>>> = {
   deepseek: {
     natural: "/characters/adult/deepseek/natural.png?v=63cec7bd",
@@ -83,10 +94,10 @@ const portraits: Record<CharacterId, Partial<Record<PoseId, string>>> = {
     playful: "/characters/adult/deepseek/playful.png?v=8444d8ea",
     thinking: "/characters/adult/deepseek/thinking.png?v=24b6f458",
   },
-  gemini: { natural: "/characters/adult/gemini/master.png" },
-  claude: { natural: "/characters/adult/claude/master.png" },
-  grok: { natural: "/characters/adult/grok/master.png" },
-  chatgpt: { natural: "/characters/adult/chatgpt/master.png" },
+  gemini: adultPoses("gemini"),
+  claude: adultPoses("claude"),
+  grok: adultPoses("grok"),
+  chatgpt: adultPoses("chatgpt"),
   kimi: {},
   qwen: {},
 };
