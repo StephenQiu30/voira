@@ -8,6 +8,8 @@ T-111已同步最新Figma：七位AI入口、五态Tabs（自然陪伴／认真�
 
 当前只有形象选择页面。角色／姿态切换是本地静态展示，不表示接入七个模型；交流按钮禁用并显示服务未连接。聊天、完整记录、直播、队列、真实音视频与API均未实现。后续按[计划02](../docs/plan/02-网页PoC逐功能实现与验收计划.md)分批推进。
 
+页面按语言分路：`/zh-CN` 与 `/en`。首次访问 `/` 时，已保存的 `voira-locale` 优先，否则按浏览器 `Accept-Language` 选择；中文（含繁体标签）进入简体，英语进入英文，其余回到 `zh-CN`。页头可改语言，选择写入 `voira-locale`。文案在 `src/i18n/dictionaries`。
+
 ## 02 启动与检查
 
 已验证环境Node 24.19.0、npm 12.0.2。依赖精确版本与package-lock.json已保存。
@@ -37,7 +39,8 @@ Vercel CLI 的链接、环境与部署见[前端规范](../docs/standard/fronten
 本目录的 public 保存页面展示资源：25张人物、2张场景和1张品牌SVG，随前端提交，浏览器URL不变。完整素材在服务端仓库外共享 `../../public/`，只留在本机；页面运行与部署使用本目录的 public。
 
 - src/components/layout/basic-layout.tsx：品牌、场景背景、主内容槽和页脚；不维护会话业务状态。
-- src/features/character-stage：角色静态数据与展示交互；页面装配保持在src/app/page.tsx。
+- src/features/character-stage：角色静态数据与展示交互；页面装配保持在src/app/[lang]/page.tsx。
+- src/i18n：语言协商与中英文案。角色编号仍在 characters.ts，显示名称随语言切换。
 - src/components/ui：shadcn Radix版组件源码；共享变体与焦点态集中维护。
 - src/app/globals.css：黑白灰语义token、液态玻璃材质与响应式规则。字体本地加载Geist，中文使用系统回退。
 - public/characters：frontend/public独立保存页面需要的展示图；characters.ts显式引用已采用成女素材。DeepSeek使用adult/deepseek下的五态PNG；Gemini／Claude／Grok／ChatGPT的自然陪伴使用adult/{character}/master.png，倾听、闲聊、俏皮、思考使用同目录对应PNG。未用于页面的四风格立绘与设定卡保留在工作区共享 `../../public/`；旧编号姿态、cards、turnarounds目录已移入被忽略的output。

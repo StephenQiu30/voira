@@ -8,12 +8,12 @@ import {
   selectCharacter,
 } from "../src/features/character-stage/characters.ts";
 
-test("seven AI choices use the five approved state labels", () => {
+test("seven AI choices use the five approved states", () => {
   assert.equal(characters.length, 7);
   assert.equal(new Set(characters.map((item) => item.id)).size, 7);
   assert.deepEqual(
-    poses.map((item) => item.label),
-    ["自然陪伴", "认真倾听", "轻松闲聊", "俏皮回应", "托腮思考"],
+    poses.map((item) => item.id),
+    ["natural", "listening", "casual", "playful", "thinking"],
   );
 });
 

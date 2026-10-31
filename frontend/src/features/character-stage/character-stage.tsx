@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { gsap, useGSAP } from "./motion";
 import { StageAtmosphere } from "./stage-atmosphere";
+import { fill } from "@/i18n/format";
+import type { Dictionary } from "@/i18n/dictionary";
 import { PortraitTransition } from "./portrait-transition";
 import {
   characters,
@@ -18,7 +20,13 @@ import {
   type PoseId,
   type Selection,
 } from "./characters";
-export function CharacterStage() {
+export function CharacterStage({
+  copy,
+  profiles,
+}: {
+  copy: Dictionary["stage"];
+  profiles: Dictionary["characters"];
+}) {
   const experience = useRef<HTMLDivElement>(null);
   const [selection, setSelection] = useState<Selection>({
     characterId: "deepseek",
@@ -32,6 +40,7 @@ export function CharacterStage() {
   };
   const index = characters.findIndex((item) => item.id === characterId);
   const character = characters[index];
+  const profile = profiles[character.id];
   useGSAP(
     () => {
       const media = gsap.matchMedia();
@@ -103,27 +112,31 @@ export function CharacterStage() {
           className="host-plate glass-panel"
           aria-labelledby="character-name"
         >
-          <h1 id="character-name">{character.name}</h1>
-          <p className="profile-tagline">{character.tagline}</p>
+          <h1 id="character-name">{profile.name}</h1>
+          <p className="profile-tagline">{profile.tagline}</p>
           <div className="flex flex-wrap gap-2">
-            {character.traits.map((trait) => (
+            {profile.traits.map((trait) => (
               <Badge variant="secondary" key={trait}>
                 {trait}
               </Badge>
             ))}
           </div>
-          <p className="profile-description">{character.description}</p>
+          <p className="profile-description">{profile.description}</p>
         </section>
         <div className="stage-figure">
           {portraitSource(characterId, pose) && <StageAtmosphere />}
           <TabsContent value={characterId} className="character-panel">
-            <PortraitTransition selection={selection} />
+            <PortraitTransition
+              selection={selection}
+              copy={copy}
+              profiles={profiles}
+            />
           </TabsContent>
           <div className="carousel-arrows">
             <Button
               variant="glass"
               size="icon"
-              aria-label="上一位人物"
+              aria-label={copy.previous}
               onClick={() => selectRelative(-1)}
             >
               <ChevronLeft data-icon="inline-start" />
@@ -131,7 +144,7 @@ export function CharacterStage() {
             <Button
               variant="glass"
               size="icon"
-              aria-label="下一位人物"
+              aria-label={copy.next}
               onClick={() => selectRelative(1)}
             >
               <ChevronRight data-icon="inline-start" />
@@ -140,9 +153,9 @@ export function CharacterStage() {
         </div>
       </div>
       <aside className="room-rail glass-panel">
-        <h2>直播间</h2>
-        <p>开播后，观众和评论会出现在这里。</p>
-        <p className="room-rail-note">当前未开启。</p>
+        <h2>{copy.roomTitle}</h2>
+        <p>{copy.roomBody}</p>
+        <p className="room-rail-note">{copy.roomNote}</p>
       </aside>
       <div className="stage-dock glass-panel">
         <div className="character-controls">
@@ -166,7 +179,7 @@ export function CharacterStage() {
             className="pose-tabs"
           >
             <TabsList
-              aria-label="人物状态"
+              aria-label={copy.poseLabel}
               aria-describedby="pose-availability"
               className="w-full"
             >
@@ -176,20 +189,20 @@ export function CharacterStage() {
                   key={item.id}
                   disabled={!portraitSource(characterId, item.id)}
                 >
-                  {item.label}
+                  {copy.poses[item.id]}
                 </TabsTrigger>
               ))}
             </TabsList>
             {poses.map((item) => (
               <TabsContent value={item.id} key={item.id} className="sr-only">
                 {portraitSource(characterId, item.id)
-                  ? `人物以${item.label}展示`
-                  : "该状态素材暂未准备"}
+                  ? fill(copy.shownAs, { state: copy.poses[item.id] })
+                  : copy.stateMissing}
               </TabsContent>
             ))}
           </Tabs>
           <TabsList
-            aria-label="选择人物形象"
+            aria-label={copy.choose}
             variant="characters"
             className="character-choices"
           >
@@ -200,7 +213,7 @@ export function CharacterStage() {
                   key={item.id}
                   value={item.id}
                   variant="character"
-                  aria-label={item.name}
+                  aria-label={profiles[item.id].name}
                 >
                   <Avatar>
                     {avatar && (
@@ -218,11 +231,11 @@ export function CharacterStage() {
                       />
                     )}
                     <AvatarFallback>
-                      {item.shortName.slice(0, 1)}
+                      {profiles[item.id].shortName.slice(0, 1)}
                     </AvatarFallback>
                   </Avatar>
                   <span className="character-choice-label">
-                    {item.shortName}
+                    {profiles[item.id].shortName}
                   </span>
                   <span className="choice-indicator" aria-hidden="true" />
                 </TabsTrigger>
@@ -233,7 +246,9 @@ export function CharacterStage() {
             <span aria-live="polite" aria-atomic="true">
               {String(index + 1).padStart(2, "0")} /{" "}
               {String(characters.length).padStart(2, "0")}
-              <span className="sr-only">，{character.name}</span>
+              <span className="sr-only">
+                {fill(copy.positionName, { name: profile.name })}
+              </span>
             </span>
           </div>
         </div>
@@ -244,21 +259,21 @@ export function CharacterStage() {
             disabled
             aria-describedby="service-status"
           >
-            开始交流
+            {copy.start}
           </Button>
           <p id="service-status">
             {!portraitSource(characterId, "natural")
-              ? "人物形象准备中"
-              : "交流服务尚未连接"}
+              ? copy.preparing
+              : copy.disconnected}
           </p>
         </div>
       </div>
       <p id="pose-availability" className="sr-only" aria-live="polite">
         {!portraitSource(characterId, "natural")
-          ? "形象准备中，五种状态暂不可用。"
+          ? copy.posesPreparing
           : poses.every((item) => portraitSource(characterId, item.id))
-            ? "五种状态均可选择。"
-            : "当前可选择自然陪伴，其余状态素材准备中。"}
+            ? copy.posesReady
+            : fill(copy.posesPartial, { state: copy.poses.natural })}
       </p>
     </Tabs>
   );

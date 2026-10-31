@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "声伴 · Voira",
+    "description": "声伴 · Voira 数字人直播间。选择一位形象，服务接通后开始交流。"
+  },
+  "layout": {
+    "skip": "跳转到主要内容",
+    "brand": "声伴 · Voira",
+    "home": "声伴 Voira 首页",
+    "standby": "待机",
+    "roomClosed": "直播间未开启",
+    "generated": "AI 生成形象",
+    "footerBrand": "声伴 · Voira",
+    "theme": "切换明暗主题",
+    "switchLocale": "切换到 English"
+  },
+  "stage": {
+    "previous": "上一位人物",
+    "next": "下一位人物",
+    "roomTitle": "直播间",
+    "roomBody": "开播后，观众和评论会出现在这里。",
+    "roomNote": "当前未开启。",
+    "poseLabel": "人物状态",
+    "shownAs": "人物以{state}展示",
+    "stateMissing": "该状态素材暂未准备",
+    "choose": "选择人物形象",
+    "start": "开始交流",
+    "preparing": "人物形象准备中",
+    "disconnected": "交流服务尚未连接",
+    "posesPreparing": "形象准备中，五种状态暂不可用。",
+    "posesReady": "五种状态均可选择。",
+    "posesPartial": "当前可选择{state}，其余状态素材准备中。",
+    "positionName": "，{name}",
+    "alt": "{name}，{state}",
+    "portraitPreparing": "形象准备中",
+    "waiting": "{name} 的故事，等待与你相遇。",
+    "loading": "正在加载形象…",
+    "preparingNext": "正在准备下一形象…",
+    "loadFailedRetained": "新形象加载失败，已保留当前形象",
+    "loadFailed": "人物形象暂时无法显示",
+    "retry": "重新加载",
+    "poses": {
+      "natural": "自然陪伴",
+      "listening": "认真倾听",
+      "casual": "轻松闲聊",
+      "playful": "俏皮回应",
+      "thinking": "托腮思考"
+    }
+  },
+  "characters": {
+    "deepseek": {
+      "name": "蓝色大肥鱼",
+      "shortName": "大肥鱼",
+      "tagline": "温柔里，藏着一点小机灵。",
+      "description": "愿意听你慢慢说，再用轻松的话陪你理清思路。认真回应，也保留一点俏皮。",
+      "traits": ["温柔耐心", "轻松自然", "小机灵"]
+    },
+    "gemini": {
+      "name": "Gemini",
+      "shortName": "Gemini",
+      "tagline": "让好奇心，带你走远一点。",
+      "description": "总对新鲜事保持好奇。一个小问题，也能聊出几种意想不到的可能。",
+      "traits": ["好奇心", "想象力", "灵动"]
+    },
+    "claude": {
+      "name": "Claude",
+      "shortName": "Claude",
+      "tagline": "慢慢听，细细想。",
+      "description": "不急着给出答案，先把你的话听完整。用细腻的观察，陪你梳理复杂的想法。",
+      "traits": ["沉稳", "细腻", "克制"]
+    },
+    "grok": {
+      "name": "Grok",
+      "shortName": "Grok",
+      "tagline": "一点腹黑，让聊天更有趣。",
+      "description": "活泼里藏着一点腹黑，接话快，也爱抛出出其不意的观点。让日常聊天多一点趣味。",
+      "traits": ["腹黑", "活泼", "机智"]
+    },
+    "chatgpt": {
+      "name": "ChatGPT",
+      "shortName": "ChatGPT",
+      "tagline": "从容倾听，把想法说清楚。",
+      "description": "从容地接住不同想法，把纷杂的问题说得清楚。温和鼓励，也愿意与你一起推敲。",
+      "traits": ["从容", "知性", "包容"]
+    },
+    "kimi": {
+      "name": "Kimi",
+      "shortName": "Kimi",
+      "tagline": "把你的故事，认真记在心里。",
+      "description": "安静专注的夜读者，记得你提过的小事。用耐心的倾听和一点冷幽默，陪你把思绪写成故事。",
+      "traits": ["安静专注", "耐心细致", "冷幽默"]
+    },
+    "qwen": {
+      "name": "Qwen",
+      "shortName": "Qwen",
+      "tagline": "旧故事，也可以有新的讲法。",
+      "description": "温雅细致的书坊姑娘，珍惜旧故事，也愿意听见新的想法。把周到藏进日常，为意外留一点余地。",
+      "traits": ["温雅周到", "细致有礼", "有主见"]
+    }
+  }
+}

@@ -134,6 +134,11 @@
   padding: 12px 28px;
   gap: 16px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .room-status {
   display: flex;
   flex-direction: column;

@@ -20,7 +20,8 @@
 
 | 位置 | 职责 |
 |---|---|
-| frontend/src/app | Next.js App Router装配、页面与全局样式 |
+| frontend/src/app | Next.js App Router装配、页面与全局样式；页面位于 `[lang]` |
+| frontend/src/i18n | 支持语言、浏览器语言协商与界面文案 |
 | frontend/src/components | 通用组件；ui为Radix版shadcn，layout为BasicLayout |
 | frontend/src/features | 按业务组织的状态、视图和交互 |
 | frontend/src/api | Umi OpenAPI生成的类型与HTTP请求；接入时生成，不手写DTO替代 |

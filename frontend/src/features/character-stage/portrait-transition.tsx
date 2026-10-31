@@ -3,12 +3,9 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  characters,
-  poses,
-  portraitSource,
-  type Selection,
-} from "./characters";
+import { fill } from "@/i18n/format";
+import type { Dictionary } from "@/i18n/dictionary";
+import { characters, portraitSource, type Selection } from "./characters";
 import { gsap, useGSAP } from "./motion";
 
 const frameKey = ({ characterId, pose }: Selection) => `${characterId}-${pose}`;
@@ -16,11 +13,15 @@ const frameKey = ({ characterId, pose }: Selection) => `${characterId}-${pose}`;
 function PortraitLayer({
   selection,
   incoming,
+  copy,
+  profiles,
   onReady,
   onFailure,
 }: {
   selection: Selection;
   incoming: boolean;
+  copy: Dictionary["stage"];
+  profiles: Dictionary["characters"];
   onReady: () => void;
   onFailure: () => void;
 }) {
@@ -30,6 +31,7 @@ function PortraitLayer({
   const character = characters.find(
     (item) => item.id === selection.characterId,
   )!;
+  const profile = profiles[character.id];
   const source = portraitSource(selection.characterId, selection.pose);
   useGSAP(
     () => {
@@ -50,7 +52,10 @@ function PortraitLayer({
       {source ? (
         <Image
           src={source}
-          alt={`${character.name}，${poses.find((item) => item.id === selection.pose)!.label}`}
+          alt={fill(copy.alt, {
+            name: profile.name,
+            state: copy.poses[selection.pose],
+          })}
           fill
           sizes="(max-width: 767px) 240px, 400px"
           preload={
@@ -74,17 +79,25 @@ function PortraitLayer({
       ) : (
         <div className="portrait-pending">
           <span className="pending-monogram" aria-hidden="true">
-            {character.shortName.slice(0, 1)}
+            {profile.shortName.slice(0, 1)}
           </span>
-          <p>形象准备中</p>
-          <span>{character.name} 的故事，等待与你相遇。</span>
+          <p>{copy.portraitPreparing}</p>
+          <span>{fill(copy.waiting, { name: profile.name })}</span>
         </div>
       )}
     </div>
   );
 }
 
-export function PortraitTransition({ selection }: { selection: Selection }) {
+export function PortraitTransition({
+  selection,
+  copy,
+  profiles,
+}: {
+  selection: Selection;
+  copy: Dictionary["stage"];
+  profiles: Dictionary["characters"];
+}) {
   const frame = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(selection);
   const [currentReady, setCurrentReady] = useState(false);
@@ -153,6 +166,8 @@ export function PortraitTransition({ selection }: { selection: Selection }) {
         key={keyFor(currentKey)}
         selection={current}
         incoming={false}
+        copy={copy}
+        profiles={profiles}
         onReady={() => setCurrentReady(true)}
         onFailure={() => setFailed(currentKey)}
       />
@@ -161,18 +176,20 @@ export function PortraitTransition({ selection }: { selection: Selection }) {
           key={keyFor(candidateKey)}
           selection={candidate}
           incoming
+          copy={copy}
+          profiles={profiles}
           onReady={() => setTransition(candidate)}
           onFailure={() => setFailed(candidateKey)}
         />
       )}
       {!currentReady && !hasError && (
         <span className="portrait-loading" role="status">
-          正在加载形象…
+          {copy.loading}
         </span>
       )}
       {changing && !transition && !hasError && (
         <span className="stage-switch-status" role="status">
-          正在准备下一形象…
+          {copy.preparingNext}
         </span>
       )}
       {hasError && (
@@ -180,11 +197,7 @@ export function PortraitTransition({ selection }: { selection: Selection }) {
           className={`portrait-feedback ${currentReady ? "portrait-feedback-retained" : ""}`}
           role="alert"
         >
-          <p>
-            {currentReady
-              ? "新形象加载失败，已保留当前形象"
-              : "人物形象暂时无法显示"}
-          </p>
+          <p>{currentReady ? copy.loadFailedRetained : copy.loadFailed}</p>
           <Button
             variant="glass"
             onClick={() => {
@@ -195,7 +208,7 @@ export function PortraitTransition({ selection }: { selection: Selection }) {
               }));
             }}
           >
-            重新加载
+            {copy.retry}
           </Button>
         </div>
       )}

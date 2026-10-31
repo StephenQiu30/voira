@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Voira",
+    "description": "Voira live room. Choose a character and start talking once the service is connected."
+  },
+  "layout": {
+    "skip": "Skip to main content",
+    "brand": "Voira",
+    "home": "Voira home",
+    "standby": "Standby",
+    "roomClosed": "Room is off",
+    "generated": "AI-generated likeness",
+    "footerBrand": "Voira",
+    "theme": "Switch color theme",
+    "switchLocale": "Switch to 中文"
+  },
+  "stage": {
+    "previous": "Previous character",
+    "next": "Next character",
+    "roomTitle": "Room",
+    "roomBody": "Viewers and comments will appear here after the room opens.",
+    "roomNote": "Not open yet.",
+    "poseLabel": "Character state",
+    "shownAs": "Shown as {state}",
+    "stateMissing": "This state is not ready yet",
+    "choose": "Choose a character",
+    "start": "Start talking",
+    "preparing": "Character art is being prepared",
+    "disconnected": "Conversation service is not connected",
+    "posesPreparing": "Art is being prepared. The five states are unavailable.",
+    "posesReady": "All five states are available.",
+    "posesPartial": "{state} is available. The other states are still being prepared.",
+    "positionName": ", {name}",
+    "alt": "{name}, {state}",
+    "portraitPreparing": "Art in progress",
+    "waiting": "{name} is waiting to meet you.",
+    "loading": "Loading character…",
+    "preparingNext": "Preparing the next character…",
+    "loadFailedRetained": "The new character failed to load. The current one stays.",
+    "loadFailed": "This character cannot be shown right now",
+    "retry": "Reload",
+    "poses": {
+      "natural": "Natural",
+      "listening": "Listen",
+      "casual": "Casual",
+      "playful": "Play",
+      "thinking": "Think"
+    }
+  },
+  "characters": {
+    "deepseek": {
+      "name": "Blue Big Fish",
+      "shortName": "Big Fish",
+      "tagline": "Gentle, with a little clever spark.",
+      "description": "Happy to hear you out, then help sort a thought in an easy way. Serious when it matters, and still a little playful.",
+      "traits": ["Patient", "Easygoing", "Clever"]
+    },
+    "gemini": {
+      "name": "Gemini",
+      "shortName": "Gemini",
+      "tagline": "Let curiosity take you a little further.",
+      "description": "Always curious about something new. Even a small question can open a few unexpected possibilities.",
+      "traits": ["Curious", "Imaginative", "Lively"]
+    },
+    "claude": {
+      "name": "Claude",
+      "shortName": "Claude",
+      "tagline": "Listen slowly. Think carefully.",
+      "description": "Does not rush an answer. Hears you out first, then helps untangle a complicated thought with careful attention.",
+      "traits": ["Steady", "Attentive", "Restrained"]
+    },
+    "grok": {
+      "name": "Grok",
+      "shortName": "Grok",
+      "tagline": "A little mischief makes the chat more fun.",
+      "description": "Lively, with a sly edge. Quick to reply, and happy to toss in an unexpected take.",
+      "traits": ["Sly", "Lively", "Witty"]
+    },
+    "chatgpt": {
+      "name": "ChatGPT",
+      "shortName": "ChatGPT",
+      "tagline": "Listen calmly. Make the idea clear.",
+      "description": "Takes in different ideas without hurry and says a tangled question clearly. Warm encouragement, and willing to work through it with you.",
+      "traits": ["Calm", "Thoughtful", "Open"]
+    },
+    "kimi": {
+      "name": "Kimi",
+      "shortName": "Kimi",
+      "tagline": "Keeps your story carefully in mind.",
+      "description": "A quiet night reader who remembers the small things you mentioned. Patient listening, a dry joke, and thoughts that become a story.",
+      "traits": ["Quiet", "Patient", "Dry humor"]
+    },
+    "qwen": {
+      "name": "Qwen",
+      "shortName": "Qwen",
+      "tagline": "An old story can still be told a new way.",
+      "description": "A gentle bookshop keeper who treasures old stories and still hears new ideas. Thoughtful in the everyday, with room left for surprise.",
+      "traits": ["Gentle", "Polite", "Assured"]
+    }
+  }
+}

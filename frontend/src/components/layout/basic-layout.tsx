@@ -1,11 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LocaleSwitch } from "@/components/locale-switch";
 import { ThemeToggle } from "@/components/theme-toggle";
-export function BasicLayout({ children }: { children: React.ReactNode }) {
+import type { Dictionary } from "@/i18n/dictionary";
+import type { Locale } from "@/i18n/locales";
+export function BasicLayout({
+  children,
+  locale,
+  copy,
+}: {
+  children: React.ReactNode;
+  locale: Locale;
+  copy: Dictionary["layout"];
+}) {
   return (
     <div className="app-shell">
       <a href="#main-content" className="skip-link">
-        跳转到主要内容
+        {copy.skip}
       </a>
       <div className="scene-surface">
         <div className="scene-background" aria-hidden="true">
@@ -26,22 +37,25 @@ export function BasicLayout({ children }: { children: React.ReactNode }) {
           />
         </div>
         <header className="site-header">
-          <Link href="/" className="brand" aria-label="声伴 Voira 首页">
+          <Link href={`/${locale}`} className="brand" aria-label={copy.home}>
             <span className="brand-mark" aria-hidden="true" />
-            声伴 · Voira
+            {copy.brand}
           </Link>
           <p className="room-status">
-            <strong>待机</strong>
-            <span>直播间未开启</span>
+            <strong>{copy.standby}</strong>
+            <span>{copy.roomClosed}</span>
           </p>
-          <ThemeToggle />
+          <div className="header-actions">
+            <LocaleSwitch locale={locale} label={copy.switchLocale} />
+            <ThemeToggle label={copy.theme} />
+          </div>
         </header>
         <main id="main-content" className="site-content" tabIndex={-1}>
           {children}
         </main>
         <footer className="site-footer">
-          <span>AI 生成形象</span>
-          <span>声伴 · Voira</span>
+          <span>{copy.generated}</span>
+          <span>{copy.footerBrand}</span>
         </footer>
       </div>
     </div>

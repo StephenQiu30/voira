@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-export function ThemeToggle() {
+export function ThemeToggle({ label }: { label: string }) {
   const { resolvedTheme, setTheme } = useTheme();
   return (
     <Tooltip>
@@ -15,14 +15,14 @@ export function ThemeToggle() {
         <Button
           variant="glass"
           size="icon"
-          aria-label="切换明暗主题"
+          aria-label={label}
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
         >
           <Moon className="theme-moon" data-icon="inline-start" />
           <Sun className="theme-sun" data-icon="inline-start" />
         </Button>
       </TooltipTrigger>
-      <TooltipContent>切换明暗主题</TooltipContent>
+      <TooltipContent>{label}</TooltipContent>
     </Tooltip>
   );
 }
