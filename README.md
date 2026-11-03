@@ -6,7 +6,7 @@
 
 一个正在构建的网页数字人项目，探索有形象、有声音、有个性的 AI 交流体验。
 
-[认识角色](#认识五位角色) · [查看设计](https://www.figma.com/design/ZO9RS5jCJqDWBnAxB8yV2w) · [项目进展](#项目进展) · [参与共建](#参与共建)
+[认识角色](#认识五位角色) · [查看设计](https://www.figma.com/design/ZO9RS5jCJqDWBnAxB8yV2w) · [项目进展](#项目进展) · [开源协议](#开源协议) · [参与共建](#参与共建)
 
 </div>
 
@@ -100,6 +100,13 @@
 - **想研究技术：** [调研索引](docs/research/00-调研索引.md) → [网页 PoC 验证计划](docs/plan/01-网页数字人PoC验证计划.md)。
 
 更多资料见[知识库导航](docs/00-知识库导航.md)。本地阅读时，可用 Obsidian 打开 `docs/` 文件夹。
+
+## 开源协议
+
+本项目采用双重授权模式：
+
+- **代码部分：** 遵循 [MIT License](LICENSE) 开源协议。
+- **原创美术与视觉资产：** 所有角色立绘、三视图、设定卡及场景素材（包括 `frontend/public/characters/` 等目录下的资产）均遵循 [知识共享 署名-非商业性使用 4.0 国际许可协议 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)。非商业用途下可自由分享与使用，未经授权不得用于商业用途。
 
 ## 参与共建
 
